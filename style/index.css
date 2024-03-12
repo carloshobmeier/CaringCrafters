@@ -1,0 +1,70 @@
+/* Responsividade extra */
+@media only screen and (max-width: 960px) {
+    .main-banner-img {
+        visibility: hidden
+    }
+}
+
+.index-main-banner {
+    background-color: #07857A;
+    padding: 0 60px;
+}
+
+.main-banner-img {
+    height: 500px;
+    object-fit: cover;
+    margin-top: 10vh;
+}
+
+.main-banner-content {
+    width: 40vw;
+    min-width: 440px;
+    padding: 200px 0;
+}
+
+.main-banner-content h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.main-banner-content h5 {
+    color: #fff;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.main-banner-content p {
+    color: #e2e2e2;
+    font-weight: 400;
+}
+
+.index-categories-banner {
+    padding: 40px 0;
+}
+
+.index-card {
+    transition: 0.2s;
+}
+
+.index-card:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.index-card-img {
+    padding: 30px 0;
+    margin: auto;
+    width: 100px;
+}
+
+.index-card-btn {
+    display: block;
+    text-align: center;
+    color: #07857A;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.index-card-btn img {
+    width: 15px;
+}
