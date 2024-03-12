@@ -56,6 +56,16 @@ header {
     cursor: pointer;
 }
 
+.edit-profile-button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
 .user-circle img {
     width: 40px;
     height: 40px;
