@@ -8,42 +8,124 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="">
-        <section id="sidebar" class="col-3 container">
-            <h1>Caring Crafters</h1>
-            <div id="filter">
-                <input type="text">
-                <h3>Filter</h3>
-            </div>
-            <div>
-            </div>
-        </section>
-        <section class="col-9"> 
-            <nav class="navbar navbar-expand-lg">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <img src="" alt="">
+    <main >
+            <nav>
+                <div class="container">
+                    <h1>Caring Crafters</h1>
+                    <div class="buttonsNav">
+                        <button>Institutions</button>
+                        <button>Oportunities</button>
+                        <button>Browse</button>
+                    </div>
+                </div>
             </nav>
-            <section id="mainPanel">
-                <h3><?php  ?>Results</h3>
-                <div class="cards">    
-                    <?php
-                    $numberOfCards = 30;
-                    for($i = 1;$i<$numberOfCards;$i++){
-                        echo '<div class="card" style="width: 18rem;">
-                        <img src="./assets/pexels-tobi-463734.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="">Card title</h5>
-                            <p class="">Some quick example text to build on the card title and make up the bulk of the card"s content.</p>
+            <section>
+                <div class="mainImage">
+                        <h2>Join Caring Crafters today on your journey to kindness</h2>
+                        <h3>Connect with institutions in need of support!</h3>
+                </div>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </section >
+            <section class="container suggested">
+                <h4>Explore meaninful causes</h4>
+                <div class="suggestedImages">
+                    <img  class="col-3" src="./resources/food.jpeg" alt="">
+                    <div class="imageDuo" class="col-3">
+                        <img class="col-6" src="./resources/agua.jpeg" alt="">
+                        <img class="col-6" src="./assets/pexels-tobi-463734.jpg" alt="">
+                    </div>
+                    <img class="col-3" src="./resources/golden.jpeg" alt="">
+                    <div class="imageDuo" class="col-3">
+                        <img class="col-6" src="./resources/uniao2.jpeg" alt="">
+                        <img class="col-6" src="./resources/tree.jpeg" alt="">
+                    </div>
+                </div>
+            </section> 
+            <section class="sectionCards container col-12">
+                <h4>Top-rated institutions to look for</h4>
+                <div class="suggestedCards col-12" >
+                    <div class="customCard">
+                        <img src="./assets/pexels-tobi-463734.jpg" alt="">
+                        <div>
+                            <h5>Title</h5>
+                            <h6>City</h6>
                         </div>
-                        </div>';
-                    }
-                    ?>
+                        <div>
+                            <h4 >Contact for details</h4>
+                        </div>
+                    </div>
+                    <div class="customCard">
+                        <img src="./assets/pexels-tobi-463734.jpg" alt="">
+                        <div>
+                            <h5>Title</h5>
+                            <h6>City</h6>
+                        </div>
+                        <div>
+                            <h4>Contact for details</h4>
+                        </div>
+                    </div>
+                    <div class="customCard">
+                        <img src="./assets/pexels-tobi-463734.jpg" alt="">
+                        <div>
+                            <h5>Title</h5>
+                            <h6>City</h6>
+                        </div>
+                        <div>
+                            <h4>Contact for details</h4>
+                        </div>
+                    </div>
+                    <div class="customCard">
+                        <img src="./assets/pexels-tobi-463734.jpg" alt="">
+                        <div>
+                            <h5>Title</h5>
+                            <h6>City</h6>
+                        </div>
+                        <div>
+                            <h4>Contact for details</h4>
+                        </div>
+                    </div>
+                    <div class="customCard">
+                        <img src="./assets/pexels-tobi-463734.jpg" alt="">
+                        <div>
+                            <h5>Title</h5>
+                            <h6>City</h6>
+                        </div>
+                        <div>
+                            <h4>Contact for details</h4>
+                        </div>
+                    </div>
                 </div>
             </section>
-        </section>
+            <div class="message container">
+                <div>
+                    <img src="" alt="">
+                    <div class="offers">
+                        <h4>Get exclusive offers and updates!</h4>
+                        <p>Do you want to get involved in meaninful causes and support those in need?</p>
+                        <p>Sign up and start making a difference today!</p>
+                    </div>
+                </div>
+                <button>JOIN NOW</button>
+            </div>
+            <footer>
+                <div class="footer-container container">
+                    <div>
+                        <h3>Caring Crafters</h3>
+                        <p>Connecting volunteers and Institutions</p>
+                    </div>
+                    <div>
+                        <strong><p>Help Center</p></strong>
+                        <p>FAQs</p>
+                        <p>Support team</p>
+                        <p>How it works</p>
+                        <p>Get in touch</p>
+                    </div>
+                </div>
+            </footer>
     </main>
     <script src="./assets/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>

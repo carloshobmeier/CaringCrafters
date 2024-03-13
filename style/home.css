@@ -1,49 +1,142 @@
-body{
-    width: 100%;
-    height: 100%;
+*{
     box-sizing: border-box;
-
 }
 
 main{
-    display: flex;
-    flex-direction: row;
-    overflow-x: hidden;
+    width: 100%;
 }
 
-#sidebar{
+nav{
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    background-color: #E8E8E8;
+
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 10px -1px rgba(185, 183, 183, 0.61);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+}
+
+nav div{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.navbar{
-    height: 10vh;
-    background-color: beige;
+nav div h1{
+    font-size: 1.5rem;
 }
 
-#filter{
-}
-
-.cards{
+.mainImage{
+    height: 40vh;
+    width: 100%;
     display: flex;
-    height: 80vh;
-    flex-wrap: wrap;    
-    overflow-x: scroll;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    align-items:center;
-    justify-content: space-evenly;
-    column-gap: 2rem;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url(../assets/Default_volunteering_happy_people_ultra_realistic_8K_01.jpg);
 }
 
-.card{
-    height: 40%;
-    aspect-ratio: 1/1;
+.mainImage h2, .mainImage h3{
+    opacity: 1 !important;
 }
 
-.card img{
-    aspect-ratio: 16/9;
-    height: 30%;
-    object-position:50% 70%;
+.mainImage h2{
+    font-size: 2rem;
+}
+.mainImage h3{
+    font-size: 1.2rem;
+}
+
+
+.suggested{
+    width: 100%;
+    margin-top: 5rem;
+}
+.suggestedImages div{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.suggestedImages img{
+    width: 25%;
     object-fit: cover;
+
+}
+
+.suggested div img{
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    background-size: cover;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
+}
+.imageDuo img{
+    aspect-ratio: 2/1 !important;
+    width: 90%;
+    background-size: cover;
+    object-fit: cover;
+
+}
+
+.suggestedImages{
+    width: 100%;
+    display: flex;
+}
+
+.sectionCards{
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+}
+
+.suggestedCards{
+    display: flex;
+    justify-content: space-between;
+}
+
+.customCard{
+    width: 18%;
+}
+
+.customCard img{
+    width: 100%;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    background-color: #E8E8E8;
+    padding: 1rem;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.message{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.offers{
+
+}
+
+.message button{
+    aspect-ratio: 16/9;
+    width: 10%;
+    height: 10%;
 }
