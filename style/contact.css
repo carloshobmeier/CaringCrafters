@@ -99,12 +99,6 @@ header {
   
 }
 
-.map {
-  max-width: 500px;
-  position: relative;
-  margin: 0 auto ;
-}
-
 
 .contact-info {
   display: flex;
@@ -125,9 +119,15 @@ header {
   margin: 0;
 }
 
-@media only screen and (max-device-width: 900px) {
-  }
+iframe {
+  width: 600px;
+  border: 10px;
+}
 
+@media only screen and (max-device-width: 900px) {
+}
+
+  
 footer {
   background-color: #f0f0f0;
   padding: 20px 0;
