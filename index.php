@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CaringCrafters</title>
     <link href="./style/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/setup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <?php include('./src/components/navbar.php') ?>
+    <?php include('./src/components/navbar2.php') ?>
     <section class="index-main-banner d-flex">
         <div class="main-banner-content">
             <h5>Nossa missão</h5>

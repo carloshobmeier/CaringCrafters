@@ -4,24 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
-  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="./style/contact.css">
+  <link rel="stylesheet" href="./style/setup.css">
 </head>
 <body>
-  <header>
-    <div class="menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Opportunit</a></li>
-        <li><a href="#">Institutions</a></li>
-        <li><a href="#">Profiles</a></li>
-        <li><a href="#">Connect</a></li>
-      </ul>
-      <div class="buttons">
-        <button class="login">Log in</button>
-        <button class="signup">Sign up</button>
-      </div>
-    </div>
-  </header>
+  <?php include('./src/components/navbar2.php') ?>
+
 
   <div class="contact">
     <h1>Contact</h1>
@@ -45,21 +33,7 @@
 
   </div>
 
-  <footer>
-    <div class="contact-info">
-      <div>
-        <h3>Call us</h3>
-        <p>+1234567890</p>
-      </div>
-      <div>
-        <h3>Email us</h3>
-        <p>info@example.com</p>
-      </div>
-      <div>
-        <h3>Visit us</h3>
-        <p>123 Main St, City, Country</p>
-      </div>
-    </div>
-  </footer>
+  <?php include('./src/components/footer.php') ?>
+
 </body>
 </html>
