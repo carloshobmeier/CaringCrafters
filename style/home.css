@@ -6,29 +6,6 @@ main{
     width: 100%;
 }
 
-nav{
-    display: flex;
-    width: 100%;
-    background-color: #E8E8E8;
-
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 5px 10px -1px rgba(185, 183, 183, 0.61);
-    padding: 0.5rem 0;
-    position: sticky;
-    top: 0;
-}
-
-nav div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav div h1{
-    font-size: 1.5rem;
-}
-
 .mainImage{
     height: 40vh;
     width: 100%;
@@ -112,17 +89,6 @@ nav div h1{
     width: 100%;
 }
 
-footer{
-    width: 100%;
-    display: flex;
-    background-color: #E8E8E8;
-    padding: 1rem;
-}
-
-.footer-container{
-    display: flex;
-    justify-content: space-between;
-}
 
 .message{
     display: flex;
@@ -131,9 +97,6 @@ footer{
     margin-bottom: 5rem;
 }
 
-.offers{
-
-}
 
 .message button{
     aspect-ratio: 16/9;
