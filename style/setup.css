@@ -9,6 +9,12 @@
   }
 }
 
+@media (width <= 460px) {
+  .filler-column {
+    display: none;
+  }
+}
+
 * {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
