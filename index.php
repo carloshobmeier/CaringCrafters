@@ -10,7 +10,7 @@
   </head>
   <body>
     <?php include('./src/components/navbar2.php') ?>
-    <section class="index-main-banner d-flex">
+    <section class="index-main-banner">
         <div class="main-banner-content">
             <h5>Nossa missão</h5>
             <h1>Ajudando pessoas e construindo um futuro melhor.</h1>
@@ -18,13 +18,13 @@
             <button type="button" class="btn btn-lg btn-outline-light">Junte-se a gente!</button>
         </div>
         <!-- Fazer imagem ficar responsiva -->
-        <img class="mx-auto main-banner-img" src="./resources/help.png">
+        <img class="main-banner-img" src="./resources/help.png">
     </section>
-    <section class="index-categories-banner">
+    <section class="container text-center" style="padding: 40px 0">
         <h4 class="text-center" style="color: #efa34c; letter-spacing: 1px">CATEGORIAS</h4>
         <h1 class="text-center" style="color: #343738;">Programas e áreas de atuação</h1>
-        <div class="d-flex justify-content-center gap-5" style="margin-top: 40px;">
-            <div class="card border border-0 index-card" style="width: 18rem;">
+        <div class="row row-cols mx-auto gap-3" style="margin-top: 40px;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
@@ -32,7 +32,7 @@
                     <a href="#" class="index-card-btn">Leia Sobre</a>
                 </div>
             </div>
-            <div class="card border border-0 index-card" style="width: 18rem;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
@@ -40,7 +40,7 @@
                     <a href="#" class="index-card-btn">Leia Sobre</a>
                 </div>
             </div>
-            <div class="card border border-0 index-card" style="width: 18rem;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
@@ -48,7 +48,7 @@
                     <a href="#" class="index-card-btn">Leia Sobre</a>
                 </div>
             </div>
-            <div class="card border border-0 index-card" style="width: 18rem;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
