@@ -25,11 +25,11 @@
         </div>
             
         </section>
-        <section class="index-categories-banner">
+        <section class="index-categories-banner container">
         <h4 class="text-center" style="color: #efa34c; letter-spacing: 1px">CATEGORIAS</h4>
         <h1 class="text-center" style="color: #343738;">Programas e áreas de atuação</h1>
-        <div class="d-flex justify-content-center gap-5" style="margin-top: 40px;">
-            <div class="card border border-0 index-card" style="width: 18rem;">
+        <div class="row row-cols mx-auto gap-3" style="margin-top: 40px;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
@@ -37,7 +37,7 @@
                     <a href="#" class="index-card-btn">Leia Sobre<span class="material-symbols-outlined">arrow_forward_ios</span></a>
                 </div>
             </div>
-            <div class="card border border-0 index-card" style="width: 18rem;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
@@ -45,7 +45,7 @@
                     <a href="#" class="index-card-btn">Leia Sobre<span class="material-symbols-outlined">arrow_forward_ios</span></a>
                 </div>
             </div>
-            <div class="card border border-0 index-card" style="width: 18rem;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
@@ -53,7 +53,7 @@
                     <a href="#" class="index-card-btn">Leia Sobre<span class="material-symbols-outlined">arrow_forward_ios</span></a>
                 </div>
             </div>
-            <div class="card border border-0 index-card" style="width: 18rem;">
+            <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>

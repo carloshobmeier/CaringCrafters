@@ -1,13 +1,13 @@
 <div class="foot">
-  <footer class="row row-cols-5 py-5  container">
-    <div class="col">
+  <footer class="row row-cols py-5 container">
+    <div class="col filler-column">
       <a href="/" class="color-white d-flex align-items-center mb-3 text-decoration-none">
         CaringCrafters
       </a>
       <p class="">© 2024</p>
     </div>
     <!-- Espaco em branco, não apagar -->
-    <div class="col"></div>
+    <div class="col filler-column"></div>
     <div class="col">
       <h5>Ajuda</h5>
       <ul class="nav flex-column">

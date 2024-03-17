@@ -2,7 +2,7 @@
 
 window.addEventListener("scroll",()=>{
     let y = window.pageYOffset
-    if(y > 100){
+    if(y > 50){
         document.getElementById("header").classList.add("active");
         document.getElementById("navButtons").classList.add("active");
 

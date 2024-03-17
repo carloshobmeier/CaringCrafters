@@ -1,12 +1,16 @@
 @import url("../assets/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
 
-
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+@media (width <= 630px) {
+  .navbar-setup {
+    padding: 10px 2rem;
+    flex-direction: column;
+  }
+}
 
 *{
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
+  font-family: "Oswald";
 }
 
 
@@ -22,20 +26,29 @@ nav{
     color: #ffffff;
     top: 0;
     z-index: 2;
-    transition: all 500ms;
+    transition: all 300ms;
     color: #22af56;
 }
-
-nav div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+@media (width <= 460px) {
+  .filler-column {
+    display: none;
+  }
 }
 
-.buttonsNav{
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
+* {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.navbar-setup {
+  padding: 10px 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .buttonsNav button{
@@ -43,32 +56,40 @@ nav div{
     color: #22af56;
     background-color: transparent;
     box-sizing: border-box;
-    transition: all 500ms;
+    transition: all 300ms;
     border-bottom: 0px solid #22af56;
 }
 
 .buttonsNav button:hover{
     border-bottom: 5px solid #22af56;
     transform: translateY(-5px)
+
+}
+.rightside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
 }
 
-nav div h1{
-    font-size: 1.5rem;
+.navbar-profile-pic {
+  border-radius: 50px;
+  width: 50px;
 }
 
-.user-circle{
-    width: 12%;
+.buttonsNav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.user-circle img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-}
-
-.rightside{
-    width: 30%;
-    font-size: 1.2rem;
+.foot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #07857a;
+  color: white !important;
 }
 
 .foot{
@@ -96,6 +117,8 @@ footer{
 nav.active{
     background-color: #22af56;
 }
+
+
 .active button{
     border-color: #ffffff;
     color: white;
