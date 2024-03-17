@@ -58,13 +58,38 @@
 }
 
 .index-card-btn {
-    display: block;
+    display: flex;
     text-align: center;
     color: #07857A;
     font-weight: 700;
     text-decoration: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .index-card-btn img {
     width: 15px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.accordion-button:not(.collapsed){
+    background-color: #07857A !important;
+    z-index: 0 !important;
+}
+
+.accordion-button:is(.show){
+    background-color: #07857A !important;
+    z-index: 0 !important;
+}
+
+.accordion-header{
+    border: 0;
+    z-index: 0;
 }

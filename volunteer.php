@@ -5,36 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Volunteer Profile</title>
   <link rel="stylesheet" href="style/volunteer.css">
+  <link rel="stylesheet" href="./style/setup.css">
 </head>
 <body>
-  <header>
-    <div class="menu">
-      <div class="left-menu">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Opportunities</a></li>
-          <li><a href="#">Volunteers</a></li>
-        </ul>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Search...">
-      </div>
-      <div class="right-menu">
-        <button class="apply-button">Apply</button>
-        <div class="user-circle"><img src="resources/profile-picture.jpeg" alt="User Avatar"></div>
-      </div>
-    </div>
-  </header>
+  <?php include('./src/components/navbar2.php') ?>
+
 
   <section class="banner">
     <img src="resources/banner.jpg" alt="Banner Image">
     <div class="profile">
       <div class="user-details">
           <img src="resources/profile-picture.jpeg" alt="User Avatar">
-          <h2><strong>User Name</strong></h2>
-          <p><strong>Location</strong></p>
-          <p><strong>Number of Opportunities:</strong> <span>37</span></p>
-          <p><strong>Connections:</strong><span>120</span></p>
+          <div>
+            <h2><strong>User Name</strong></h2>
+            <p>Location</p>
+          </div>
+          <div>
+            <p><strong>Number of Opportunities:</strong> <span>37</span></p>
+            <p><strong>Connections:</strong><span>120</span></p>
+          </div>
           <br>
           <p><strong>About</strong></p>
           <p>I'm dedicated to giving back to my community through volunteer work. Whether it's supporting local charities or environmental initiatives, I'm committed to making a positive impact. Together, let's create a brighter future through service and compassion.</p>
@@ -44,14 +33,14 @@
     </div>
   </section>
 
-  <nav class="sub-menu">
+  <div class="sub-menu">
     <ul>
       <li><a href="#">All</a></li>
       <li><a href="#">Volunteers</a></li>
       <li><a href="#">Institutions</a></li>
       <li><a href="#">Following</a></li>
     </ul>
-  </nav>
+  </div>
 
   <section class="gallery">
     <!-- Lista de itens clicáveis -->
@@ -69,22 +58,8 @@
     <button class="load-more-button">Load more</button>
 </div>
 
-<footer>
-    <div class="contact-info">
-      <div>
-        <h3>Call us</h3>
-        <p>+1234567890</p>
-      </div>
-      <div>
-        <h3>Email us</h3>
-        <p>info@example.com</p>
-      </div>
-      <div>
-        <h3>Visit us</h3>
-        <p>123 Main St, City, Country</p>
-      </div>
-    </div>
-  </footer>
+<?php include('./src/components/footer.php') ?>
+
 </body>
 </html>
 

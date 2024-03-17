@@ -124,21 +124,29 @@ header {
     max-width: 250px;
     border-color: #000;
     text-align: center;
+    border-radius: 10px;
 }
 
 .profile img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 40%;
+    aspect-ratio: 1/1;
+    margin: 1rem 0;
 }
 
 .profile button {
     align-content: center;
 }
 
-.profile h2 {
+.profile div h2 {
+    font-size: 1.3rem;
     margin-bottom: 5px;
 }
+.profile div p{
+    font-size: 1rem;
+}
+
+
 .gallery ul {
     display: flex;
     flex-wrap: wrap;

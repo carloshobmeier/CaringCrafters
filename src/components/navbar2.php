@@ -1,8 +1,8 @@
-<nav>
+<nav id="header">
     <div class="container container-fluid">
         <h1>Caring Crafters</h1>
         <div class="rightside">
-            <div class="buttonsNav">
+            <div id="navButtons" class="buttonsNav">
                 <button>Institutions</button>
                 <button>Oportunities</button>
                 <button>Browse</button>
@@ -13,3 +13,4 @@
         </div>
     </div>
 </nav>
+<script src="./assets/scripts/layout.js"></script>
