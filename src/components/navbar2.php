@@ -1,5 +1,4 @@
-<nav>
-    <div class="container container-fluid">
+<nav class="navbar-setup">
         <h1>Caring Crafters</h1>
         <div class="rightside">
             <div class="buttonsNav">
@@ -7,9 +6,6 @@
                 <button>Oportunities</button>
                 <button>Browse</button>
             </div>
-            <div class="user-circle">
-                <img src="./resources/profile-picture.jpeg" alt="User Avatar">
-            </div>
+            <img src="./resources/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic">
         </div>
-    </div>
 </nav>
