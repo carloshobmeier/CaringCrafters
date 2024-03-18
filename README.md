@@ -24,6 +24,8 @@ Our mission is to create a collaborative community where volunteering is accessi
 <div style="display: inline_block"><br/>
     <img style="margin-top:4px;" align="center" alt="html5" height="30px" src="https://img.shields.io/badge/HTML5-ff3030?style=for-the-badge&logo=html5&logoColor=white" />
     <img style="margin-top:4px;" align="center" alt="css" height="30px" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+    <img style="margin-top:4px;" align="center" alt="bootstrap"src="https://img.shields.io/badge/Bootstrap-7d12f9?style=for-the-badge&logo=Bootstrap&logoColor=white" />
+    <img style="margin-top:4px;" align="center" alt="php" height="30px" src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
     <img style="margin-top:4px;" align="center" alt="javascript" height="30px" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 </div>
 
