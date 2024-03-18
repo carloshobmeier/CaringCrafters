@@ -4,86 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./style/signIn.css">
+    <link rel="stylesheet" href="./style/setup.css">
 </head>
-<body>
-    <header>
-        <div class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Opportunit</a></li>
-            <li><a href="#">Institutions</a></li>
-            <li><a href="#">Profiles</a></li>
-            <li><a href="#">Connect</a></li>
-          </ul>
-          <div class="buttons">
-            <button class="login">Log in</button>
-            <button class="signup">Sign up</button>
-          </div>
-        </div>
-      </header>
-
-      <div class="signin">
+<body id="body">
+      <div class="signin pt-5">
         <h1>Sign In</h1>
       </div>
 
-      <div class="content">
-        <form action="#">
-            <label for="name"><strong>Inform your name:</strong></label>
-            <br>
-            <br>
-            <input type="text" id="name">
-            <br>
-            <br>
-            <label for="username"><strong>Inform your username:</strong></label>
-            <br>
-            <br>
-            <input type="text" id="username">
-            <br>
-            <br>
-            <label for="email"><strong>Inform your e-mail:</strong></label>
-            <br>
-            <br>
-            <input type="email" id="email">
-            <br>
-            <br>
-            <label for="phonenumber"><strong>Inform your phone number:</strong></label>
-            <br>
-            <br>
-            <input type="text" id="phonenumber">
-            <br>
-            <br>
+      <div class="radioButtons ">
+        <input type="radio" id="volunteer_radio" name="user_type" value="volunteer" onclick="toggleForm('volunteer')">
+        <label for="volunteer_radio">
+          <div class="card container justify-content-between align-items-center">
+            <span class="material-symbols-outlined py-3">
+            person_raised_hand
+            </span>
+            <h2 class="card-title">Volunteer</h2>
+        </div>
+        </label>
+        <input type="radio" id="institution_radio" name="user_type" value="institution" onclick="toggleForm('institution')">
+        <label for="institution_radio">
+          <div class="card container d-flex flex-column justify-content-between align-items-center">
+            <span class="material-symbols-outlined py-3">
+            family_home
+            </span>
+            <h2 class="card-title">Institution</h2>
+          </div></label>
+      </div>
+
+      <div id="volunteer" class="hidden content container container-fluid">
+        <form class="d-flex flex-column" action="#">
+          <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+              <label for="name"><strong>Inform your full name:</strong></label>
+              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+              <label for="username"><strong>Inform your CPF:</strong></label>
+              <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="username">
+            </div>
+          </div>
+          <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+              <label for="email"><strong>Inform your e-mail:</strong></label>
+              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+              <label for="phonenumber"><strong>Inform your phone number:</strong></label>
+              <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber">
+            </div>
+          </div>
+          <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+              <label for="cep"><strong>Inform your CEP:</strong></label>
+              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+              <label for="city"><strong>Inform your city:</strong></label>
+              <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city">
+            </div>
+          </div>
+          <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+              <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="birthdate"><strong>Inform your date of birth:</strong></label>
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate">
+              </div>
+              <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="gender"><strong>Inform your gender:</strong></label>
+                <select class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" id="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+              <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="maritalstatus"><strong>Inform your marital status:</strong></label>
+                <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus">
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                  <option value="divorced">Divorced</option>
+                  <option value="widowed">Widowed</option>
+                </select>
+              </div>
+              <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="education"><strong>Inform your highest level of education:</strong></label>
+                <select class="col-12" id="education">
+                  <option value="highschool">High School</option>
+                  <option value="college">College</option>
+                  <option value="bachelor">Bachelor's Degree</option>
+                  <option value="master">Master's Degree</option>
+                  <option value="phd">Ph.D.</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+              <label for="nationality"><strong>Inform your nationality:</strong></label>
+              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality">
+            </div>
+              <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="occupation"><strong>Inform your occupation:</strong></label>
+                <input class="col-12" type="text" id="occupation">
+              </div>
+            </div>
+            <div class="d-flex flex-row col-12">
+              <div class="d-flex flex-column col-12">
+                <label for="volunteering_experience"><strong>Do you have any previous experience with volunteering?</strong></label>
+                <textarea class="form-control" id="volunteering_experience" rows="4"></textarea>
+              </div>
+            </div>
+            <div class="d-flex flex-row col-12">
+  <div class="d-flex flex-column col-6">
+    <label for="areas_of_interest"><strong>Areas of Interest:</strong></label>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="interest1" value="education">
+      <label class="form-check-label" for="interest1">Education</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="interest2" value="environment">
+      <label class="form-check-label" for="interest2">Environment</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="interest3" value="healthcare">
+      <label class="form-check-label" for="interest3">Healthcare</label>
+    </div>
+    <!-- Add more options as needed -->
+  </div>
+</div>
+
+
+
             <label for="pass1"><strong>Create a password:</strong></label>
-            <br>
-            <br>
             <input type="password" id="pass1">
-            <br>
-            <br>
             <label for="pass2"><strong>Confirm your password:</strong></label>
-            <br>
-            <br>
             <input type="password" id="pass2">
-            <br>
-            <br>
+            <div class="d-flex flex-row col-12">
+              <div class="d-flex flex-column col-6">
+                <label for="accept_terms"><strong>Do you accept the terms and conditions?</strong></label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="accept_terms">
+                  <label class="form-check-label" for="accept_terms">Yes, I accept</label>
+                </div>
+              </div>
+            </div>
             <input class="submit" type="submit" value="Submit">
+
         </form>
       </div>
 
-      <footer>
-        <div class="contact-info">
-          <div>
-            <h3>Call us</h3>
-            <p>+1234567890</p>
-          </div>
-          <div>
-            <h3>Email us</h3>
-            <p>info@example.com</p>
-          </div>
-          <div>
-            <h3>Visit us</h3>
-            <p>123 Main St, City, Country</p>
-          </div>
-        </div>
-      </footer>
+      <div class="hidden" id="institution">
+        <h1>heelo</h1>
+      </div>
+
+      <?php include("./src/components/footer.php")?>
+      <script src="./assets/scripts/signin.js"></script>
 </body>
 </html>

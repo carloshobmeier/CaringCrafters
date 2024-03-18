@@ -128,3 +128,7 @@ nav.active{
     border-color: #ffffff;
 }
 
+.hidden{
+  display: none;
+}
+

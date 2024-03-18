@@ -5,6 +5,10 @@ body {
     background-color: #fff;
     color: #000;
 }
+
+*{
+  box-sizing:border-box
+}
   
 header {
   background-color: #fff;
@@ -13,9 +17,10 @@ header {
 }
 
 .signin {
-    position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
     text-align: center;
-    padding-left: 50px;
     margin-bottom: 4%;
 }
 
@@ -64,9 +69,7 @@ header {
 }
 
 .content {
-    display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
+    display: flex;  
 }
 
 .content form {
@@ -77,7 +80,6 @@ header {
 .content form input,
 .content form textarea,
 .content form button {
-  width: calc(100% - 10px);
   margin-bottom: 10px;
   padding: 8px;
   border-radius: 4px;
@@ -86,15 +88,14 @@ header {
 
 
 .content form input,
-.content form textarea {
-  width: 80%;
+.content form textarea,
+.content form select{
   padding: 12px; 
 }
 
 .submit { 
   background-color: #000;
   color: #fff;
-  width: 84%;
   margin-top: 20px;
 }
 
@@ -123,4 +124,32 @@ header {
 footer {
     background-color: #f0f0f0;
     padding: 20px 0;
+}
+
+#institution_radio, #volunteer_radio{
+  display: none;
+}
+
+label div span {
+  font-size: 50px !important;
+}
+
+.radioButtons{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+  margin-bottom: 10rem;
+}
+
+.radioButtons label{
+  transition: 300ms all;
+  border: 5px solid transparent !important;
+}
+
+.radioButtons label:hover{
+  cursor: pointer;
+  border: 5px solid #22af56!important;
+  border-radius: calc(.375rem + 5px);
 }
