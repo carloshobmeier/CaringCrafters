@@ -112,20 +112,7 @@ header {
     margin: 10px;
 }
 
-.profile {
-    position: absolute;
-    top: 60%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    margin: 20px;
-    background-color: #f0f0f0;
-    padding: 15px;
-    max-width: 250px;
-    border-color: #000;
-    text-align: center;
-    border-radius: 10px;
-}
+
 
 .profile img {
     border-radius: 50%;
