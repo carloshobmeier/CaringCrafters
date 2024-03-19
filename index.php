@@ -63,12 +63,12 @@
             </div>
         </div>
     </section>
-    <section class="my-5 faq container d-flex"> 
-        <div class="col-6 d-flex flex-column align-items-center justify-content-between">
+    <section class="my-5 faq container d-grid"> 
+        <div class="col-12 d-flex flex-column align-items-center justify-content-between">
             <h3 class="font-weight-bold">Frequently Asked Questions</h3>
             <p class="col-10">If you have any other questions or need further assistance, please don't hesitate to contact us. We're here to help make your volunteering experience with CaringCrafters as seamless and rewarding as possible!</p>
         </div>
-        <div class="col-6 d-flex justify-content-center">
+        <div class="col-12 d-flex justify-content-center">
         <div class="col-10 accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
