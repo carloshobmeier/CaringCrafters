@@ -13,7 +13,7 @@
         <h1>Sign In</h1>
       </div>
 
-      <div class="radioButtons ">
+      <div class="radioButtons" id="radioButtons">
         <input type="radio" id="volunteer_radio" name="user_type" value="volunteer" onclick="toggleForm('volunteer')">
         <label for="volunteer_radio">
           <div class="card container justify-content-between align-items-center">
@@ -157,9 +157,91 @@
         </form>
       </div>
 
-      <div class="hidden" id="institution">
-        <h1>heelo</h1>
-      </div>
+      <div id="institution" class="hidden content container container-fluid">
+    <form class="d-flex flex-column" action="#">
+        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_email"><strong>Inform your e-mail:</strong></label>
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="institution_email">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_phonenumber"><strong>Inform your phone number:</strong></label>
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_phonenumber">
+            </div>
+        </div>
+        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_cep"><strong>Inform your CEP:</strong></label>
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="institution_cep">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_city"><strong>Inform your city:</strong></label>
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_city">
+            </div>
+        </div>
+        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_social_reasoning"><strong>Social Reasoning:</strong></label>
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_social_reasoning">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_fantasy_name"><strong>Fantasy Name:</strong></label>
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_fantasy_name">
+            </div>
+        </div>
+        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_cnpj"><strong>CNPJ:</strong></label>
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="institution_telephone"><strong>Telephone:</strong></label>
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_telephone">
+            </div>
+        </div>
+        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="founding_date"><strong>Founding Date:</strong></label>
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="founding_date">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="social_capital"><strong>Social Capital:</strong></label>
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="social_capital">
+            </div>
+        </div>
+        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="administrator_name"><strong>Administrator Name:</strong></label>
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="administrator_name">
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                <label for="working_hours"><strong>Working Hours:</strong></label>
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="working_hours">
+            </div>
+        </div>
+        <div class="d-flex flex-row col-12">
+            <div class="d-flex flex-column col-12">
+                <label for="volunteering_areas"><strong>Areas of Volunteering:</strong></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="teaching" id="volunteering_area_teaching">
+                    <label class="form-check-label" for="volunteering_area_teaching">Teaching</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="mentoring" id="volunteering_area_mentoring">
+                    <label class="form-check-label" for="volunteering_area_mentoring">Mentoring</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="counseling" id="volunteering_area_counseling">
+                    <label class="form-check-label" for="volunteering_area_counseling">Counseling</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="administration" id="volunteering_area_administration">
+                    <label class="form-check-label" for="volunteering_area_administration">Administration</label>
+                </div>
+                <!-- Add more checkboxes as needed -->
+            </div>
+        </div>
+        </div>
 
       <?php include("./src/components/footer.php")?>
       <script src="./assets/scripts/signin.js"></script>
