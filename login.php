@@ -10,17 +10,17 @@
 </head>
 <body>
     <main>
-        <div class="container">
-            <div class="card rounded-3">
+        <div class="container text-center">
+            <div class="card rounded-3 px-3 py-3 border-success">
                 <div class="card-body">
                     <h1>Log In:</h1>
                     <p>Lorem ipsum dolor sit.</p>
                     <form action="#" method="get">
-                        <div class="mb-3">
+                        <div class="mb-4 px-3">
                             <label for="formGroupExampleInput" class="form-label">Username:</label>
                             <input type="text" class="form-control" id="formGroupExampleInput">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4 px-3">
                             <label for="formGroupExampleInput2" class="form-label">Password:</label>
                             <input type="text" class="form-control" id="formGroupExampleInput2">
                         </div>
