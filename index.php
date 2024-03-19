@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
   <body>
-    <?php include('./src/components/navbar2.php') ?>
+  <?php include('./src/components/navbar_index.php') ?>
     <section class="index-main-banner d-flex">
         <div class="d-flex container">
             <div class="main-banner-content col-6">
