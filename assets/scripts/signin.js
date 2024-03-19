@@ -4,6 +4,7 @@ function toggleForm(formId) {
     var volunteerForm = document.getElementById("volunteer");
     var institutionForm = document.getElementById("institution");
     document.getElementById("radioButtons").classList.add("hidden")
+    document.getElementById("foot").classList.add("footerActive")
     if (volunteerRadio.checked && formId === "volunteer") {
       volunteerForm.classList.remove("hidden");
       institutionForm.classList.add("hidden");

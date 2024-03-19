@@ -1,4 +1,4 @@
-<div class="foot">
+<div id="foot" class="foot">
   <footer class="row row-cols py-5 container">
     <div class="col filler-column">
       <a href="/" class="color-white d-flex align-items-center mb-3 text-decoration-none">

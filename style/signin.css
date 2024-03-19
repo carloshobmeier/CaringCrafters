@@ -153,3 +153,16 @@ label div span {
   border: 5px solid #22af56!important;
   border-radius: calc(.375rem + 5px);
 }
+
+select{
+  border: 1px solid #ccc !important;
+}
+
+.foot{
+  position: absolute;
+  bottom: 0;
+}
+
+.footerActive{
+  position: static;
+}

@@ -161,16 +161,6 @@
     <form class="d-flex flex-column" action="#">
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                <label for="institution_name"><strong>Inform your full name:</strong></label>
-                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_name">
-            </div>
-            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                <label for="institution_username"><strong>Inform your CPF:</strong></label>
-                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_username">
-            </div>
-        </div>
-        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
-            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Inform your e-mail:</strong></label>
                 <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="institution_email">
             </div>
@@ -201,18 +191,12 @@
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                <label for="institution_social_capital"><strong>Social Capital:</strong></label>
-                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_social_capital">
-            </div>
-            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cnpj"><strong>CNPJ:</strong></label>
-                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj">
+                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj">
             </div>
-        </div>
-        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_telephone"><strong>Telephone:</strong></label>
-                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_telephone">
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_telephone">
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
@@ -256,6 +240,7 @@
                 </div>
                 <!-- Add more checkboxes as needed -->
             </div>
+        </div>
         </div>
 
       <?php include("./src/components/footer.php")?>
