@@ -14,7 +14,7 @@
 <div class="container">
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
-      <img src="./brand_identity/Logo_PNG-verde.png" class="navbar-brand" style="max-width:80px">Caring Crafters
+      <a href="home.php" style="text-decoration: none; color: black"><img src="./brand_identity/Logo_PNG-verde.png" class="navbar-brand" style="max-width:80px">Caring Crafters</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,7 +25,7 @@
             <button class="btn btn-outline-success">Opportunities</button>
             <button class="btn btn-outline-success">Browse</button>
           </div>
-          <img src="./resources/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic">
+          <a href="volunteer.php"><img src="./resources/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>

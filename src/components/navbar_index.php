@@ -21,8 +21,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
 
-            <button class="btn btn-outline-success">Log In</button>
-            <button class="btn btn-outline-success">Sign In</button>
+            <a href="login.php"><button class="btn btn-outline-success">Log In</button></a>
+            <a href="signIn.php"><button class="btn btn-outline-success">Sign In</button></a>
         </div>
       </div>
     </div>

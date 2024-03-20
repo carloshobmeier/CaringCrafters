@@ -20,16 +20,15 @@
 
   <div class="sub-menu container">
   <div class="row">
-      <div class="profile column col-md-2 bg-light">
+      <div class="profile column col-md-3 bg-light">
         <div class="user-details">
             <img src="resources/profile-picture.jpeg" alt="User Avatar">
             <div>
-              <h2><strong>User Name</strong></h2>
+              <h2><strong>Username</strong></h2>
               <p>Location</p>
             </div>
             <div>
-              <p><strong>Number of Opportunities:</strong> <span>37</span></p>
-              <p><strong>Connections:</strong><span>120</span></p>
+              <p><strong>Type of user: </strong><span>Volunteer</span></p>
             </div>
             <br>
             <p><strong>About</strong></p>
@@ -38,29 +37,23 @@
             <button class="edit-profile-button btn btn-dark">Edit Profile</button>
         </div>
       </div>
-      <div class="column col md-10">
-        <ul>
-          <li><a href="#">All</a></li>
-          <li><a href="#">Volunteers</a></li>
-          <li><a href="#">Institutions</a></li>
-          <li><a href="#">Following</a></li>
+      <div class="column col">
+        <ul class="text-start">
+          <li><h4>Volunteer Work</h4></li>
         </ul>
         <section class="gallery container">
           <ul>
             <li><img src="resources/agua.jpeg" alt="Image 1"></li>
             <li><img src="resources/food.jpeg" alt="Image 2"></li>
-            <li><img src="resources/golden.jpeg" alt="Image 3"></li>
-            <li><img src="resources/tree.jpeg" alt="Image 4"></li>
-            <li><img src="resources/uniao.jpeg" alt="Image 5"></li>
-            <li><img src="resources/uniao2.jpeg" alt="Image 6"></li>
+            <li><img src="resources/golden.jpeg" alt="Image 2"></li>
           </ul>
         </section>
       </div>
     </div>
   </div>
-<div class="button-load"> 
+<!-- <div class="button-load"> 
     <button class="load-more-button btn btn-dark">Load more</button>
-</div>
+</div> -->
 
 <?php include('./src/components/footer.php') ?>
 

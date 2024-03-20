@@ -15,10 +15,10 @@
     <section class="index-main-banner d-flex">
         <div class="d-flex container">
             <div class="main-banner-content col-6">
-                <h5>Nossa missão</h5>
-                <h1>Ajudando pessoas e construindo um futuro melhor.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, accusantium! Ratione nobis vitae nulla repellendus eos, modi quia sunt fugit molestiae molestias labore esse quisquam iusto exercitationem laborum quos necessitatibus.</p>
-                <button type="button" class="btn btn-lg btn-outline-light">Junte-se a gente!</button>
+                <h5>Our Mission</h5>
+                <h1>Helping people build a more humane and equal world.</h1>
+                <p>We discover and connect emerging volunteering institutions with collaborative people who wish to partake in volunteering programs.</p>
+                <a href="signIn.php"><button type="button" class="btn btn-lg btn-outline-light">Join Us!</button></a>
             </div>
             <!-- Fazer imagem ficar responsiva -->
             <img class="mx-auto main-banner-img col-6" src="./resources/help.png">
@@ -26,63 +26,63 @@
             
         </section>
         <section class="index-categories-banner container">
-        <h4 class="text-center" style="color: #efa34c; letter-spacing: 1px">CATEGORIAS</h4>
-        <h1 class="text-center" style="color: #343738;">Programas e áreas de atuação</h1>
+        <h4 class="text-center" style="color: #efa34c; letter-spacing: 1px">CATEGORIES</h4>
+        <h1 class="text-center" style="color: #343738;">Programs and areas of action</h1>
         <div class="row row-cols mx-auto gap-3" style="margin-top: 40px;">
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="index-card-btn">Leia Sobre<span class="material-symbols-outlined">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Medical Help</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Find programs to help those who need better medical care.</p>
+                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="index-card-btn">Leia Sobre<span class="material-symbols-outlined">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Animal Care</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Help animal shelters take care of their insfrastructure and their little friends.</p>
+                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="index-card-btn">Leia Sobre<span class="material-symbols-outlined">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Social Services</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Join institutions and help people from all walks of life within your community.</p>
+                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Categoria teste</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="index-card-btn">Leia Sobre<span class="material-symbols-outlined">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Food Bank</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Join cheritable food banks and help people avoid hunger and malnutrion.</p>
+                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
         </div>
     </section>
     <section class="my-5 faq container d-grid"> 
         <div class="col-12 d-flex flex-column align-items-center justify-content-between">
-            <h3 class="font-weight-bold">Frequently Asked Questions</h3>
+            <h4 class="font-weight-bold" style="color: #efa34c; margin-bottom: 30px; letter-spacing: 1px">FREQUENTLY ASKED QUESTIONS</h4>
             <p class="col-10">If you have any other questions or need further assistance, please don't hesitate to contact us. We're here to help make your volunteering experience with CaringCrafters as seamless and rewarding as possible!</p>
         </div>
         <div class="col-12 d-flex justify-content-center">
         <div class="col-10 accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     How does CaringCrafters work?
                 </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">•	CaringCrafters is a platform that connects volunteers with organizations and businesses in need of support. Volunteers can browse through a variety of opportunities based on their interests, skills, and availability, while organizations can post volunteer opportunities and connect with passionate individuals who want to make a difference</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                     How can I sign up to volunteer with CaringCrafters?
                 </button>
                 </h2>
@@ -92,7 +92,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                     What types of volunteer opportunities are available on CaringCrafters?
                 </button>
                 </h2>
@@ -102,7 +102,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
                     How do I contact an organization or business about a volunteer opportunity?
                 </button>
                 </h2>
@@ -112,7 +112,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
                     Can organizations and businesses post volunteer opportunities on CaringCrafters?
                 </button>
                 </h2>
@@ -122,7 +122,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
                     Is there a cost to use CaringCrafters?                
                 </button>
                 </h2>

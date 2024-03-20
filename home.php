@@ -23,7 +23,7 @@
                 </div>
             </section >
             <section class="container suggested">
-                <h4>Explore meaninful causes</h4>
+                <h4>Explore meaningful causes</h4>
                 <div class="suggestedImages">
                     <img  class="col-3" src="./resources/food.jpeg" alt="">
                     <div class="imageDuo" class="col-3">

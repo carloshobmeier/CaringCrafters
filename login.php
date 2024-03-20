@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h1>Log In:</h1>
                     <p>Lorem ipsum dolor sit.</p>
-                    <form action="#" method="get">
+                    <form action="home.php" method="get">
                         <div class="mb-4 px-3">
                             <label for="formGroupExampleInput" class="form-label">Username:</label>
                             <input type="text" class="form-control" id="formGroupExampleInput">
