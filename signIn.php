@@ -38,37 +38,37 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Inform your full name:</strong></label>
-              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name">
+              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name">
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="username"><strong>Inform your CPF:</strong></label>
-              <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="username">
+              <input data-type="cpf" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="username">
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="email"><strong>Inform your e-mail:</strong></label>
-              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email">
+              <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email">
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="phonenumber"><strong>Inform your phone number:</strong></label>
-              <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber">
+              <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber">
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cep"><strong>Inform your CEP:</strong></label>
-              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep">
+              <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep">
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="city"><strong>Inform your city:</strong></label>
-              <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city">
+              <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city">
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="birthdate"><strong>Inform your date of birth:</strong></label>
-                <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate">
+                <input data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate">
               </div>
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="gender"><strong>Inform your gender:</strong></label>
@@ -105,11 +105,11 @@
             <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="nationality"><strong>Inform your nationality:</strong></label>
-              <input class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality">
+              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality">
             </div>
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="occupation"><strong>Inform your occupation:</strong></label>
-                <input class="col-12" type="text" id="occupation">
+                <input data-type="plainText" class="col-12" type="text" id="occupation">
               </div>
             </div>
             <div class="d-flex flex-row col-12">
@@ -119,30 +119,30 @@
               </div>
             </div>
             <div class="d-flex flex-row col-12">
-  <div class="d-flex flex-column col-6">
-    <label for="areas_of_interest"><strong>Areas of Interest:</strong></label>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="interest1" value="education">
-      <label class="form-check-label" for="interest1">Education</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="interest2" value="environment">
-      <label class="form-check-label" for="interest2">Environment</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="interest3" value="healthcare">
-      <label class="form-check-label" for="interest3">Healthcare</label>
-    </div>
-    <!-- Add more options as needed -->
-  </div>
-</div>
+            <div class="d-flex flex-column col-6">
+              <label for="areas_of_interest"><strong>Areas of Interest:</strong></label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="interest1" value="education">
+                <label class="form-check-label" for="interest1">Education</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="interest2" value="environment">
+                <label class="form-check-label" for="interest2">Environment</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="interest3" value="healthcare">
+                <label class="form-check-label" for="interest3">Healthcare</label>
+              </div>
+              <!-- Add more options as needed -->
+            </div>
+          </div>
 
 
 
             <label for="pass1"><strong>Create a password:</strong></label>
-            <input type="password" id="pass1">
+            <input data-type="password" type="password" id="pass1">
             <label for="pass2"><strong>Confirm your password:</strong></label>
-            <input type="password" id="pass2">
+            <input data-type="repeatPassword" type="password" id="pass2">
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-6">
                 <label for="accept_terms"><strong>Do you accept the terms and conditions?</strong></label>
