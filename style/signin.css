@@ -170,10 +170,3 @@ select{
 .wrong{
   border: 2px red solid !important;
 }
-
-
-.wrong::after{
-  content: "olas";
-  color: black;
-  font-size: 20px ;
-}

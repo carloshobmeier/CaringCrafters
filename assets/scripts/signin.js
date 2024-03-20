@@ -37,20 +37,32 @@ function toggleForm(formId) {
         case "password":
           isValidPassword(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
           break
+        case "cnpj":
+          isValidCNPJ(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+          break
+        case "date":
+          isDateNotInFuture(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+          break
         case "repeatPassword":
           console.log("ta aqui")
           let password = id=="volunteer"?document.getElementById("pass1").value:"oi"
           let result = passwordsMatch(element.value,password)
           result?element.classList.remove("wrong"):element.classList.add("wrong")
+          break
       }
     })
+
     // Check if any required field is empty
     if (containsWrongClass('input',id)) {
-        // Prevent form submission
-        alert('Please fill out all required fields.');
-        return false;
+      // Prevent form submission
+      alert('Please fill out all required fields.');
+      return false;
     }
-
+    
+    if(!document.getElementById("accept_terms").checked && !document.getElementById("accept_terms_institution").checked){
+      alert("Please accept our terms and conditions")
+      return false
+    }
     // All fields are filled, allow form submission
     return true;
 }
@@ -64,6 +76,16 @@ function toggleForm(formId) {
         alert("foi")
       }
   });
+
+document.getElementById('institution').addEventListener('submit', function(event) {
+    if (!validateFormVol('institution')) {
+        // Prevent default form submission if validation fails
+        event.preventDefault();
+    }
+    else{
+      alert("foi")
+    }
+});
 
 function isValidEmail(email) {
     const regex = /^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*(\.[a-zA-Z]{2,})$/;
@@ -108,6 +130,11 @@ function isValidCPF(cpf) {
   return regex.test(cpf);
 } 
 
+function isValidCNPJ(cnpj) {
+  const regex = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
+  return regex.test(cnpj);
+}
+
 function containsWrongClass(selector,id) {
   const elements = document.getElementById(id).querySelectorAll(selector);
   for (const element of elements) {
@@ -127,3 +154,71 @@ function passwordsMatch(password, confirmPassword) {
   console.log(confirmPassword)
   return password === confirmPassword;
 }
+
+function isDateNotInFuture(dateString) {
+  // Convert the input string to a Date object
+  const inputDate = new Date(dateString);
+  
+  // Get the current date
+  const currentDate = new Date();
+
+  // Compare the input date with the current date
+  return inputDate <= currentDate;
+}
+
+document.querySelectorAll("input").forEach(element=>{
+  element.addEventListener("focusout",()=>{
+    let errorPhrase = ""
+    switch (element.dataset.type){
+      case "plainText":
+        isValidText(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "Please add only letters to this field."
+        break
+      case "cpf":
+        isValidCPF(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "This is not a valid CPF. Ex: 000.000.000-00."
+        break
+      case "number":
+        isValidNumber(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "Please add only numbers to this field."
+        break
+      case "cep":
+        isValidCEP(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "This is not a valid CEP. Ex: 00000-00."
+        break
+      case "email":
+        isValidEmail(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "This is not a valid email. Ex: test@test.com."
+        break
+      case "dateOfBirth":
+        isValidDateOfBirth(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "This is not a valid birthday. You must be older than 18 years old."
+        break
+      case "password":
+        isValidPassword(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "This is not a valid password. It needs to be at least 8 chars., a special char. and an uppercase letter."
+        break
+      case "cnpj":
+        isValidCNPJ(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "This is not a valid CPF. Ex: 00.000.000/0000-00."
+        break
+      case "date":
+        isDateNotInFuture(element.value)?element.classList.remove("wrong"):element.classList.add("wrong")
+        errorPhrase = "This is not a valid date. It must not be set in the future."
+        break
+      case "repeatPassword":
+        let password = id=="volunteer"?document.getElementById("pass1").value:"oi"
+        let result = passwordsMatch(element.value,password)
+        errorPhrase = "The passwords do not match."
+        result?element.classList.remove("wrong"):element.classList.add("wrong")
+    }
+    let identifier = element.getAttribute('id')
+    let divError = document.getElementsByClassName(identifier)
+    if(element.classList.contains("wrong")){
+      divError[0].innerHTML = errorPhrase
+    }
+    else{
+      divError[0].innerHTML = ""
+    }
+  })
+})
