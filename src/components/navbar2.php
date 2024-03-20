@@ -12,7 +12,7 @@
 <body>
 
 <div class="container">
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
       <img src="./brand_identity/Logo_PNG-verde.png" class="navbar-brand" style="max-width:80px">Caring Crafters
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
