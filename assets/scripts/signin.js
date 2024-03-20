@@ -248,7 +248,7 @@ document.querySelectorAll("input").forEach((element) => {
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
         errorPhrase =
-          "This is not a valid password. It needs to be at least 8 chars., a special char. and an uppercase letter.";
+          "This is not a valid password. It needs to be at least 8 letters and an uppercase letter.";
         break;
       case "cnpj":
         isValidCNPJ(element.value)

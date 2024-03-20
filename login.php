@@ -9,26 +9,30 @@
     <link rel="stylesheet" href="./style/setup.css">
 </head>
 <body>
-    <main>
-        <div class="container text-center">
-            <div class="card rounded-3 px-3 py-3 border-success">
-                <div class="card-body">
-                    <h1>Log In:</h1>
-                    <p>Lorem ipsum dolor sit.</p>
-                    <form action="home.php" method="get">
-                        <div class="mb-4 px-3">
-                            <label for="formGroupExampleInput" class="form-label">Username:</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput">
-                        </div>
-                        <div class="mb-4 px-3">
-                            <label for="formGroupExampleInput2" class="form-label">Password:</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2">
-                        </div>
-                        <button class="btn btn-success ">Log In</button>
-                    </form>
+    <div class="login-form-container mx-auto text-center">
+        <h1>Log In</h1>
+        <form class="needs-validation" novalidate action="home.php" method="get" id="loginForm">
+            <div class="mb-4">
+                <label for="form-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="form-email">
+                <div class="invalid-feedback" id="email-feedback">
+                    Please type a valid email.
                 </div>
             </div>
-        </div>
-    </main>
+            <div class="mb-4">
+                <label for="form-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="form-password">
+                <div class="invalid-feedback" id="password-feedback">
+                    This is not a valid password. It needs to be at least 8 letters and an uppercase letter.
+                </div>
+            </div>
+            <button class="submit">Log In</button>
+        </form>
+    </div>
+    <div class="footer-container-form">
+    <?php include('./src/components/footer.php') ?>
+
+    </div>
+    <script src="./assets/scripts/login.js"></script>
 </body>
 </html>
