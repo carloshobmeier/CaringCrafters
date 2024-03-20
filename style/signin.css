@@ -170,3 +170,7 @@ select{
 .wrong{
   border: 2px red solid !important;
 }
+
+.hidden{
+  display: none;
+}

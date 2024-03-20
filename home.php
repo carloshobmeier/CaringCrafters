@@ -16,11 +16,6 @@
                         <h2>Join Caring Crafters today on your journey to kindness</h2>
                         <h3>Connect with institutions in need of support!</h3>
                 </div>
-                <div>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                </div>
             </section >
             <section class="container suggested">
                 <h4>Explore meaningful causes</h4>

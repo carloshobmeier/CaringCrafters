@@ -174,52 +174,62 @@
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Inform your e-mail:</strong></label>
                 <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="institution_email">
+                <div class="institution_email"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_phonenumber"><strong>Inform your phone number:</strong></label>
                 <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_phonenumber">
+                <div class="institution_phonenumber"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cep"><strong>Inform your CEP:</strong></label>
                 <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="institution_cep">
+                <div class="institution_cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_city"><strong>Inform your city:</strong></label>
                 <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_city">
+                <div class="institution_city"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_social_reasoning"><strong>Social Reasoning:</strong></label>
                 <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_social_reasoning">
+                <div class="institution_social_reasoning"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_fantasy_name"><strong>Fantasy Name:</strong></label>
                 <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_fantasy_name">
+                <div class="institution_fantasy_name"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12">
                 <label for="institution_cnpj"><strong>CNPJ:</strong></label>
                 <input data-type="cnpj" class="col-xl-12 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj">
+                <div class="institution_cnpj"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="founding_date"><strong>Founding Date:</strong></label>
                 <input data-type="date" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="founding_date">
+                <div class="founding_date"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="social_capital"><strong>Social Capital:</strong></label>
                 <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="social_capital">
+                <div class="social_capital"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="administrator_name"><strong>Administrator Name:</strong></label>
                 <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="administrator_name">
+                <div class="administrator_name"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="working_hours"><strong>Working Hours:</strong></label>
@@ -248,10 +258,13 @@
                 <!-- Add more checkboxes as needed -->
             </div>
         </div>
-        <label for="pass1"><strong>Create a password:</strong></label>
+            <label for="pass3"><strong>Create a password:</strong></label>
             <input data-type="password" type="password" id="pass3">
-            <label for="pass2"><strong>Confirm your password:</strong></label>
+            <div class="pass3"></div>
+            <label for="pass4"><strong>Confirm your password:</strong></label>
             <input data-type="repeatPassword" type="password" id="pass4">
+            <div class="pass4"></div>
+
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-6">
                 <label for="accept_terms"><strong>Do you accept the terms and conditions?</strong></label>

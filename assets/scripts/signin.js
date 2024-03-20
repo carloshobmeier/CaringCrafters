@@ -143,14 +143,18 @@ function isValidCEP(cep) {
 
 function isValidDateOfBirth(dateOfBirth) {
   const regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+  console.log(dateOfBirth)
+  console.log(regex.test(dateOfBirth))
   if (!regex.test(dateOfBirth)) {
     return false; // Invalid date format
   }
 
   const today = new Date();
+  console.log(today)
   const birthDate = new Date(dateOfBirth);
-  const age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
+  console.log(birthDate)
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let monthDiff = today.getMonth() - birthDate.getMonth();
 
   if (
     monthDiff < 0 ||

@@ -2,6 +2,7 @@
   width: 30%;
   min-width: 300px;
   margin-top: 15vh;
+  margin-bottom: 20px;
 }
 
 .submit {
@@ -13,8 +14,8 @@
 }
 
 .footer-container-form {
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   right: 0;
-  left: 0;
+  left: 0; */
 }
