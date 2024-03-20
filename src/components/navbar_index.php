@@ -12,7 +12,7 @@
 <body>
 
 <div class="container">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <nav class="navbar navbar-expand-md navbar-light">
     <div class="container-fluid">
       <img src="./brand_identity/Logo_PNG-verde.png" class="navbar-brand" style="max-width:80px">Caring Crafters
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,11 +20,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
-          <div id="navButtons" class="buttonsNav">
-            <button class="btn btn-outline-success">Institutions</button>
-            <button class="btn btn-outline-success">Opportunities</button>
-            <button class="btn btn-outline-success">Browse</button>
-        </div>
+
             <button class="btn btn-outline-success">Log In</button>
             <button class="btn btn-outline-success">Sign In</button>
         </div>
