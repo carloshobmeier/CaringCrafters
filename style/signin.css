@@ -174,3 +174,7 @@ select{
 .hidden{
   display: none;
 }
+
+.requir{
+  color: red;
+}

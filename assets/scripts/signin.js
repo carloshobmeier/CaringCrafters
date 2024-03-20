@@ -258,7 +258,7 @@ document.querySelectorAll("input").forEach((element) => {
         isValidCNPJ(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase = "This is not a valid CPF. Ex: 00.000.000/0000-00.";
+        errorPhrase = "This is not a valid CNPJ. Ex: 00.000.000/0000-00.";
         break;
       case "date":
         isDateNotInFuture(element.value)

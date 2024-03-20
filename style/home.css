@@ -103,3 +103,7 @@ main{
     width: 10%;
     height: 10%;
 }
+
+.join{
+    min-width: 150px;
+  }
