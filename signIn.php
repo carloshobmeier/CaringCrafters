@@ -33,7 +33,7 @@
           </div></label>
       </div>
 
-      <div id="volunteer" class="hidden content container container-fluid">
+      <div id="volunteer" class="d-none content container container-fluid">
         <form class="d-flex flex-column" action="#">
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -168,7 +168,7 @@
         </form>
       </div>
 
-      <div id="institution" class="hidden content container container-fluid">
+      <div id="institution" class="d-none content container container-fluid">
     <form class="d-flex flex-column" action="#">
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">

@@ -7,14 +7,14 @@ function toggleForm(formId) {
     document.getElementById("volunteer_radio").checked &&
     formId === "volunteer"
   ) {
-    volunteerForm.classList.remove("hidden");
-    institutionForm.classList.add("hidden");
+    volunteerForm.classList.remove("d-none");
+    institutionForm.classList.add("d-none");
   } else if (
     document.getElementById("institution_radio").checked &&
     formId === "institution"
   ) {
-    institutionForm.classList.remove("hidden");
-    volunteerForm.classList.add("hidden");
+    institutionForm.classList.remove("d-none");
+    volunteerForm.classList.add("d-none");
   }
 }
 
