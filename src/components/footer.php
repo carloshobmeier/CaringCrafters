@@ -13,7 +13,7 @@
       <ul class="nav flex-column">
         <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0 text-decoration-none">Frequent Questions</a></li>
         <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0 text-decoration-none">About Us</a></li>
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0 text-decoration-none">Contact</a></li>
+        <li class="nav-item mb-2"><a href="contact.php" class="color-white nav-link p-0 text-decoration-none">Contact</a></li>
       </ul>
     </div>
     <div class="col">
