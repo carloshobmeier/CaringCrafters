@@ -68,9 +68,10 @@ function validateFormVol(id) {
           : element.classList.add("wrong");
         break;
       case "repeatPassword":
-        console.log("ta aqui");
         let password =
-          id == "volunteer" ? document.getElementById("pass1").value : "oi";
+          id == "volunteer"
+            ? document.getElementById("pass1").value
+            : document.getElementById("pass3").value;
         let result = passwordsMatch(element.value, password);
         result
           ? element.classList.remove("wrong")
@@ -104,7 +105,7 @@ document
       // Prevent default form submission if validation fails
       event.preventDefault();
     } else {
-      alert("foi");
+      event.submit();
     }
   });
 
@@ -115,7 +116,7 @@ document
       // Prevent default form submission if validation fails
       event.preventDefault();
     } else {
-      alert("foi");
+      event.submit();
     }
   });
 
@@ -187,7 +188,6 @@ function isValidPassword(password) {
 }
 
 function passwordsMatch(password, confirmPassword) {
-  console.log(confirmPassword);
   return password === confirmPassword;
 }
 

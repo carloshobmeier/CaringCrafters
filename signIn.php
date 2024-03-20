@@ -34,7 +34,7 @@
       </div>
 
       <div id="volunteer" class="d-none content container container-fluid">
-        <form class="d-flex flex-column" action="#">
+        <form class="d-flex flex-column" action="home.php">
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Inform your full name:</strong></label>
@@ -169,7 +169,7 @@
       </div>
 
       <div id="institution" class="d-none content container container-fluid">
-    <form class="d-flex flex-column" action="#">
+    <form class="d-flex flex-column" action="home.php">
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Inform your e-mail:</strong></label>
