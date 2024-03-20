@@ -1,70 +1,113 @@
 /* Responsividade extra */
 @media only screen and (max-width: 960px) {
-    .main-banner-img {
-        visibility: hidden
-    }
+  .index-main-banner {
+    flex-direction: column;
+  }
+
+  .main-banner-img {
+    display: none;
+  }
 }
 
 .index-main-banner {
-    background-color: #07857A;
-    padding: 0 60px;
+  background-color: #07857a;
+  padding: 0 30px;
+  display: flex;
+  gap: 5vw;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-banner-img {
-    height: 500px;
-    object-fit: cover;
-    margin-top: 10vh;
+  width: 45%;
+  min-width: 300px;
 }
 
 .main-banner-content {
-    width: 40vw;
-    min-width: 440px;
-    padding: 200px 0;
+  width: 40vw;
+  padding: 100px 0;
 }
 
 .main-banner-content h1 {
-    color: #fff;
-    font-weight: 700;
-    font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 40px;
 }
 
 .main-banner-content h5 {
-    color: #fff;
-    text-transform: uppercase;
-    font-style: italic;
+  color: #fff;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 .main-banner-content p {
-    color: #e2e2e2;
-    font-weight: 400;
+  color: #e2e2e2;
+  font-weight: 400;
 }
 
 .index-categories-banner {
-    padding: 40px 0;
+  padding: 40px 0;
+}
+
+.cards-grid {
+  display: grid;
 }
 
 .index-card {
-    transition: 0.2s;
+  transition: 0.2s;
 }
 
 .index-card:hover {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.13);
 }
 
 .index-card-img {
-    padding: 30px 0;
-    margin: auto;
-    width: 100px;
+  padding: 30px 0;
+  margin: auto;
+  width: 100px;
 }
 
 .index-card-btn {
-    display: block;
+    display: flex;
     text-align: center;
     color: #07857A;
     font-weight: 700;
     text-decoration: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .index-card-btn img {
     width: 15px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.accordion-button:not(.collapsed){
+    background-color: #22af56 !important;
+    z-index: 0 !important;
+    color: white !important;
+    transition: all 500ms;
+
+}
+
+.accordion-button:is(.show){
+    background-color: #22af56 !important;
+    z-index: 0 !important;
+}
+
+.accordion-header{
+    border: 0;
+    z-index: 0;
+}
+
+.accordion-button{
+  outline: none !important;  
+  transition: all 500ms;
 }

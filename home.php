@@ -9,16 +9,8 @@
 </head>
 <body>
     <main >
-            <nav>
-                <div class="container">
-                    <h1>Caring Crafters</h1>
-                    <div class="buttonsNav">
-                        <button>Institutions</button>
-                        <button>Oportunities</button>
-                        <button>Browse</button>
-                    </div>
-                </div>
-            </nav>
+            <?php include('./src/components/navbar2.php') ?>
+
             <section>
                 <div class="mainImage">
                         <h2>Join Caring Crafters today on your journey to kindness</h2>
@@ -111,22 +103,8 @@
                 </div>
                 <button>JOIN NOW</button>
             </div>
-            <footer>
-                <div class="footer-container container">
-                    <div>
-                        <h3>Caring Crafters</h3>
-                        <p>Connecting volunteers and Institutions</p>
-                    </div>
-                    <div>
-                        <strong><p>Help Center</p></strong>
-                        <p>FAQs</p>
-                        <p>Support team</p>
-                        <p>How it works</p>
-                        <p>Get in touch</p>
-                    </div>
-                </div>
-            </footer>
-    </main>
+        </main>
+        <?php include('./src/components/footer.php') ?>
     <script src="./assets/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

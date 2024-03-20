@@ -112,33 +112,28 @@ header {
     margin: 10px;
 }
 
-.profile {
-    position: absolute;
-    top: 60%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    margin: 20px;
-    background-color: #f0f0f0;
-    padding: 15px;
-    max-width: 250px;
-    border-color: #000;
-    text-align: center;
-}
+
 
 .profile img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 40%;
+    aspect-ratio: 1/1;
+    margin: 1rem 0;
 }
 
 .profile button {
     align-content: center;
 }
 
-.profile h2 {
+.profile div h2 {
+    font-size: 1.3rem;
     margin-bottom: 5px;
 }
+.profile div p{
+    font-size: 1rem;
+}
+
+
 .gallery ul {
     display: flex;
     flex-wrap: wrap;
