@@ -268,8 +268,7 @@ document.querySelectorAll("input").forEach((element) => {
           "This is not a valid date. It must not be set in the future.";
         break;
       case "repeatPassword":
-        let password =
-          id == "volunteer" ? document.getElementById("pass1").value : "oi";
+        let password = id == "volunteer" ? document.getElementById("pass1").value : "oi";
         let result = passwordsMatch(element.value, password);
         errorPhrase = "The passwords do not match.";
         result
