@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,8 +21,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
 
-            <a href="login.php"><button class="btn btn-outline-success">Log In</button></a>
-            <a href="signIn.php"><button class="btn btn-outline-success">Sign In</button></a>
+            <a href="login.php"><button class="btn btn-outline-success">Entrar</button></a>
+            <a href="signIn.php"><button class="btn btn-outline-success">Inscrever-se</button></a>
         </div>
       </div>
     </div>

@@ -9,26 +9,26 @@
     <!-- Espaco em branco, não apagar -->
     <div class="col filler-column"></div>
     <div class="col">
-      <h5>Help</h5>
+      <h5>Ajuda</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0 text-decoration-none">Frequent Questions</a></li>
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0 text-decoration-none">About Us</a></li>
-        <li class="nav-item mb-2"><a href="contact.php" class="color-white nav-link p-0 text-decoration-none">Contact</a></li>
+        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0 text-decoration-none">Perguntas frequentes</a></li>
+        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0 text-decoration-none">Sobre Nós</a></li>
+        <li class="nav-item mb-2"><a href="contact.php" class="color-white nav-link p-0 text-decoration-none">Contato</a></li>
       </ul>
     </div>
     <div class="col">
-      <h5>Services</h5>
+      <h5>Serviços</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Institutions</a></li>
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Volunteering</a></li>
+        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Instituições</a></li>
+        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Voluntários</a></li>
       </ul>
     </div>
 
     <div class="col">
-      <h5>Policies</h5>
+      <h5>Políticas</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Privacy Policy</a></li>
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Terms of Service</a></li>
+        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Política de privacidade</a></li>
+        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Termos de serviço</a></li>
       </ul>
     </div>
   </footer>

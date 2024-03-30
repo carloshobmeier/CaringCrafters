@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +21,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
           <div id="navButtons" class="buttonsNav">
-            <button class="btn btn-outline-success">Institutions</button>
-            <button class="btn btn-outline-success">Opportunities</button>
-            <button class="btn btn-outline-success">Browse</button>
+            <button class="btn btn-outline-success">Instituições</button>
+            <button class="btn btn-outline-success">Voluntários</button>
+            <button class="btn btn-outline-success">Navegue</button>
           </div>
           <a href="volunteer.php"><img src="./resources/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
         </div>

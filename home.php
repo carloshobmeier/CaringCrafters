@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/setup.css">
     <link rel="stylesheet" href="./style/home.css">
-    <title>Document</title>
+    <title>Página Inicial</title>
 </head>
 <body>
     <main >
@@ -13,12 +13,12 @@
 
             <section>
                 <div class="mainImage container text-center">
-                        <h2>Join Caring Crafters today on your journey to kindness</h2>
-                        <h3>Connect with institutions in need of support!</h3>
+                        <h2>Junte-se hoje ao Caring Crafters e nossa jornada de bondade</h2>
+                        <h3>Conecte-se com instituições que precisam de suporte!</h3>
                 </div>
             </section >
             <section class="container suggested">
-                <h4>Explore meaningful causes</h4>
+                <h4>Explore causas de valor</h4>
                 <div class="suggestedImages d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
                     <img  class="col-3" src="./resources/food.jpeg" alt="">
                     <div class="imageDuo" class="col-3">
@@ -45,65 +45,65 @@
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Anterior</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Próximo</span>
                 </a>
                 </div>
             </section> 
             <section class="sectionCards container col-12">
-                <h4>Top-rated institutions to look for</h4>
+                <h4>Instituições mais bem avaliadas para procurar</h4>
                 <div class="suggestedCards col-12 d-flex flex-lg-row flex-md-row flex-sm-column flex-column" >
                     <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
                         <img src="./assets/pexels-tobi-463734.jpg" alt="">
                         <div>
-                            <h5>Title</h5>
-                            <h6>City</h6>
+                            <h5>Título</h5>
+                            <h6>Cidade</h6>
                         </div>
                         <div>
-                            <h4 >Contact for details</h4>
+                            <h4 >Contato para detalhes</h4>
                         </div>
                     </div> 
                     <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
                         <img src="./assets/pexels-tobi-463734.jpg" alt="">
                         <div>
-                            <h5>Title</h5>
-                            <h6>City</h6>
+                            <h5>Título</h5>
+                            <h6>Cidade</h6>
                         </div>
                         <div>
-                            <h4>Contact for details</h4>
-                        </div>
-                    </div>
-                    <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
-                        <img src="./assets/pexels-tobi-463734.jpg" alt="">
-                        <div>
-                            <h5>Title</h5>
-                            <h6>City</h6>
-                        </div>
-                        <div>
-                            <h4>Contact for details</h4>
+                            <h4 >Contato para detalhes</h4>
                         </div>
                     </div>
                     <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
                         <img src="./assets/pexels-tobi-463734.jpg" alt="">
                         <div>
-                            <h5>Title</h5>
-                            <h6>City</h6>
+                            <h5>Título</h5>
+                            <h6>Cidade</h6>
                         </div>
                         <div>
-                            <h4>Contact for details</h4>
+                            <h4 >Contato para detalhes</h4>
                         </div>
                     </div>
                     <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
                         <img src="./assets/pexels-tobi-463734.jpg" alt="">
                         <div>
-                            <h5>Title</h5>
-                            <h6>City</h6>
+                            <h5>Título</h5>
+                            <h6>Cidade</h6>
                         </div>
                         <div>
-                            <h4>Contact for details</h4>
+                            <h4 >Contato para detalhes</h4>
+                        </div>
+                    </div>
+                    <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
+                        <img src="./assets/pexels-tobi-463734.jpg" alt="">
+                        <div>
+                            <h5>Título</h5>
+                            <h6>Cidade</h6>
+                        </div>
+                        <div>
+                            <h4 >Contato para detalhes</h4>
                         </div>
                     </div>
                 </div>
@@ -112,12 +112,12 @@
                 <div>
                     <img src="" alt="">
                     <div class="offers">
-                        <h4>Get exclusive offers and updates!</h4>
-                        <p>Do you want to get involved in meaninful causes and support those in need?</p>
-                        <p>Sign up and start making a difference today!</p>
+                        <h4>Obtenha ofertas exclusivas e atualizações!</h4>
+                        <p>Você quer se envolver em causas de valor e dar suporte aos que precisam?</p>
+                        <p>Inscreva-se e comece a fazer a diferença hoje!</p>
                     </div>
                 </div>
-                <button class="join">JOIN NOW</button>
+                <button class="join">Participar!</button>
             </div>
         </main>
         <?php include('./src/components/footer.php') ?>

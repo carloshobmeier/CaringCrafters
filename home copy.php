@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/setup.css">
     <link rel="stylesheet" href="./style/home.css">
-    <title>Document</title>
+    <title>Documento</title>
 </head>
 <body>
     <main class="">
@@ -13,7 +13,7 @@
             <h1>Caring Crafters</h1>
             <div id="filter">
                 <input type="text">
-                <h3>Filter</h3>
+                <h3>Filtro</h3>
             </div>
             <div>
             </div>
@@ -27,7 +27,7 @@
                 <img src="" alt="">
             </nav>
             <section id="mainPanel">
-                <h3><?php  ?>Results</h3>
+                <h3><?php  ?>Resultados</h3>
                 <div class="cards">    
                     <?php
                     $numberOfCards = 30;

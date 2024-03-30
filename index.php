@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,10 +15,10 @@
     <section class="index-main-banner d-flex">
         <div class="d-flex container">
             <div class="main-banner-content col-6">
-                <h5>Our Mission</h5>
-                <h1>Helping people build a more humane and equal world.</h1>
-                <p>We discover and connect emerging volunteering institutions with collaborative people who wish to partake in volunteering programs.</p>
-                <a href="signIn.php"><button type="button" class="btn btn-lg btn-outline-light">Join Us!</button></a>
+                <h5>Nossa Missão</h5>
+                <h1>Ajudando pessoas a construir um mundo mais humano e igualitário.</h1>
+                <p>Nós descobrimos e conectamos instituições emergentes de voluntariado com pessoas colaborativas que desejam participar de programas de voluntariado.</p>
+                <a href="signIn.php"><button type="button" class="btn btn-lg btn-outline-light">Junte-se a Nós!</button></a>
             </div>
             <!-- Fazer imagem ficar responsiva -->
             <img class="mx-auto main-banner-img col-6" src="./resources/help.png">
@@ -26,108 +26,108 @@
             
         </section>
         <section class="index-categories-banner container">
-        <h4 class="text-center" style="color: #efa34c; letter-spacing: 1px">CATEGORIES</h4>
-        <h1 class="text-center" style="color: #343738;">Programs and areas of action</h1>
+        <h4 class="text-center" style="color: #efa34c; letter-spacing: 1px">CATEGORIAS</h4>
+        <h1 class="text-center" style="color: #343738;">Programas e áreas de ação</h1>
         <div class="row row-cols mx-auto gap-3" style="margin-top: 40px;">
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Medical Help</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Find programs to help those who need better medical care.</p>
-                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Auxílio médico</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Encontre programas para ajudar aqueles que precisam de melhor cuidado médico.</p>
+                    <a href="#" class="index-card-btn">Veja mais<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Animal Care</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Help animal shelters take care of their insfrastructure and their little friends.</p>
-                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Auxílio a animais</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Ajude abrigos de animais a cuidade de suas infraestruturas e seus amiguinhos.</p>
+                    <a href="#" class="index-card-btn">Veja mais<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Social Services</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Join institutions and help people from all walks of life within your community.</p>
-                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Serviço social</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Junte-se às instituições e ajude pessoas de todos os segmentos da vida dentro da sua comunidade.</p>
+                    <a href="#" class="index-card-btn">Veja mais<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
                 <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Food Bank</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Join cheritable food banks and help people avoid hunger and malnutrion.</p>
-                    <a href="#" class="index-card-btn">See More<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
+                    <h5 class="card-title text-center" style="color: #343738;">Banco de alimentos</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Junte-se aos bancos de alimentos beneficentes e ajude as pessoas a evitar a fome e a desnutrição.</p>
+                    <a href="#" class="index-card-btn">Veja mais<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
         </div>
     </section>
     <section class="my-5 faq container d-grid"> 
         <div class="col-12 d-flex flex-column align-items-center justify-content-between">
-            <h4 class="font-weight-bold" style="color: #efa34c; margin-bottom: 30px; letter-spacing: 1px">FREQUENTLY ASKED QUESTIONS</h4>
-            <p class="col-10">If you have any other questions or need further assistance, please don't hesitate to contact us. We're here to help make your volunteering experience with CaringCrafters as seamless and rewarding as possible!</p>
+            <h4 class="font-weight-bold" style="color: #efa34c; margin-bottom: 30px; letter-spacing: 1px">PERGUNTAS FREQUENTES</h4>
+            <p class="col-10">• Se você tiver outras perguntas ou precisar de mais assistência, não hesite em nos contatar. Estamos aqui para ajudar a tornar sua experiência de voluntariado com o CaringCrafters o mais tranquila e gratificante possível!</p>
         </div>
         <div class="col-12 d-flex justify-content-center">
         <div class="col-10 accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    How does CaringCrafters work?
+                    Como o CaringCrafters funciona?
                 </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">•	CaringCrafters is a platform that connects volunteers with organizations and businesses in need of support. Volunteers can browse through a variety of opportunities based on their interests, skills, and availability, while organizations can post volunteer opportunities and connect with passionate individuals who want to make a difference</div>
+                <div class="accordion-body">•	CaringCrafters é uma plataforma que conecta voluntários a instituições que precisam de apoio. Os voluntários podem navegar por uma variada gama de oportunidades com base em seus interesses, habilidades e disponibilidade, enquanto as organizações podem publicar oportunidades de voluntariado e conectar-se com indivíduos apaixonados que querem fazer a diferença.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    How can I sign up to volunteer with CaringCrafters?
+                    Como posso me inscrever para voluntariar com o CaringCrafters?
                 </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">•	Signing up as a volunteer with CaringCrafters is easy! Simply visit our website and click on the "Sign Up" button. You'll be guided through a quick registration process where you can create your profile and start browsing volunteer opportunities right away.</div>
+                <div class="accordion-body">•	Se inscrever como voluntário no CaringCrafters é fácil! Basta visitar nosso site e clicar no botão "Inscrever-se". Você será guiado por um rápido processo de registro onde poderá criar seu perfil e começar a navegar nas oportunidades de voluntariado imediatamente.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    What types of volunteer opportunities are available on CaringCrafters?
+                    Que tipo de oportunidades de voluntariado estão disponíveis no CaringCrafters?
                 </button>
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">•	We offer a wide range of volunteer opportunities to suit diverse interests and skill sets. Whether you're passionate about environmental conservation, community outreach, education, or social justice, you'll find something that aligns with your passions and values on our platform.</div>
+                <div class="accordion-body">•	Nós divulgamos uma ampla variedade de oportunidades de voluntariado para atender a diversos interesses e conjuntos de habilidades. Se você é apaixonado por conservação ambiental, alcance comunitário, educação ou justiça social, encontrará algo que se alinhe com suas paixões e valores em nossa plataforma.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                    How do I contact an organization or business about a volunteer opportunity?
+                    Como eu contato uma instituição a respeito de uma oportunidade de voluntariado?
                 </button>
                 </h2>
                 <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">•	Once you've found a volunteer opportunity that interests you, simply click on the listing to view more details. From there, you'll find contact information for the organization or business hosting the opportunity. You can reach out to them directly via email or phone to express your interest and ask any questions you may have.</div>
+                <div class="accordion-body">•	Assim que você encontrar uma oportunidade de voluntariado que lhe interesse, basta clicar no anúncio para ver mais detalhes. A partir daí, você encontrará informações de contato da organização ou empresa que está oferecendo a oportunidade. Você pode entrar em contato diretamente com eles por e-mail ou telefone para expressar seu interesse e fazer quaisquer perguntas que possa ter.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                    Can organizations and businesses post volunteer opportunities on CaringCrafters?
+                    Instituições podem postar oportunidades de voluntariado no CaringCrafters?
                 </button>
                 </h2>
                 <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">•	Yes, absolutely! We welcome organizations and businesses of all sizes to post volunteer opportunities on our platform. Whether you're hosting a one-time event, need ongoing support for a project, or are looking for skilled volunteers with specific expertise, we're here to help you find the right volunteers for the job.</div>
+                <div class="accordion-body">•	Sim, com certeza! Nós damos as boas-vindas a organizações e empresas de todos os tamanhos para publicar oportunidades de voluntariado em nossa plataforma. Seja para hospedar um evento único, necessidade de apoio contínuo em um projeto ou se estiver em busca de voluntários qualificados com expertise específica, estamos aqui para ajudá-los a encontrar os voluntários certos para o trabalho.</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                    Is there a cost to use CaringCrafters?                
+                    Há algum custo para utilizar o CaringCrafters?                
                 </button>
                 </h2>
                 <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">•	No, there is no cost to use CaringCrafters for volunteers or organizations. Our platform is free to use for everyone, and we're committed to making it as accessible and inclusive as possible.</div>
+                <div class="accordion-body">•	Não, não há custo para usar o CaringCrafters. Tanto para voluntários quanto para instituições. Nossa plataforma é gratuita para todos, e estamos comprometidos em torná-la o quanto mais acessível e inclusiva possível.</div>
                 </div>
             </div>
             </div>
