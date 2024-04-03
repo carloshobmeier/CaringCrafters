@@ -1,3 +1,6 @@
+<?php
+  include_once('./banco_de_dados/signIn-validate.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -38,48 +41,48 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Informe seu nome completo:<span class="requir">*</span></strong></label>
-              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name">
+              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU">
               <div class="name"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="username"><strong>Informe seu CPF:<span class="requir">*</span></strong></label>
-              <input data-type="cpf" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf">
+              <input data-type="cpf" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf" name="cpfU">
               <div class="cpf"></div>
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-              <label for="email"><strong>Informe se e-mail:<span class="requir">*</span></strong></label>
-              <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email">
+              <label for="email"><strong>Informe seu e-mail:<span class="requir">*</span></strong></label>
+              <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email" name="emailU">
               <div class="email"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="phonenumber"><strong>Informe seu número de telefone:<span class="requir">*</span></strong></label>
-              <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber">
+              <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber" name="phonenumberU">
               <div class="phonenumber"></div>
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-              <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep">
+              <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU">
               <div class="cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="city"><strong>Informe sua cidade:<span class="requir">*</span></strong></label>
-              <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city">
+              <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city" name="cityU">
               <div class="city"></div>
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="birthdate"><strong>Informe sua data de nascimento:<span class="requir">*</span></strong></label>
-                <input data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate">
+                <input data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate" name="birthdateU">
                 <div class="birthdate"></div>
               </div>
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="gender"><strong>Informe seu gênero:</strong></label>
-                <select class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" id="gender">
+                <select class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" id="gender" name="genderU">
                   <option value="male">Masculino</option>
                   <option value="female">Feminino</option>
                   <option value="other">Outro</option>
@@ -90,7 +93,7 @@
             <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="maritalstatus"><strong>Informe seu estado civil:</strong></label>
-                <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus">
+                <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus" name="martialstatusU">
                   <option value="single">Solteiro(a)</option>
                   <option value="married">Casado(a)</option>
                   <option value="divorced">Divorciado(a)</option>
@@ -99,7 +102,7 @@
               </div>
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="education"><strong>Informe seu nível de educação:</strong></label>
-                <select class="col-12" id="education">
+                <select class="col-12" id="education" name="educationU">
                   <option value="highschool">Ensino médio</option>
                   <option value="college">Faculdade</option>
                   <option value="bachelor">Especialização</option>
@@ -112,54 +115,54 @@
             <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="nationality"><strong>Informe sua nacionalidade:<span class="requir">*</span></strong></label>
-              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality">
+              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality" name="nationalityU">
               <div class="nationality"></div>
             </div>
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="occupation"><strong>Informe sua ocupação:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-12" type="text" id="occupation">
+                <input data-type="plainText" class="col-12" type="text" id="occupation" name="occupationU">
                 <div class="occupation"></div>
               </div>
             </div>
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-12">
                 <label for="volunteering_experience"><strong>Você tem alguma experiência prévia com voluntariado?</strong></label>
-                <textarea class="form-control" id="volunteering_experience" rows="4"></textarea>
+                <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU"></textarea>
               </div>
             </div>
             <div class="d-flex flex-row col-12">
             <div class="d-flex flex-column col-6">
               <label for="areas_of_interest"><strong>Áreas de interesse:</strong></label>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest1" value="education">
+                <input class="form-check-input" type="checkbox" id="interest1" value="education" name="educationarea">
                 <label class="form-check-label" for="interest1">Educação</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest2" value="environment">
+                <input class="form-check-input" type="checkbox" id="interest2" value="environment" name="environmentarea">
                 <label class="form-check-label" for="interest2">Meio Ambiente</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest3" value="healthcare">
+                <input class="form-check-input" type="checkbox" id="interest3" value="healthcare" name="healtharea">
                 <label class="form-check-label" for="interest3">Saúde</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest4" value="healthcare">
+                <input class="form-check-input" type="checkbox" id="interest4" value="healthcare" name="animalarea">
                 <label class="form-check-label" for="interest4">Animais</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest5" value="healthcare">
+                <input class="form-check-input" type="checkbox" id="interest5" value="healthcare" name="elderarea">
                 <label class="form-check-label" for="interest5">Idosos</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest6" value="healthcare">
+                <input class="form-check-input" type="checkbox" id="interest6" value="healthcare" name="childrenarea">
                 <label class="form-check-label" for="interest6">Crianças</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest7" value="healthcare">
+                <input class="form-check-input" type="checkbox" id="interest7" value="healthcare" name="foodarea">
                 <label class="form-check-label" for="interest7">Alimentação</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest8" value="healthcare">
+                <input class="form-check-input" type="checkbox" id="interest8" value="healthcare" name="sportsarea">
                 <label class="form-check-label" for="interest8">Esporte e Recreação</label>
               </div>
               <!-- Adicionar mais depois -->
@@ -169,10 +172,10 @@
 
 
             <label for="pass1"><strong>Crie uma senha:<span class="requir">*</span></strong></label>
-            <input data-type="password" type="password" id="pass1">
+            <input data-type="password" type="password" id="pass1" name="pass1U">
             <div class="pass1"></div>
             <label for="pass2"><strong>Confirme sua senha:<span class="requir">*</span></strong></label>
-            <input data-type="repeatPassword" type="password" id="pass2">
+            <input data-type="repeatPassword" type="password" id="pass2" name="pass2U">
             <div class="pass2"></div>
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-6">
@@ -183,7 +186,7 @@
                 </div>
               </div>
             </div>
-            <input class="submit" type="submit" value="Submit">
+            <input class="submit" type="submit" value="Submit" name="submitU">
 
         </form>
       </div>

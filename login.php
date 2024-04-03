@@ -1,3 +1,6 @@
+<?php
+  include('./login-validate.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,22 +14,22 @@
 <body>
     <div class="login-form-container mx-auto text-center">
         <h1>Entrar</h1>
-        <form class="needs-validation" novalidate action="home.php" method="get" id="loginForm">
+        <form class="needs-validation" novalidate action="home.php" method="POST" id="loginForm">
             <div class="mb-4">
                 <label for="form-email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="form-email">
+                <input type="email" class="form-control" id="form-email" name="form-email">
                 <div class="invalid-feedback" id="email-feedback">
                     Por favor digite um e-mail válido.
                 </div>
             </div>
             <div class="mb-4">
                 <label for="form-password" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="form-password">
+                <input type="password" class="form-control" id="form-password" name="form-password">
                 <div class="invalid-feedback" id="password-feedback">
                     Esta senha não é válida. Mínimo de 8 caracteres e uma letra maiúscula.
                 </div>
             </div>
-            <button class="submit">Entrar</button>
+            <input type="submit" value="Entrar" name="entrar">
         </form>
     </div>
     <div class="footer-container-form">
