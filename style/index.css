@@ -73,6 +73,8 @@
   font-weight: 700;
   align-items: center;
   justify-content: center;
+  color: #07857a;
+  text-decoration: none;
 }
 
 .index-card-btn img {
