@@ -25,7 +25,7 @@
             <button class="btn btn-outline-success">Voluntários</button>
             <button class="btn btn-outline-success">Navegue</button>
           </div>
-          <a href="volunteer.php"><img src="./resources/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
+          <a href="profileVolunteer.php"><img src="./resources/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>
