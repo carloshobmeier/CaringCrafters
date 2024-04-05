@@ -21,6 +21,7 @@
 .main-banner-img {
   width: 45%;
   min-width: 300px;
+  object-fit: contain;
 }
 
 .main-banner-content {

@@ -21,7 +21,7 @@
                 <a href="signIn.php"><button type="button" class="btn btn-lg btn-outline-light">Junte-se a Nós!</button></a>
             </div>
             <!-- Fazer imagem ficar responsiva -->
-            <img class="mx-auto main-banner-img col-6" src="./resources/help.png">
+            <img class="mx-auto main-banner-img" src="./resources/help.png">
         </div>
             
         </section>
