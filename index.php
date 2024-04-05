@@ -66,7 +66,7 @@
     <section class="my-5 faq container d-grid"> 
         <div class="col-12 d-flex flex-column align-items-center justify-content-between">
             <h4 class="font-weight-bold" style="color: #efa34c; margin-bottom: 30px; letter-spacing: 1px">PERGUNTAS FREQUENTES</h4>
-            <p class="col-10">• Se você tiver outras perguntas ou precisar de mais assistência, não hesite em nos contatar. Estamos aqui para ajudar a tornar sua experiência de voluntariado com o CaringCrafters o mais tranquila e gratificante possível!</p>
+            <p class="col-10">Se você tiver outras perguntas ou precisar de mais assistência, não hesite em nos contatar. Estamos aqui para ajudar a tornar sua experiência de voluntariado com o CaringCrafters o mais tranquila e gratificante possível!</p>
         </div>
         <div class="col-12 d-flex justify-content-center">
         <div class="col-10 accordion accordion-flush" id="accordionFlushExample">

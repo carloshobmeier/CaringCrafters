@@ -87,14 +87,14 @@
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #22af56 !important;
+  background-color: #07857A !important;
   z-index: 0 !important;
   color: white !important;
   transition: all 500ms;
 }
 
 .accordion-button:is(.show) {
-  background-color: #22af56 !important;
+  background-color: #07857A !important;
   z-index: 0 !important;
 }
 
