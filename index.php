@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
   <body>
-  <?php include('./src/components/navbar_index.php') ?>
+  <?php include('./components/navbar_index.php') ?>
     <section class="index-main-banner d-flex">
         <div class="d-flex container">
             <div class="main-banner-content col-6">
@@ -21,7 +21,7 @@
                 <a href="signIn.php"><button type="button" class="btn btn-lg btn-outline-light">Junte-se a Nós!</button></a>
             </div>
             <!-- Fazer imagem ficar responsiva -->
-            <img class="mx-auto main-banner-img" src="./resources/help.png">
+            <img class="mx-auto main-banner-img" src="./assets/images/help.png">
         </div>
             
         </section>
@@ -30,7 +30,7 @@
         <h1 class="text-center" style="color: #343738;">Programas e áreas de ação</h1>
         <div class="row row-cols mx-auto gap-3" style="margin-top: 40px;">
             <div class="col-sm card border border-0 index-card">
-                <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Auxílio médico</h5>
                     <p class="card-text text-center" style="color: #8c8c91;">Encontre programas para ajudar aqueles que precisam de melhor cuidado médico.</p>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
-                <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Auxílio a animais</h5>
                     <p class="card-text text-center" style="color: #8c8c91;">Ajude abrigos de animais a cuidade de suas infraestruturas e seus amiguinhos.</p>
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
-                <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Serviço social</h5>
                     <p class="card-text text-center" style="color: #8c8c91;">Junte-se às instituições e ajude pessoas de todos os segmentos da vida dentro da sua comunidade.</p>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
-                <img src="./resources/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Banco de alimentos</h5>
                     <p class="card-text text-center" style="color: #8c8c91;">Junte-se aos bancos de alimentos beneficentes e ajude as pessoas a evitar a fome e a desnutrição.</p>
@@ -134,7 +134,7 @@
         </div>
 
     </section>
-    <?php include('./src/components/footer.php') ?>
+    <?php include('./components/footer.php') ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

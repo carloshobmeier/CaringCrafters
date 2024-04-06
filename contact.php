@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <?php include('./src/components/navbar2.php') ?>
+  <?php include('./components/navbar_logado.php') ?>
 
 
   <div class="contact">
@@ -43,7 +43,7 @@
 
   </div>
 
-  <?php include('./src/components/footer.php') ?>
+  <?php include('./components/footer.php') ?>
 
 </body>
 </html>

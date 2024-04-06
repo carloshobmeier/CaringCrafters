@@ -33,7 +33,7 @@
         </form>
     </div>
     <div class="footer-container-form">
-    <?php include('./src/components/footer.php') ?>
+    <?php include('./components/footer.php') ?>
 
     </div>
     <script src="./assets/scripts/login.js"></script>

@@ -302,7 +302,7 @@
             <input class="submit" type="submit" value="Submit">
         </div>
 
-      <?php include("./src/components/footer.php")?>
+      <?php include("./components/footer.php")?>
       <script src="./assets/scripts/signin.js"></script>
 </body>
 </html>
