@@ -5,6 +5,10 @@
   }
 }
 
+h5 {
+  color: #343738;
+}
+
 .profile-banner {
   width: 100%;
   height: 200px;
@@ -17,4 +21,13 @@
   width: 100%;
   height: 200px;
   background: rgba(0, 0, 0, 0.6);
+}
+
+.profile-label {
+  padding: 1px 8px;
+  border-radius: 10px;
+  border: 1.5px solid #d7d7d7;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
 }

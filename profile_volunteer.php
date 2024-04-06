@@ -16,7 +16,7 @@
                 <div class="banner-overlay"></div>
             </div>
         </div>
-        <div class="d-flex justify-content-center gap-4 mb-5 profile-layout">
+        <div class="d-flex justify-content-center gap-5 mb-5 profile-layout">
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
                 <img class="mx-auto rounded-circle mb-2" src="./assets/images/agua.jpeg" style="width: 38%" alt="">
                 <div class="text-center mb-3">
@@ -29,7 +29,7 @@
                     <p class="fw-normal" style="font-size: 15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus odio rerum? Eveniet laborum maiores, ipsa quasi qui quibusdam asperiores, in id saepe, expedita nesciunt amet enim neque voluptates facilis.</p>
                 </div>
             </div>
-            <div class="py-2" style="width: 50%">
+            <div class="py-4" style="width: 45%">
                 <h5 class="border-1 border-bottom py-1 mb-3">Colaborações</h5>
                 <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
                     <div class="card p-0" style="width: 250px">

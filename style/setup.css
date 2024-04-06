@@ -82,3 +82,19 @@ footer {
 .color-white {
   color: white !important;
 }
+
+.out-yellow-button {
+  border: 1px solid #efa34c;
+  padding: 6px 10px;
+  background-color: transparent;
+  color: #efa34c;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.2s;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.08);
+}
+
+.out-yellow-button:hover {
+  background-color: #efa34c;
+  color: white;
+}
