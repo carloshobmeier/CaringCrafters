@@ -12,6 +12,6 @@
   try {
     $conn = new PDO('mysql:host=' . $host . ';dbname=' . $dbname, $user, $pass, $pdoOptions);
   } catch (PDOException $e) {
-    die('Erro de conexão.');
+    echo 'Erro de conexão!', $e->getMessage();
   }
 ?>
