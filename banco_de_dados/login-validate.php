@@ -1,5 +1,5 @@
 <?php
-  include_once('./connect.php');
+  include_once('./banco_de_dados/connect.php');
 
   if (isset($_POST['entrar'])) {
     $email = $_POST['form-email'];

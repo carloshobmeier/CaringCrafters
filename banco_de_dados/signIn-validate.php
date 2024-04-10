@@ -26,12 +26,48 @@
 
     $prepU = $conn->prepare($sqlU);
 
-    $exec = $prepU->execute();
+    $execU = $prepU->execute();
 
     if ($exec) {
-      echo('Cadastrado com sucesso!');
+      echo 'Cadastrado com sucesso!';
     } else {
-      echo('Erro ao cadastrar!');
+      echo 'Erro ao cadastrar!';
     }
+  }
+
+  if (isset($_POST['submitI'])) {
+    $emailI = $_POST['emailI'];
+    $numeroI = $_POST['phonenumberI'];
+    $cepI = $_POST['cepI'];
+    $cidadeI = $_POST['cityI'];
+    $razaoI = $_POST['reasonI'];
+    $nomeI = $_POST['nameI'];
+    $cnpjI = $_POST['cnpjI'];
+    $dataI = $_POST['dateI'];
+    $socialI = $_POST['socialI'];
+    $nomeAdmin = $_POST['adminNameI'];
+    $horaTrabalho = $_POST['woringHourI'];
+    $educacaoI = $_POST['educationI'];
+    $mentoriaI = $_POST['montoringI'];
+    $conselhoI = $_POST['counselingI'];
+    $administracaoI = $_POST['administrationI'];
+    $pass1I = $_POST['pass1I'];
+    $pass2I = $_POST['pass2I'];
+
+    if ($pass1I !== $pass2I) {
+      die('Senhas devem ser iguais!');
+    }
+
+    $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal,senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','','',$pass1I)";
+  }
+
+  $prepI = $conn->prepare($sqlI);
+
+  $execI = $prepI->execute();
+
+  if ($execI) {
+    echo 'Cadastro bem-sucedido!';
+  } else {
+    echo 'Cadastro mal-sucedido!';
   }
 ?>

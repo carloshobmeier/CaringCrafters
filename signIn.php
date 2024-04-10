@@ -196,67 +196,67 @@
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Informe seu e-mail:<span class="requir">*</span></strong></label>
-                <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="institution_email">
+                <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="institution_email" name="emailI">
                 <div class="institution_email"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_phonenumber"><strong>Informe seu telefone:<span class="requir">*</span></strong></label>
-                <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_phonenumber">
+                <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_phonenumber" name="phonenumberI">
                 <div class="institution_phonenumber"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-                <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="institution_cep">
+                <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="institution_cep" name="cepI">
                 <div class="institution_cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_city"><strong>Informe sua cidade:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_city">
+                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_city" name="cityI">
                 <div class="institution_city"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_social_reasoning"><strong>Razão Social:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_social_reasoning">
+                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_social_reasoning" name="reasonI">
                 <div class="institution_social_reasoning"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_fantasy_name"><strong>Nome Fantasia:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_fantasy_name">
+                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_fantasy_name" name="nameI">
                 <div class="institution_fantasy_name"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12">
                 <label for="institution_cnpj"><strong>CNPJ:<span class="requir">*</span></strong></label>
-                <input data-type="cnpj" class="col-xl-12 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj">
+                <input data-type="cnpj" class="col-xl-12 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
                 <div class="institution_cnpj"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="founding_date"><strong>Data de fundação:<span class="requir">*</span></strong></label>
-                <input data-type="date" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="founding_date">
+                <input data-type="date" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="founding_date" name="dateI">
                 <div class="founding_date"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="social_capital"><strong>Capital Social:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="social_capital">
+                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="social_capital" name="socialI">
                 <div class="social_capital"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="administrator_name"><strong>Nome do administrador:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="administrator_name">
+                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="administrator_name" name="adminNameI">
                 <div class="administrator_name"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="working_hours"><strong>Horário de funcionamento:</strong></label>
-                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="working_hours">
+                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="working_hours" name="workingHourI">
             </div>
         </div>
         <div class="d-flex flex-row col-12">
@@ -265,29 +265,29 @@
 
                 <!-- deixar as mesmas que no dos voluntários -->
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="teaching" id="volunteering_area_teaching">
+                    <input class="form-check-input" type="checkbox" value="teaching" id="volunteering_area_teaching" name="educationI">
                     <label class="form-check-label" for="volunteering_area_teaching">Educação</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="mentoring" id="volunteering_area_mentoring">
+                    <input class="form-check-input" type="checkbox" value="mentoring" id="volunteering_area_mentoring" name="mentoringI">
                     <label class="form-check-label" for="volunteering_area_mentoring">Mentoria</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="counseling" id="volunteering_area_counseling">
+                    <input class="form-check-input" type="checkbox" value="counseling" id="volunteering_area_counseling" name="counselingI">
                     <label class="form-check-label" for="volunteering_area_counseling">Aconselhamento</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="administration" id="volunteering_area_administration">
+                    <input class="form-check-input" type="checkbox" value="administration" id="volunteering_area_administration" name="administrationI">
                     <label class="form-check-label" for="volunteering_area_administration">Administração</label>
                 </div>
                 <!-- Add more checkboxes as needed -->
             </div>
         </div>
             <label for="pass3"><strong>Crie uma senha:<span class="requir">*</span></strong></label>
-            <input data-type="password" type="password" id="pass3">
+            <input data-type="password" type="password" id="pass3" name="pass1I">
             <div class="pass3"></div>
             <label for="pass4"><strong>Confirme sua senha:<span class="requir">*</span></strong></label>
-            <input data-type="repeatPassword" type="password" id="pass4">
+            <input data-type="repeatPassword" type="password" id="pass4" name="pass2I">
             <div class="pass4"></div>
 
             <div class="d-flex flex-row col-12">
@@ -299,7 +299,7 @@
                 </div>
               </div>
             </div>
-            <input class="submit" type="submit" value="Submit">
+            <input class="submit" type="submit" value="Submit" name="submitI">
         </div>
 
       <?php include("./components/footer.php")?>
