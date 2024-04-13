@@ -31,3 +31,24 @@ h5 {
   font-weight: 500;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
 }
+
+/* Estilos do form do modal */
+
+.content {
+  display: flex;
+}
+
+.content form {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.content form input,
+.content form textarea,
+.content form button,
+.content form select {
+  margin-bottom: 10px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
