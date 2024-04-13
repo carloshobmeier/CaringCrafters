@@ -53,6 +53,16 @@
   gap: 10px;
 }
 
+.btn-outline-success {
+  border-color: #07857a !important;
+  color: #07857a !important;
+}
+
+.btn-outline-success:hover {
+  color: white !important;
+  background-color: #07857a !important;
+}
+
 .buttonsNav button {
   background-color: transparent;
   box-sizing: border-box;

@@ -1,8 +1,12 @@
+.login-background {
+  padding-top: 20vh;
+  width: 100%;
+}
+
 .login-form-container {
-  width: 30%;
+  width: 370px;
   min-width: 300px;
-  margin-top: 15vh;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .submit {
@@ -11,6 +15,7 @@
   color: #fff;
   margin-top: 20px;
   padding: 12px;
+  border: none;
 }
 
 .footer-container-form {
@@ -18,4 +23,9 @@
   bottom: 0;
   right: 0;
   left: 0; */
+}
+
+.foot {
+  position: absolute;
+  bottom: 0;
 }

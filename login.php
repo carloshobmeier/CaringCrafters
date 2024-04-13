@@ -9,29 +9,28 @@
     <link rel="stylesheet" href="./style/setup.css">
 </head>
 <body>
-    <div class="login-form-container mx-auto text-center">
-        <h1>Entrar</h1>
-        <form class="needs-validation" novalidate action="./banco_de_dados/login_php.php" method="POST" id="loginForm">
-            <div class="mb-4">
-                <label for="form-email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="form-email" name="email">
-                <div class="invalid-feedback" id="email-feedback">
-                    Por favor digite um e-mail válido.
+    <div class="login-background">
+        <div class="login-form-container mx-auto text-center rounded bg-white p-4 rounded-sm border border-1">
+            <h1 class="mb-5">Entrar</h1>
+            <form class="needs-validation" novalidate action="./banco_de_dados/login_php.php" method="POST" id="loginForm">
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="form-email" name="email" placeholder="Digite seu e-mail aqui...">
+                    <div class="invalid-feedback" id="email-feedback">
+                        Por favor digite um e-mail válido.
+                    </div>
                 </div>
-            </div>
-            <div class="mb-4">
-                <label for="form-password" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="form-password" name="password">
-                <div class="invalid-feedback" id="password-feedback">
-                    Esta senha não é válida. Mínimo de 8 caracteres e uma letra maiúscula.
+                <div class="mb-4">
+                    <input type="password" class="form-control" id="form-password" name="password" placeholder="Digite sua senha...">
+                    <div class="invalid-feedback" id="password-feedback">
+                        Esta senha não é válida. Mínimo de 8 caracteres e uma letra maiúscula.
+                    </div>
                 </div>
-            </div>
-            <input type="submit" value="Entrar" name="entrar">
-        </form>
+                <input type="submit" value="Entrar" name="entrar" class="submit">
+                <p class="mt-2">Não tem uma conta? <a href="./signIn.php" class="text-decoration-none" style="color: #3C99F0">Cadastre-se</a></p>
+            </form>
+        </div>
     </div>
-    <div class="footer-container-form">
     <?php include('./components/footer.php') ?>
-    </div>
     <script src="./assets/scripts/login.js"></script>
 </body>
 </html>
