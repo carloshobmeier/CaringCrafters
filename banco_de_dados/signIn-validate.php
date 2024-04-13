@@ -1,5 +1,5 @@
 <?php
-  include('./banco_de_dados/connect.php');
+  include('./connect.php');
 
   if (isset($_POST['submitU'])) {
     $nomeU = $_POST['nameU'];
@@ -67,6 +67,8 @@
 
   if ($execI) {
     echo 'Cadastro bem-sucedido!';
+    header("Location: ../home.php");
+
   } else {
     echo 'Cadastro mal-sucedido!';
   }

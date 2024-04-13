@@ -2,7 +2,7 @@
   $dbname = 'caringcrafters';
   $host = 'localhost';
   $user = 'root';
-  $pass = 'PUC@2023';
+  $pass = 'PUC@1234';
 
   $pdoOptions = [
     PDO::ATTR_PERSISTENT => TRUE,

@@ -1,6 +1,3 @@
-<?php
-  #include_once('./banco_de_dados/signIn-validate.php');
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -37,7 +34,7 @@
       </div>
 
       <div id="volunteer" class="d-none content container container-fluid">
-        <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signIn-validate.php">
+        <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signinuser_php.php">
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Informe seu nome completo:<span class="requir">*</span></strong></label>
