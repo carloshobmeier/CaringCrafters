@@ -2,7 +2,7 @@
   $database = 'caringcrafters';
   $servername = 'localhost';
   $username = 'root';
-  $password = 'PUC@2023';
+  $password = 'PUC@1234';
 
   $conn = new mysqli($servername, $username, $password, $database);
 
