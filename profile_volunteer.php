@@ -19,7 +19,6 @@ else{
 
         $nome = $userData['nome'];
         $sobrenome = $userData['sobrenome'];
-        $cpf = $userData['cpf'];
         $email = $userData['email'];
         $telefone = $userData['telefone'];
         $cep = $userData['cep'];
@@ -80,8 +79,8 @@ else{
                             </div>
                             <div class="modal-body">
                                 <div id="volunteer" class="content container container-fluid">
-                                    <form method="POST" class="d-flex flex-column" action="">
-                                        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+                                    <form method="POST" id="formUpdateUser" class="d-flex flex-column" action="./banco_de_dados/updateuser_php.php">
+                                        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12" >
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="name"><strong>Nome:<span class="requir"></span></strong></label>
                                                 <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU" value="<?php echo $nome;?>">
@@ -95,24 +94,37 @@ else{
                                         </div>
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="email"><strong>Informe seu e-mail:<span class="requir"></span></strong></label>
+                                                <label for="email"><strong>E-mail:<span class="requir"></span></strong></label>
                                                 <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email" name="emailU" value="<?php echo $email;?>">
                                                 <div class="email"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="phonenumber"><strong>Informe seu número de telefone:<span class="requir"></span></strong></label>
+                                                <label for="phonenumber"><strong>Número de telefone:<span class="requir"></span></strong></label>
                                                 <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber" name="phonenumberU" value="<?php echo $telefone;?>">
                                                 <div class="phonenumber"></div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="birthdate"><strong>Informe sua data de nascimento:<span class="requir"></span></strong></label>
+                                                <label for="cep"><strong>CEP:</strong></label>
+                                                <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU" value="<?php echo $cep;?>">
+                                                <div class="cep"></div>
+                                            </div>
+                                            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                                                <label for="city"><strong>Cidade:</strong></label>
+                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city" name="cityU" value="<?php echo $cidade;?>">
+                                                <div class="city"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
+                                            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                                                <label for="birthdate"><strong>Data de nascimento:<span class="requir"></span></strong></label>
                                                 <input data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate" name="birthdateU" value="<?php echo $dataDeNascimento;?>">
                                                 <div class="birthdate"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="gender"><strong>Informe seu gênero:</strong></label>
+                                                <label for="gender"><strong>Gênero:</strong></label>
                                                 <select class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" id="gender" name="genderU">
                                                 <option value="male">Masculino</option>
                                                 <option value="female">Feminino</option>
@@ -123,7 +135,7 @@ else{
 
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="maritalstatus"><strong>Informe seu estado civil:</strong></label>
+                                                <label for="maritalstatus"><strong>Estado civil:</strong></label>
                                                 <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus" name="martialstatusU">
                                                 <option value="single">Solteiro(a)</option>
                                                 <option value="married">Casado(a)</option>
@@ -132,7 +144,7 @@ else{
                                                 </select>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="education"><strong>Informe seu nível de educação:</strong></label>
+                                                <label for="education"><strong>Educação:</strong></label>
                                                 <select class="col-12" id="education" name="educationU">
                                                 <option value="highschool">Ensino médio</option>
                                                 <option value="college">Faculdade</option>
@@ -145,7 +157,7 @@ else{
 
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="nationality"><strong>Informe sua nacionalidade:<span class="requir">*</span></strong></label>
+                                                <label for="nationality"><strong>Nacionalidade:<span class="requir">*</span></strong></label>
                                                 <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality" name="nationalityU" value="<?php echo $nacionalidade;?>">
                                                 <div class="nationality"></div>
                                             </div>
@@ -166,17 +178,6 @@ else{
                                                 <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU" value="<?php echo $experienciaPrevia;?>"></textarea>
                                             </div>
                                         </div>
-                                        <!-- <div class="d-flex flex-row col-12">
-                                            <div class="d-flex flex-column col-6">
-                                                <label for="areas_of_interest"><strong>Áreas de interesse:</strong></label>
-                                                
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="interest2" value="environment" name="environmentarea">
-                                                    <label class="form-check-label" for="interest2">Meio Ambiente</label>
-                                                </div>
-                                                Adicionar mais depois
-                                            </div>
-                                        </div> -->
 
                                         <label for="pass1"><strong>Alterar senha:<span class="requir"></span></strong></label>
                                         <input data-type="password" type="password" id="pass1" name="pass1U" >
@@ -188,11 +189,11 @@ else{
 
                                         <!-- <input class="submit" type="submit" value="Submit" name="submitU"> -->
                                     </form>
-                                </div>
+                                </div>  
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="submit" form="formUpdateUser" type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
