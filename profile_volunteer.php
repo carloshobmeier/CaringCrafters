@@ -8,8 +8,42 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit(); // Make sure to exit after redirection
 }
-?>
+else{
+    include('./banco_de_dados/connectTeste.php');
+    $userID = $_SESSION['id'];
+    $sql = "SELECT * FROM usuario WHERE id_user = $userID";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
 
+        $userData = $result->fetch_assoc();
+
+        $nome = $userData['nome'];
+        $sobrenome = $userData['sobrenome'];
+        $cpf = $userData['cpf'];
+        $email = $userData['email'];
+        $telefone = $userData['telefone'];
+        $cep = $userData['cep'];
+        $cidade = $userData['cidade'];
+        $dataDeNascimento = $userData['dataDeNascimento'];
+        $genero = $userData['genero'];
+        $estadoCivil = $userData['estadoCivil'];
+        $escolaridade = $userData['escolaridade'];
+        $nacionalidade = $userData['nacionalidade'];
+        $ocupacao = $userData['ocupacao'];
+        $experienciaPrevia = $userData['experienciaPrevia'];
+        $senha = $userData['senha'];
+        $id_user = $userData['id_user'];
+
+        // Add more fields as needed
+    } else {
+        // No user found with the provided ID
+        echo "No user found with ID: $userID";
+    }
+    
+    // Close database connection
+    $conn->close();
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,7 +65,7 @@ if (!isset($_SESSION['id'])) {
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
                 <img class="mx-auto rounded-circle mb-2" src="./assets/images/agua.jpeg" style="width: 38%" alt="">
                 <div class="text-center mb-3">
-                    <h5 class="mb-0">bptiago</h5>
+                    <h5 class="mb-0"><?php echo $nome;?></h5>
                     <p>Curitiba, Paraná</p>
                 </div>
                 <button type="button" class="btn btn-outline-dark mb-4" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar Perfil</button>
@@ -50,31 +84,31 @@ if (!isset($_SESSION['id'])) {
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="name"><strong>Nome:<span class="requir"></span></strong></label>
-                                                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU">
+                                                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU" value="<?php echo $nome;?>">
                                                 <div class="name"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="sobrenome"><strong>Sobrenome:<span class="requir"></span></strong></label>
-                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="sobrenome" name="sobrenomeU">
+                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="sobrenome" name="sobrenomeU" value="<?php echo $sobrenome;?>">
                                                 <div class="name"></div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="email"><strong>Informe seu e-mail:<span class="requir"></span></strong></label>
-                                                <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email" name="emailU">
+                                                <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email" name="emailU" value="<?php echo $email;?>">
                                                 <div class="email"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="phonenumber"><strong>Informe seu número de telefone:<span class="requir"></span></strong></label>
-                                                <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber" name="phonenumberU">
+                                                <input data-type="number" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber" name="phonenumberU" value="<?php echo $telefone;?>">
                                                 <div class="phonenumber"></div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="birthdate"><strong>Informe sua data de nascimento:<span class="requir"></span></strong></label>
-                                                <input data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate" name="birthdateU">
+                                                <input data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate" name="birthdateU" value="<?php echo $dataDeNascimento;?>">
                                                 <div class="birthdate"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -110,11 +144,11 @@ if (!isset($_SESSION['id'])) {
                                         </div>
 
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
-                                            <!-- <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                                            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="nationality"><strong>Informe sua nacionalidade:<span class="requir">*</span></strong></label>
-                                                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality" name="nationalityU">
+                                                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality" name="nationalityU" value="<?php echo $nacionalidade;?>">
                                                 <div class="nationality"></div>
-                                            </div> -->
+                                            </div>
                                             <!-- <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="occupation"><strong>Informe sua ocupação:<span class="requir"></span></strong></label>
                                                 <input data-type="plainText" class="col-12" type="text" id="occupation" name="occupationU">
@@ -122,14 +156,14 @@ if (!isset($_SESSION['id'])) {
                                             </div> -->
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="occupation"><strong>Ocupação:<span class="requir"></span></strong></label>
-                                                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="occupation" name="occupationU">
+                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="occupation" name="occupationU" value="<?php echo $ocupacao;?>">
                                                 <div class="name"></div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row col-12">
                                             <div class="d-flex flex-column col-12">
                                                 <label for="volunteering_experience"><strong>Experiência como voluntário:</strong></label>
-                                                <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU"></textarea>
+                                                <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU" value="<?php echo $experienciaPrevia;?>"></textarea>
                                             </div>
                                         </div>
                                         <!-- <div class="d-flex flex-row col-12">
@@ -145,7 +179,7 @@ if (!isset($_SESSION['id'])) {
                                         </div> -->
 
                                         <label for="pass1"><strong>Alterar senha:<span class="requir"></span></strong></label>
-                                        <input data-type="password" type="password" id="pass1" name="pass1U">
+                                        <input data-type="password" type="password" id="pass1" name="pass1U" >
                                         <div class="pass1"></div>
 
                                         <label for="pass2"><strong>Confirme a senha nova:<span class="requir"></span></strong></label>
@@ -220,5 +254,10 @@ if (!isset($_SESSION['id'])) {
         </div>
     </section>
     <?php include('./components/footer.php') ?>
+    <script>
+        document.getElementById('gender').value = '<?php echo $genero;?>';
+        document.getElementById('maritalstatus').value = '<?php echo $estadoCivil;?>';
+        document.getElementById('education').value = '<?php echo $escolaridade;?>';
+    </script>
 </body>
 </html>
