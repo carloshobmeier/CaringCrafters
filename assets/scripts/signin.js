@@ -83,7 +83,7 @@ function validateFormVol(id) {
   // Check if any required field is empty
   if (containsWrongClass("input", id)) {
     // Prevent form submission
-    alert("Please fill out all required fields.");
+    //alert("Please fill out all required fields.");
     return false;
   }
 
@@ -91,7 +91,7 @@ function validateFormVol(id) {
     !document.getElementById("accept_terms").checked &&
     !document.getElementById("accept_terms_institution").checked
   ) {
-    alert("Please accept our terms and conditions");
+    //alert("Please accept our terms and conditions");
     return false;
   }
   // All fields are filled, allow form submission
@@ -132,7 +132,7 @@ function isValidNumber(input) {
 }
 
 function isValidText(input) {
-  const regex = /^[a-zA-Z\s]+$/;
+  const regex = /^[a-zA-Z\s]{3,}$/;
   return regex.test(input);
 }
 
