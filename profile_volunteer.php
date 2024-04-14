@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+// Check if the session variable 'id' is not set
+if (!isset($_SESSION['id'])) {
+    // Redirect to login.php
+    header("Location: login.php");
+    exit(); // Make sure to exit after redirection
+}
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
