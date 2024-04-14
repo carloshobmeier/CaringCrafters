@@ -143,16 +143,16 @@ function isValidCEP(cep) {
 
 function isValidDateOfBirth(dateOfBirth) {
   const regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
-  console.log(dateOfBirth)
-  console.log(regex.test(dateOfBirth))
+  console.log(dateOfBirth);
+  console.log(regex.test(dateOfBirth));
   if (!regex.test(dateOfBirth)) {
     return false; // Invalid date format
   }
 
   const today = new Date();
-  console.log(today)
+  console.log(today);
   const birthDate = new Date(dateOfBirth);
-  console.log(birthDate)
+  console.log(birthDate);
   let age = today.getFullYear() - birthDate.getFullYear();
   let monthDiff = today.getMonth() - birthDate.getMonth();
 
@@ -214,63 +214,64 @@ document.querySelectorAll("input").forEach((element) => {
         isValidText(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase = "Please add only letters to this field.";
+        errorPhrase = "Inserir somente letras, pelo menos três.";
         break;
       case "cpf":
         isValidCPF(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase = "This is not a valid CPF. Ex: 000.000.000-00.";
+        errorPhrase =
+          "CPF inválido. Inserir segundo um dos modelos: 000.000.000-00 ou 00000000000.";
         break;
       case "number":
         isValidNumber(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase = "Please add only numbers to this field.";
+        errorPhrase = "Inserir somente números.";
         break;
       case "cep":
         isValidCEP(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase = "This is not a valid CEP. Ex: 00000-00.";
+        errorPhrase =
+          "CEP inválido. Inserir segundo um dos modelos: 00000-000 ou 00000000.";
         break;
       case "email":
         isValidEmail(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase = "This is not a valid email. Ex: test@test.com.";
+        errorPhrase = "E-mail inválido.";
         break;
       case "dateOfBirth":
         isValidDateOfBirth(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase =
-          "This is not a valid birthday. You must be older than 18 years old.";
+        errorPhrase = "Você precisa ter mais de 18 anos.";
         break;
       case "password":
         isValidPassword(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
         errorPhrase =
-          "This is not a valid password. It needs to be at least 8 letters and an uppercase letter.";
+          "Sua senha precisa conter oito ou mais caracteres, com pelo menos uma letra maiúscula e um número.";
         break;
       case "cnpj":
         isValidCNPJ(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase = "This is not a valid CNPJ. Ex: 00.000.000/0000-00.";
+        errorPhrase = "CNPJ inválido. Seguir o modelo: 00.000.000/0000-00.";
         break;
       case "date":
         isDateNotInFuture(element.value)
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
-        errorPhrase =
-          "This is not a valid date. It must not be set in the future.";
+        errorPhrase = "Data inválida. Insira uma data possível.";
         break;
       case "repeatPassword":
-        let password = id == "volunteer" ? document.getElementById("pass1").value : "oi";
+        let password =
+          id == "volunteer" ? document.getElementById("pass1").value : "oi";
         let result = passwordsMatch(element.value, password);
-        errorPhrase = "The passwords do not match.";
+        errorPhrase = "As senhas não são iguais.";
         result
           ? element.classList.remove("wrong")
           : element.classList.add("wrong");
