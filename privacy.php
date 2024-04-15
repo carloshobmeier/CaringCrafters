@@ -26,10 +26,10 @@ if (!isset($_SESSION['id'])) {
 
   <div class="container text-center">
     <h1>POLÍTICA DE PRIVACIDADE E SEGURANÇA DE DADOS</h1>
-    <p>Entenda como tratamos os seus dados.</p>
+    <p> </p>
   </div>
 
-  <div class="container" style="margin-top:40px; margin-bottom:40px">
+  <div class="container" style="margin-top:40px; margin-bottom:40px; text-align: justify">
     <div class="row">
 
       <div class="col-md-6">
