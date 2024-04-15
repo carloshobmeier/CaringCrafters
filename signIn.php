@@ -248,7 +248,7 @@
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="social_capital"><strong>Capital Social:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="social_capital" name="socialI">
+                <input data-type="number" placeholder="Somente números..." class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="number" id="social_capital" name="socialI">
                 <div class="social_capital"></div>
             </div>
         </div>
