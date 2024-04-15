@@ -183,7 +183,7 @@
             <div class="pass2"></div>
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-6">
-                <label for="accept_terms"><strong>Você aceita os termos e condições?</strong></label>
+                <label for="accept_terms"><strong>Você aceita os nossos <a href="terms.php" target="__blank" style="color: #07857A">Termos e Condições</a> de uso?</strong></label>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="accept_terms">
                   <label class="form-check-label" for="accept_terms">Sim, aceito.</label>
@@ -305,7 +305,7 @@
 
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-6">
-                <label for="accept_terms"><strong>Você aceita os termos e condições?</strong></label>
+                <label for="accept_terms"><strong>Você aceita os nossos <a href="terms.php" target="__blank" style="color: #07857A">Termos e Condições</a> de uso?</strong></label>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="accept_terms_institution">
                   <label class="form-check-label" for="accept_terms_institution">Sim, aceito.</label>

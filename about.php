@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-
-// Check if the session variable 'id' is not set
-if (!isset($_SESSION['id'])) {
-    // Redirect to login.php
-    header("Location: login.php");
-    exit(); // Make sure to exit after redirection
-}
 ?>
 
 <html lang="pt-BR">
@@ -21,8 +14,13 @@ if (!isset($_SESSION['id'])) {
 
 </head>
 <body>
-  <?php include('./components/navbar_logado.php') ?>
-
+  <?php 
+  if (!isset($_SESSION['id'])) {
+    include('./components/navbar_index.php');
+  } else {
+    include('./components/navbar_logado.php');
+  }
+  ?>
 
   <div class="faq container text-center">
     <h1 style="margin-top: 30px;">SOBRE NÓS</h1>
