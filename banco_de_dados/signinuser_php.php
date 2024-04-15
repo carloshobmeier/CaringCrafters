@@ -25,7 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sqlU = "INSERT INTO usuario (nome, sobrenome, cpf, email, telefone, cep, cidade,dataDeNascimento, genero, estadoCivil, escolaridade, nacionalidade, ocupacao, experienciaPrevia, senha) VALUES ('$nomeU', '$sobrenomeU', '$cpfU', '$emailU', '$numeroU', '$cepU','$cidadeU', '$dataNascimentoU', '$generoU', '$estadoCivilU', '$educacaoU', '$nacionalidadeU', '$ocupacaoU', '$experienciaU', md5('$pass1U'))";
 
     // Execute the query
-    if (mysqli_query($conn, $sqlU)) {
+    if (mysqli_query($conn, $sqlU)) {   
+
+
+        $sql = "SELECT * FROM usuario WHERE email = '$emailU'";
+        $result = mysqli_query($conn, $sql);
+
+        $row = mysqli_fetch_assoc($result);
+        
+        session_start();
+        $_SESSION['tipoCadastro'] = 'usuario';
+        $_SESSION['id'] = $row['id_user'];
         echo 'Cadastrado com sucesso!';
         header("Location:../home.php");
     } else {

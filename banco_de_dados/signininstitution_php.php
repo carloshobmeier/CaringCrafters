@@ -27,6 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the query
     if (mysqli_query($conn, $sqlI)) {
+        $sql = "SELECT * FROM Instituicao WHERE email = '$emailI'";
+        $result = mysqli_query($conn, $sql);
+
+        $row = mysqli_fetch_assoc($result);
+        
+        session_start();
+        $_SESSION['tipoCadastro'] = 'instituicao';
+        $_SESSION['id'] = $row['id_Inst'];
+        
         echo 'Cadastrado com sucesso!';
         header("Location:../home.php");
     } else {

@@ -24,7 +24,14 @@
             <button class="btn btn-outline-success">Voluntários</button>
             <button class="btn btn-outline-success">Navegue</button>
           </div>
-          <a href="profile_volunteer.php"><img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
+          <a href="<?php 
+          $type = $_SESSION['tipoCadastro'];
+          if($type == "usuario"){
+            echo "profile_volunteer.php";
+          }else{
+            echo "profile_institution.php";
+          }
+          ?>"><img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>
