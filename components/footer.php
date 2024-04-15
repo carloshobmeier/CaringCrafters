@@ -19,7 +19,7 @@
     <div class="col">
       <h5>Serviços</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Instituições</a></li>
+        <li class="nav-item mb-2"><a href="institution.php" class="color-white nav-link p-0">Instituições</a></li>
         <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Voluntários</a></li>
       </ul>
     </div>
