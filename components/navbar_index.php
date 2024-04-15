@@ -21,7 +21,7 @@
         <div class="rightside ms-auto">
 
             <a href="login.php"><button class="btn btn-outline-success">Entrar</button></a>
-            <a href="signIn.php"><button class="btn btn-outline-success">Inscrever-se</button></a>
+            <a href="signIn.php"><button class="btn btn-outline-success">Cadastre-se</button></a>
         </div>
       </div>
     </div>

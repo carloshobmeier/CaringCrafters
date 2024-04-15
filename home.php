@@ -119,17 +119,6 @@ if (!isset($_SESSION['id'])) {
                     </div>
                 </div>
             </section>
-            <div class="message container d-flex flex-lg-row flex-md-row flex-xl-row flex-sm-column flex-column">
-                <div>
-                    <img src="" alt="">
-                    <div class="offers">
-                        <h4>Obtenha ofertas exclusivas e atualizações!</h4>
-                        <p>Você quer se envolver em causas de valor e dar suporte aos que precisam?</p>
-                        <p>Inscreva-se e comece a fazer a diferença hoje!</p>
-                    </div>
-                </div>
-                <button class="join">Participar!</button>
-            </div>
         </main>
         <?php include('./components/footer.php') ?>
     <!--<script src="./assets/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>-->

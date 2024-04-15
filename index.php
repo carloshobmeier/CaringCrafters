@@ -18,7 +18,7 @@
                 <h5>Nossa Missão</h5>
                 <h1>Ajudando pessoas a construir um mundo mais humano e igualitário.</h1>
                 <p>Nós descobrimos e conectamos instituições emergentes de voluntariado com pessoas colaborativas que desejam participar de programas de voluntariado.</p>
-                <a href="signIn.php"><button type="button" class="btn btn-lg btn-outline-light">Junte-se a Nós!</button></a>
+                <a href="signIn.php"><button type="button" class="btn btn-lg btn-outline-light">Junte-se a nós!</button></a>
             </div>
             <!-- Fazer imagem ficar responsiva -->
             <img class="mx-auto main-banner-img" src="./assets/images/help.png">

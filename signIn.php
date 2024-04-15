@@ -10,7 +10,7 @@
 </head>
 <body id="body">
       <div class="signin pt-5">
-        <h1>Registre-se</h1>
+        <h1>Cadastre-se</h1>
       </div>
 
       <div class="radioButtons" id="radioButtons">
@@ -190,7 +190,7 @@
                 </div>
               </div>
             </div>
-            <input class="submit" type="submit" value="Submit" name="submitU">
+            <input class="submit" type="submit" value="Cadastre-se" name="submitU">
 
         </form>
       </div>
@@ -312,7 +312,7 @@
                 </div>
               </div>
             </div>
-            <input class="submit" type="submit" value="Submit" name="submitI">
+            <input class="submit" type="submit" value="Cadastre-se" name="submitI">
         </div>
 
       <?php include("./components/footer.php")?>
