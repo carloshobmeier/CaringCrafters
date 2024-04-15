@@ -101,8 +101,8 @@ if (!isset($_SESSION['id'])) {
       </div>
    
 
-      <div class="col-md-6 direita" style="margin-top:10px; margin-bottom:10px">
-        <img src="./assets/images/meeting.jpeg" alt="" width="100%">
+      <div class="col-md-6 direita" style="margin-top:10px; margin-bottom:10px;">
+        <img src="./assets/images/meeting.jpeg" alt="" width="90%">
       </div>
     </div>
   </div>

@@ -20,8 +20,3 @@
     outline: none !important;
     transition: all 500ms;
   }
-
-  .esquerda {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
