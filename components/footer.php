@@ -27,7 +27,7 @@
     <div class="col">
       <h5>Políticas</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Política de privacidade</a></li>
+        <li class="nav-item mb-2"><a href="privacy.php" class="color-white nav-link p-0">Política de privacidade</a></li>
         <li class="nav-item mb-2"><a href="#" class="color-white nav-link p-0">Termos de serviço</a></li>
       </ul>
     </div>
