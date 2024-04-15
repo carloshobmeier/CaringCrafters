@@ -1,0 +1,17 @@
+span {
+    color: #07857A;
+}
+
+strong {
+    color: #efa34c;
+}
+
+
+.container h2 {
+    margin-top: 30px;
+}
+
+.container p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
