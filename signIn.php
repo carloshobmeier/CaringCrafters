@@ -259,8 +259,17 @@
                 <div class="administrator_name"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                <label for="working_hours"><strong>Horário de funcionamento:</strong></label>
-                <input class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="working_hours" name="workingHourI">
+                <label for="working_hours"><strong>Horário de funcionamento:</strong><span class="requir">*</span></label>
+                <div class="d-flex gap-3">
+                  <div class="align-item-center">
+                    <label for="open_time"><strong>Abertura: </strong></label>
+                    <input type="time" id="appt" name="open_time" required />
+                  </div>
+                  <div class="align-item-center">
+                    <label for="close_time"><strong>Fechamento: </strong></label>
+                    <input type="time" id="appt" name="close_time" required />
+                  </div>
+                </div>
             </div>
         </div>
         <div class="d-flex flex-row col-12">

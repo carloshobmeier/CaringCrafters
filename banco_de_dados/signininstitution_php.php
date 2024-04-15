@@ -15,17 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dataI = mysqli_real_escape_string($conn, $_POST['dateI']);
     $socialI = mysqli_real_escape_string($conn, $_POST['socialI']);
     $nomeAdmin = mysqli_real_escape_string($conn, $_POST['adminNameI']);
-    $horaTrabalho = mysqli_real_escape_string($conn, $_POST['workingHourI']);
-    #$educacaoI = mysqli_real_escape_string($conn, $_POST['educationI']);
-    #$mentoriaI = mysqli_real_escape_string($conn, $_POST['monitoringI']);
-    #$conselhoI = mysqli_real_escape_string($conn, $_POST['counselingI']);
+    $horaAbertura = mysqli_real_escape_string($conn, $_POST['open_time']);
+    $horaFechamento = mysqli_real_escape_string($conn, $_POST['close_time']);
     $administracaoI = mysqli_real_escape_string($conn, $_POST['adminNameI']);
     $pass1I = mysqli_real_escape_string($conn, $_POST['pass1I']);
     #$pass2I = mysqli_real_escape_string($conn, $_POST['pass2I']);
 
 
     // Construct the SQL query
-    $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal,senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','','',md5('$pass1I'))";
+    $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal,senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','$horaAbertura','$horaFechamento',md5('$pass1I'))";
 
     // Execute the query
     if (mysqli_query($conn, $sqlI)) {
