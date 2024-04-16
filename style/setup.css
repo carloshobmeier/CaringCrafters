@@ -116,3 +116,6 @@ footer {
   background-color: #efa34c;
   color: white;
 }
+.WrongText{
+  color: red !important;
+}

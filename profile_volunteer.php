@@ -50,7 +50,7 @@ else{
     <link rel="stylesheet" href="./style/setup.css">
     <link rel="stylesheet" href="./style/profile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <title>Document</title>
+    <title><?php echo $nome;?> - Profile Page</title>
 </head>
 <body>
     <?php include('./components/navbar_logado.php') ?>
@@ -84,12 +84,12 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="name"><strong>Nome:<span class="requir"></span></strong></label>
                                                 <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU" value="<?php echo $nome;?>">
-                                                <div class="name"></div>
+                                                <div class="name col-10"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="sobrenome"><strong>Sobrenome:<span class="requir"></span></strong></label>
-                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="sobrenome" name="sobrenomeU" value="<?php echo $sobrenome;?>">
-                                                <div class="name"></div>
+                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="surname" name="sobrenomeU" value="<?php echo $sobrenome;?>">
+                                                <div class="surname col-10"></div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
@@ -108,7 +108,7 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="cep"><strong>CEP:</strong></label>
                                                 <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU" value="<?php echo $cep;?>">
-                                                <div class="cep"></div>
+                                                <div class="cep col-10"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="city"><strong>Cidade:</strong></label>
@@ -161,15 +161,10 @@ else{
                                                 <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality" name="nationalityU" value="<?php echo $nacionalidade;?>">
                                                 <div class="nationality"></div>
                                             </div>
-                                            <!-- <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
-                                                <label for="occupation"><strong>Informe sua ocupação:<span class="requir"></span></strong></label>
-                                                <input data-type="plainText" class="col-12" type="text" id="occupation" name="occupationU">
-                                                <div class="occupation"></div>
-                                            </div> -->
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="occupation"><strong>Ocupação:<span class="requir"></span></strong></label>
                                                 <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="occupation" name="occupationU" value="<?php echo $ocupacao;?>">
-                                                <div class="name"></div>
+                                                <div class="occupation"></div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row col-12">
@@ -260,5 +255,7 @@ else{
         document.getElementById('maritalstatus').value = '<?php echo $estadoCivil;?>';
         document.getElementById('education').value = '<?php echo $escolaridade;?>';
     </script>
+    <script src="./assets/scripts/updateUser.js"></script>
+
 </body>
 </html>

@@ -103,5 +103,6 @@ if (!isset($_SESSION['id'])) {
         </div>
     </section>
     <?php include('./components/footer.php') ?>
+
 </body>
 </html>
