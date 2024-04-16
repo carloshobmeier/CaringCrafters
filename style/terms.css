@@ -1,0 +1,20 @@
+span {
+    color: #07857A;
+}
+
+strong {
+    color: #efa34c;
+}
+
+
+.container h4 {
+    margin-top: 50px;
+}
+
+.container p {
+    padding-left: 0px;
+    margin-bottom: 20px;
+    text-align: justify; 
+}
+
+

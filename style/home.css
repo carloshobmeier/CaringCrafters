@@ -1,105 +1,104 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-main{
-    width: 100%;
+main {
+  width: 100%;
 }
 
-.mainImage{
-    height: 40vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-image: url(../assets/Default_volunteering_happy_people_ultra_realistic_8K_01.jpg);
+.mainImage {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(../assets/images/Default_volunteering_happy_people_ultra_realistic_8K_01.jpg);
 }
 
-.mainImage h2, .mainImage h3{
-    opacity: 1 !important;
+.mainImage h2,
+.mainImage h3 {
+  opacity: 1 !important;
 }
 
-.mainImage h2{
-    font-size: 2rem;
+.mainImage h2 {
+  font-size: 2rem;
 }
-.mainImage h3{
-    font-size: 1.2rem;
-}
-
-
-.suggested{
-    width: 100%;
-    margin-top: 5rem;
-}
-.suggestedImages div{
-    width: 25%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-
+.mainImage h3 {
+  font-size: 1.2rem;
 }
 
-.suggestedImages img{
-    width: 25%;
-    object-fit: cover;
-
+.suggested {
+  width: 100%;
+  margin-top: 5rem;
+}
+.suggestedImages div {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
-.suggested div img{
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-
-    background-size: cover;
-    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
-}
-.imageDuo img{
-    aspect-ratio: 2/1 !important;
-    width: 90%;
-    background-size: cover;
-    object-fit: cover;
-
+.suggestedImages img {
+  width: 25%;
+  object-fit: cover;
 }
 
-.suggestedImages{
-    width: 100%;
-    display: flex;
+.suggested div img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  background-size: cover;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+}
+.imageDuo img {
+  aspect-ratio: 2/1 !important;
+  width: 90%;
+  background-size: cover;
+  object-fit: cover;
 }
 
-.sectionCards{
-    margin-top: 7rem;
-    margin-bottom: 5rem;
+.suggestedImages {
+  width: 100%;
+  display: flex;
 }
 
-.suggestedCards{
-    display: flex;
-    justify-content: space-between;
+.sectionCards {
+  margin-top: 7rem;
+  margin-bottom: 5rem;
 }
 
-.customCard{
-    width: 18%;
+.suggestedCards {
+  display: flex;
+  justify-content: space-between;
 }
 
-.customCard img{
-    width: 100%;
+.customCard {
+  width: 18%;
 }
 
-
-.message{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5rem;
+.customCard img {
+  width: 100%;
 }
 
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
 
-.message button{
-    aspect-ratio: 16/9;
-    width: 10%;
-    height: 10%;
+.message button {
+  aspect-ratio: 16/9;
+  width: 10%;
+  height: 10%;
+}
+
+.join {
+  min-width: 150px;
 }

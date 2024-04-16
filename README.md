@@ -2,24 +2,24 @@
 
 ***
 
-### Making the connection between volunteers and institutions.
+### Fazendo a conexão entre voluntários e instituições.
 
 <img src="https://raw.githubusercontent.com/carloshobmeier/Assets/main/caring_crafters/Logo.jpg" width="350px">
 
-## Description
+## Descrição
 
-Our volunteering website is an innovative platform that connects individuals willing to donate their time and skills with organizations and causes in need of assistance. Volunteers can easily register their profiles, specifying their areas of interest, availability, and skills, thus creating a personalized profile that highlights their abilities and interests.
+Nosso site de voluntariado é uma plataforma inovadora que faz a conexão entre indivíduos dispostos a doar seu tempo/habilidades e instituições que precisam de assistência com suas causas. Os voluntários podem facilmente registrar seus perfis, especificando suas áreas de interesse, sua disponibilidade e habilidades. Dessa forma criando um perfil personalizado, que destaca suas habilidades e interesses.
 
-On the other hand, organizations can also sign up on the platform, describing their specific needs and the type of assistance they are seeking. With an intelligent and intuitive search system, volunteers can easily find opportunities that match their skills and interests, while organizations can find the support they need to boost their social initiatives and projects.
+Por outro lado, também as organizações podem se inscrever na plataforma, descrevendo suas necessidades específicas e o tipo de assistência que estão buscando. Com um sistema de busca inteligente e intuitivo, os voluntários podem facilmente encontrar oportunidades que correspondam às suas habilidades e interesses, enquanto as organizações podem encontrar o suporte necessário para impulsionar suas iniciativas sociais e projetos.
 
-In addition to simplifying the connection process between volunteers and organizations, our volunteering website also offers additional features, such as evaluations and feedback, to ensure a positive experience for both parties.
+Além de simplificar o processo de conexão entre voluntários e organizações, nosso site de voluntariado também oferece recursos adicionais, como avaliações e feedback, para garantir uma experiência positiva para ambas as partes.
 
-Our mission is to create a collaborative community where volunteering is accessible, rewarding, and effective, contributing to a positive impact on various causes and communities around the world.
+Nossa missão é criar uma comunidade colaborativa onde o voluntariado seja acessível, gratificante e eficaz, contribuindo para um impacto positivo em diversas causas e comunidades ao redor do mundo.
 
 
 ***
 
-## Developed with:
+## Desenvolvido com:
 
 <div style="display: inline_block"><br/>
     <img style="margin-top:4px;" align="center" alt="html5" height="30px" src="https://img.shields.io/badge/HTML5-ff3030?style=for-the-badge&logo=html5&logoColor=white" />
@@ -31,15 +31,15 @@ Our mission is to create a collaborative community where volunteering is accessi
 
 ***
 
-## Features:
+## Recursos:
 
-- user authentication with an encrypted password, kept in the database;
-- session control and management with user data;
-- user identification in the interface;
-- expiration of the user session;
-- data persistence in a relational database;
-- search filters;
-- https protocol on the web server.
+- Autenticação do usuário com senha criptografada, mantida no banco de dados;
+- Controle e gerenciamento de sessão com dados do usuário;
+- Identificação do usuário na interface;
+- Expiração da sessão do usuário;
+- Persistência de dados em um banco de dados relacional;
+- Filtros de pesquisa;
+- Protocolo HTTPS no servidor web.
 
 
 ***

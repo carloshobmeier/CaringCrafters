@@ -1,0 +1,22 @@
+
+.accordion-button:not(.collapsed) {
+    background-color: #07857A !important;
+    z-index: 0 !important;
+    color: white !important;
+    transition: all 500ms;
+  }
+  
+  .accordion-button:is(.show) {
+    background-color: #07857A !important;
+    z-index: 0 !important;
+  }
+  
+  .accordion-header {
+    border: 0;
+    z-index: 0;
+  }
+  
+  .accordion-button {
+    outline: none !important;
+    transition: all 500ms;
+  }

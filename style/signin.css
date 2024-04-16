@@ -1,15 +1,15 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
 }
 
-*{
-  box-sizing:border-box
+* {
+  box-sizing: border-box;
 }
-  
+
 header {
   background-color: #fff;
   color: #000;
@@ -20,16 +20,16 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-    text-align: center;
-    margin-bottom: 4%;
+  text-align: center;
+  margin-bottom: 4%;
 }
 
 .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .menu ul {
@@ -49,10 +49,10 @@ header {
 }
 
 .buttons button {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .buttons .signup {
@@ -69,12 +69,12 @@ header {
 }
 
 .content {
-    display: flex;  
+  display: flex;
 }
 
 .content form {
   flex: 1;
-  margin-right: 5px; 
+  margin-right: 5px;
 }
 
 .content form input,
@@ -86,24 +86,23 @@ header {
   border: 1px solid #ccc;
 }
 
-
 .content form input,
 .content form textarea,
-.content form select{
-  padding: 12px; 
+.content form select {
+  padding: 12px;
 }
 
-.submit { 
+.submit {
   background-color: #000;
   color: #fff;
   margin-top: 20px;
 }
 
 .contact-info {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-info div {
@@ -119,14 +118,15 @@ header {
 }
 
 @media only screen and (max-device-width: 900px) {
-  }  
-
-footer {
-    background-color: #f0f0f0;
-    padding: 20px 0;
 }
 
-#institution_radio, #volunteer_radio{
+footer {
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+#institution_radio,
+#volunteer_radio {
   display: none;
 }
 
@@ -134,7 +134,7 @@ label div span {
   font-size: 50px !important;
 }
 
-.radioButtons{
+.radioButtons {
   width: 100%;
   display: flex;
   align-items: center;
@@ -143,30 +143,38 @@ label div span {
   margin-bottom: 10rem;
 }
 
-.radioButtons label{
+.radioButtons label {
   transition: 300ms all;
   border: 5px solid transparent !important;
 }
 
-.radioButtons label:hover{
+.radioButtons label:hover {
   cursor: pointer;
-  border: 5px solid #22af56!important;
-  border-radius: calc(.375rem + 5px);
+  border: 5px solid #07857a !important;
+  border-radius: calc(0.375rem + 5px);
 }
 
-select{
+select {
   border: 1px solid #ccc !important;
 }
 
-.foot{
+.foot {
   position: absolute;
   bottom: 0;
 }
 
-.footerActive{
+.footerActive {
   position: static;
 }
 
-.wrong{
+.wrong {
   border: 2px red solid !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.requir {
+  color: red;
 }
