@@ -1,3 +1,18 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Unset all session variables
+  session_unset();
+  
+  // Destroy the session
+  session_destroy();
+  
+  // Redirect to a different page after removing session variables
+  header("Location: index.php");
+  exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -43,9 +58,13 @@
         <!-- Conteúdo do modal: imagem do usuário e botões -->
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
           <img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
-          <div>
+          <div class="d-flex">
             <a href="profile_volunteer.php" class="btn btn-success elemento">Ver Perfil</a>
-            <button type="button" class="btn btn-success elemento" id="logoutButton">Sair</button>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <button type="submit" onclick="leave()" class="btn btn-success elemento" id="logoutButton">Sair</button>
+
+            </form>
+
           </div>
         </div>
       </div>
@@ -72,6 +91,5 @@
 
 
 </style>
-
 </body>
 </html>
