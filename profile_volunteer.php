@@ -64,11 +64,13 @@ else{
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
                 <img class="mx-auto rounded-circle mb-2" src="./assets/images/agua.jpeg" style="width: 38%" alt="">
                 <div class="text-center mb-3">
-                    <h5 class="mb-0"><?php echo $nome;?></h5>
-                    <p>Curitiba, Paraná</p>
+                    <h5 class="mb-0"><?php echo $nome;?> <?php echo $sobrenome;?></h5>
+                    <p><?php echo $cidade;?></p>
+                    <p class="mb-0"><strong>Escolaridade:</strong> <?php echo $escolaridade;?></p>
+                    <p class="mb-0"><strong>Ocupação:</strong> <?php echo $ocupacao;?></p>
                 </div>
                 <button type="button" class="btn btn-outline-dark mb-4" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar Perfil</button>
-                
+
                 <!-- MODAL DE EDIÇÃO PERFIL -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -200,7 +202,7 @@ else{
                     <p class="fw-normal" style="font-size: 15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus odio rerum? Eveniet laborum maiores, ipsa quasi qui quibusdam asperiores, in id saepe, expedita nesciunt amet enim neque voluptates facilis.</p>
                 </div>
             </div>
-            <div class="py-4" style="width: 45%">
+            <div class="py-4" style="width: 55%; max-width: 835px">
                 <h5 class="border-1 border-bottom py-1 mb-3">Colaborações</h5>
                 <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
                     <div class="card p-0" style="width: 250px">

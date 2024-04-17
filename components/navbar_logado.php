@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button class="btn btn-outline-success">Voluntários</button>
             <button class="btn btn-outline-success">Navegue</button>
           </div>
-          <a href="#" id="profileLink"><img src="./assets/images/pequeno_principe.jpg" alt="User Avatar" class="navbar-profile-pic"></a>
+          <a href="#" id="profileLink"><img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>
