@@ -62,6 +62,9 @@ if (!isset($_SESSION['id'])) {
                 </div>
                 <div>
                     <h5 class="border-1 border-bottom py-1 mb-3">Eventos</h5>
+                    <div>
+                    <button onclick="location.href='crud_eventos.php';" class="btn btn-success" style="margin-bottom: 15px;">Gerenciar</button>
+                    </div>
                     <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
                         <div class="card p-0" style="width: 250px">
                             <div class="card-body">

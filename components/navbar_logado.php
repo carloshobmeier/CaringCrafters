@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
           <img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
           <div class="d-flex">
-            <a href="profile_volunteer.php" class="btn btn-success elemento">Ver Perfil</a>
+            <a href="profile_institution.php" class="btn btn-success elemento">Ver Perfil</a>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <button type="submit" onclick="leave()" class="btn btn-success elemento" id="logoutButton">Sair</button>
 

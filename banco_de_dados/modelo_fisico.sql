@@ -62,8 +62,8 @@ CREATE TABLE Evento (
     dataEvento DATE NOT NULL,
     conteudo TEXT NOT NULL,
     numeroVagas INTEGER,
-    horaInicial DATETIME,
-    horaFinal DATETIME,
+    horaInicial TIME,
+    horaFinal TIME,
     fk_Instituicao_id_Inst INTEGER
 );
 
