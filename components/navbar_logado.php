@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button class="btn btn-outline-success">Voluntários</button>
             <button class="btn btn-outline-success">Navegue</button>
           </div>
-          <a href="#" id="profileLink"><img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
+          <a href="#" id="profileLink"><img src="./assets/images/pequeno_principe.jpg" alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="modal-body">
         <!-- Conteúdo do modal: imagem do usuário e botões -->
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
-          <img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
+          <img src="./assets/images/pequeno_principe.jpg" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
           <div class="d-flex">
             <a href="profile_institution.php" class="btn btn-success elemento">Ver Perfil</a>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">

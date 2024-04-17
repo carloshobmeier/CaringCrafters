@@ -190,7 +190,7 @@
                 </div>
               </div>
             </div>
-            <input class="submit" type="submit" value="Cadastre-se" name="submitU">
+            <input class="submit btn btn-success" type="submit" value="Cadastre-se" name="submitU">
 
         </form>
       </div>
@@ -312,7 +312,7 @@
                 </div>
               </div>
             </div>
-            <input class="submit" type="submit" value="Cadastre-se" name="submitI">
+            <input class="submit btn btn-success" type="submit" value="Cadastre-se" name="submitI">
         </div>
 
       <?php include("./components/footer.php")?>

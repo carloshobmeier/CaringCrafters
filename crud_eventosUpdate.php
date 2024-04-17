@@ -1,3 +1,15 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Evento</title>
+  <!-- Inclua o CSS do Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
 <?php
 session_start();
 
@@ -13,7 +25,7 @@ include('./banco_de_dados/connectTeste.php');
 if(isset($_POST['id_counter'])) {
     $counterPost = $_POST['id_counter'];
     // You can use $counterPost in your modal content
-    echo $counterPost;
+    // echo $counterPost;
 }
 $userID = $_SESSION['id'];
 
@@ -21,6 +33,16 @@ $result = $conn->query("SELECT * FROM evento WHERE fk_Instituicao_id_Inst = '$us
 $evento = $result->fetch_all(MYSQLI_ASSOC);
 // Retrieve user's ID from session
 ?>
+<div class="container align-content-center">
+<div class="row">
+<div class="col-2">
+
+</div>
+
+    <div class="col-7" style="border: 2px solid rgba(0, 0, 0, 0.5); border-radius: 5px; padding: 30px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); margin: 35px; margin-bottom: 60px;">
+    <div style="container">
+        <h2 style="margin-bottom: 25px;">Edição de Evento:</h2>
+    </div>
 <form action="./banco_de_dados/eventoUpdate.php" method="post" class="form">
             <input type="hidden" name="id_evento" value="<?php echo $evento[$counterPost]['id_evento'] ?? ''; ?>">
 
@@ -70,4 +92,12 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
             </div>
 
             <button type="submit" class="btn btn-success" name="action" value="create">Atualizar</button>
+            <br>
+            <a href="crud_eventos.php" class="btn mb-4"  style="font-size: 14px; background-color: #efa34c; color: white; margin-top: 15px;">Cancelar</a>
         </form>
+        </div>
+        <div class="col-2">
+    
+</div>
+        </div>
+        </div>

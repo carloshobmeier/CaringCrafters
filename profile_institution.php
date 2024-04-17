@@ -23,13 +23,13 @@ if (!isset($_SESSION['id'])) {
     <?php include('./components/navbar_logado.php') ?>
     <section class="w-100 h-100">
         <div class="w-full">
-            <div class="profile-banner" style="background-image: url('./assets/images/agua.jpeg')" alt="">
+            <div class="profile-banner" style="background-image: url('./assets/images/pequeno_principe.jpg')" alt="">
                 <div class="banner-overlay"></div>
             </div>
         </div>
         <div class="d-flex justify-content-center gap-5 mb-5 profile-layout">
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
-                <img class="mx-auto rounded-circle mb-2" src="./assets/images/agua.jpeg" style="width: 38%" alt="">
+                <img class="mx-auto rounded-circle mb-2" src="./assets/images/pequeno_principe.jpg" style="width: 38%" alt="">
                 <div class="text-center mb-3">
                     <h5 class="mb-0">Pequeno Príncipe</h5>
                     <p>Curitiba, Paraná</p>
