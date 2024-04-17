@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['tipoCadastro'] = 'usuario';
         $_SESSION['id'] = $row['id_user'];
+        $_SESSION['nome'] = $row['nome'];
         echo 'Cadastrado com sucesso!';
         header("Location:../home.php");
     } else {

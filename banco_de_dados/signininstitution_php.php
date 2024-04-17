@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['tipoCadastro'] = 'instituicao';
         $_SESSION['id'] = $row['id_Inst'];
-        
+        $_SESSION['nome'] = $row['nomeFantasia'];
         echo 'Cadastrado com sucesso!';
         header("Location:../home.php");
     } else {

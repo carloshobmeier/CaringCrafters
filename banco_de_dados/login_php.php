@@ -15,6 +15,7 @@
         session_start();
         $_SESSION['tipoCadastro'] = 'usuario';
         $_SESSION['id'] = $row['id_user'];
+        $_SESSION['nome'] = $row['nome'];
         header("Location:../home.php");
     } else {
         $sql = "SELECT * FROM instituicao WHERE email = '$email' AND senha = md5('$senha')";
@@ -26,6 +27,7 @@
             session_start();
             $_SESSION['tipoCadastro'] = 'instituicao';
             $_SESSION['id'] = $row['id_Inst'];
+            $_SESSION['nome'] = $row['nomeFantasia'];
             header("Location:../home.php");
         } else {
             echo 'Cadastro inexistente';
