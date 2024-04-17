@@ -132,7 +132,7 @@ function isValidNumber(input) {
 }
 
 function isValidText(input) {
-  const regex = /^[a-zA-Z\s]{3,}$/;
+  const regex = /^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]{3,}$/;
   return regex.test(input);
 }
 
