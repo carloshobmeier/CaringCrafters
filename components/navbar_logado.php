@@ -39,7 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button class="btn btn-outline-success">Voluntários</button>
             <button class="btn btn-outline-success">Navegue</button>
           </div>
-          <a href="#" id="profileLink"><img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
+          <a href="#" id="profileLink">
+            <!-- ESSE CÓDIGO PHP N VAI SER USADO DPS, SÓ FIZ PRA TER UMA IMAGEM ESTÁTICA DIFERENTE PRA CADA USUARIO (SPRINT 2) -->
+            <img src="<?php if($_SESSION['tipoCadastro'] === 'usuario') {
+              echo("./assets/images/profile-picture.jpeg");
+            } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+              echo("./assets/images/pequeno_principe.jpg");
+            } ?>" alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>
@@ -57,7 +63,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="modal-body">
         <!-- Conteúdo do modal: imagem do usuário e botões -->
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
-          <img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
+          <!-- ESSE CÓDIGO PHP N VAI SER USADO DPS, SÓ FIZ PRA TER UMA IMAGEM ESTÁTICA DIFERENTE PRA CADA USUARIO (SPRINT 2) -->
+          <img src="<?php if($_SESSION['tipoCadastro'] === 'usuario') {
+              echo("./assets/images/profile-picture.jpeg");
+            } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+              echo("./assets/images/pequeno_principe.jpg");
+            } ?>" 
+            alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
           <h4>Bem-vindo(a), <?php echo $_SESSION['nome']; ?></h4>
           <div class="d-flex">
             <a href="<?php if($_SESSION['tipoCadastro'] === 'usuario') {

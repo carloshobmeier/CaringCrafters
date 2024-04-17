@@ -8,6 +8,33 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit(); // Make sure to exit after redirection
 }
+else{
+    include('./banco_de_dados/connectTeste.php');
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM instituicao WHERE id_Inst = $id";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+
+        $row = $result->fetch_assoc();
+
+        $nomeFantasia = $row['nomeFantasia'];
+        $nomeAdm = $row['nomeAdministrador'];
+        $email = $row['email'];
+        $telefone = $row['telefone'];
+        $cep = $row['cep'];
+        $cidade = $row['cidade'];
+        $dataFundacao = $row['dataFundacao'];
+        $horaInicial = $row['horaInicial'];
+        $horaFinal = $row['horaFinal'];
+
+    } else {
+        // No user found with the provided ID
+        echo "No user found with ID: $id";
+    }
+    
+    // Close database connection
+    $conn->close();
+}
 ?>
 
 <html lang="en">
@@ -31,8 +58,17 @@ if (!isset($_SESSION['id'])) {
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
                 <img class="mx-auto rounded-circle mb-2" src="./assets/images/pequeno_principe.jpg" style="width: 38%" alt="">
                 <div class="text-center mb-3">
-                    <h5 class="mb-0">Pequeno Príncipe</h5>
-                    <p>Curitiba, Paraná</p>
+                    <h5 class="mb-0"><?php echo($nomeFantasia) ?></h5>
+                    <p><?php echo($cidade) ?></p>
+                    <p class="mb-0"><strong>Administrador:</strong> <?php echo $nomeAdm;?></p>
+                    <p class="mb-0"><strong>Funcionamento:</strong> <?php echo substr($horaInicial, 0, 5);?>h : <?php echo substr($horaFinal, 0, 5);?>h</p>
+                    <p class="mb-0"><strong>Fundação em:</strong>
+                        <?php 
+                        $date = date_create($dataFundacao); 
+                        $formattedDate = date_format($date, 'd-m-Y'); 
+                        echo  str_replace("-", "/", $formattedDate)
+                        ?>
+                    </p>
                 </div>
                 <button type="button" class="btn btn-outline-dark mb-4" style="font-size: 14px">Editar Perfil</button>
                 <div class="text-start">
@@ -61,9 +97,12 @@ if (!isset($_SESSION['id'])) {
                     </div>
                 </div>
                 <div>
-                    <h5 class="border-1 border-bottom py-1 mb-3">Eventos</h5>
+                    <div class="d-flex justify-content-between align-items-center border-1 border-bottom py-1 mb-3">
+                        <h5 class="mb-0">Eventos</h5>
+                        <button onclick="location.href='crud_eventos.php';" class="btn btn-success mb-0" style="margin-bottom: 15px;">Gerenciar</button>
+                    </div>
+                    
                     <div>
-                    <button onclick="location.href='crud_eventos.php';" class="btn btn-success" style="margin-bottom: 15px;">Gerenciar</button>
                     </div>
                     <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
                         <div class="card p-0" style="width: 250px">
