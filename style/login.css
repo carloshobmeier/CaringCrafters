@@ -1,5 +1,5 @@
 .login-background {
-  padding-top: 20vh;
+  padding-top: 17vh;
   width: 100%;
 }
 
@@ -17,18 +17,8 @@
   padding: 12px;
   border: none;
 }
- /*
-.footer-container-form {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-} */
 
 .foot {
+  position: absolute;
   bottom: 0;
-}
-
-.login {
-margin: auto;
 }

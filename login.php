@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style/setup.css">
 </head>
 <body>
-    <div class="container-fluid login-background login">
+    <div class="login-background">
         <div class="login-form-container mx-auto text-center rounded bg-white p-4 rounded-sm border border-1">
             <h1 class="mb-5">Entrar</h1>
             <form class="needs-validation" novalidate action="./banco_de_dados/login_php.php" method="POST" id="loginForm">
