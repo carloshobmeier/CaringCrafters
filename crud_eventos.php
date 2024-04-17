@@ -99,7 +99,7 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
             </div>
 
 
-            <button type="submit" class="btn btn-success" name="action" value="create">Criar</button>
+            <button type="submit" class="btn btn-success" name="action" value="create" style="margin-bottom: 20px;">Criar</button>
         </form>
 
         </div>
@@ -139,11 +139,11 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
                 <td>
                     <form method="POST" action="./crud_eventosUpdate.php">
                         <input type="hidden" name="id_counter" value="<?php echo $counter; ?>">
-                        <input type="submit" class="btn btn-outline-dark mb-4"  style="font-size: 14px" name="action" value="Editar Perfil">
+                        <input type="submit" class="btn mb-4 btn-success"  style="font-size: 14px" name="action" value="Editar">
                     </form>
                     <form method="post" action="./banco_de_dados/eventoDelete.php">
                         <input type="hidden" name="id_evento" value="<?php echo $eventos['id_evento']; ?>">
-                        <input type="submit" class="btn btn-outline-dark mb-4"  style="font-size: 14px" name="action" value="Deletar" >
+                        <input type="submit" class="btn mb-4"  style="font-size: 14px; background-color: #efa34c; color: white;" name="action" value="Deletar" >
                     </form>
                 </td>
             </tr>
@@ -194,5 +194,6 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
 <script>
     
 </script>
+<?php include('./components/footer.php') ?>
 </body>
 </html>

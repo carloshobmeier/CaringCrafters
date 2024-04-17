@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style/setup.css">
 </head>
 <body>
-    <div class="login-background">
+    <div class="container-fluid login-background login">
         <div class="login-form-container mx-auto text-center rounded bg-white p-4 rounded-sm border border-1">
             <h1 class="mb-5">Entrar</h1>
             <form class="needs-validation" novalidate action="./banco_de_dados/login_php.php" method="POST" id="loginForm">
@@ -25,7 +25,7 @@
                         Esta senha não é válida. Mínimo de 8 caracteres e uma letra maiúscula.
                     </div>
                 </div>
-                <input type="submit" value="Entrar" name="entrar" class="submit">
+                <input type="submit" value="Entrar" name="entrar" class="submit btn btn-success">
                 <p class="mt-2">Não tem uma conta? <a href="./signIn.php" class="text-decoration-none" style="color: #3C99F0">Cadastre-se</a></p>
             </form>
         </div>
