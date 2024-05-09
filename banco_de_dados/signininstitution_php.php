@@ -19,14 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $horaFechamento = mysqli_real_escape_string($conn, $_POST['close_time']);
     $administracaoI = mysqli_real_escape_string($conn, $_POST['adminNameI']);
     $pass1I = mysqli_real_escape_string($conn, $_POST['pass1I']);
-    #$pass2I = mysqli_real_escape_string($conn, $_POST['pass2I']);
+    $pass2I = mysqli_real_escape_string($conn, $_POST['pass2I']);
 
 
     // Construct the SQL query
     $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal,senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','$horaAbertura','$horaFechamento',md5('$pass1I'))";
 
     // Execute the query
-    if (mysqli_query($conn, $sqlI)) {
+    if (mysqli_query($conn, $sqlI) && $pass1I === $pass2I) {
         $sql = "SELECT * FROM Instituicao WHERE email = '$emailI'";
         $result = mysqli_query($conn, $sql);
 
