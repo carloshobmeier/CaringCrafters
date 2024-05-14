@@ -8,6 +8,18 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit(); // Make sure to exit after redirection
 }
+
+// Atribuindo valores para expirar a sessão
+$offset = 3*60*60;
+$dateFormat = "h:i:s";
+$time = gmdate($dateFormat, time()-$offset);
+
+// Verificando se a última atividade foi a 30 minutos atrás
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+  session_unset();
+  session_destroy();
+  header("Location:../login.php");
+}
 ?>
 
 <html lang="pt-BR">
