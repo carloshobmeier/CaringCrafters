@@ -21,6 +21,7 @@
                 </div>
                 <div class="mb-4">
                     <input type="password" class="form-control" id="form-password" name="password" placeholder="Digite sua senha...">
+                    <i class="fa-solid fa-eye-slashed"></i>
                     <div class="invalid-feedback" id="password-feedback">
                         Esta senha não é válida. Mínimo de 8 caracteres e uma letra maiúscula.
                     </div>
@@ -32,5 +33,6 @@
     </div>
     <?php include('./components/footer.php') ?>
     <script src="./assets/scripts/login.js"></script>
+    <script src="https://kit.fontawesome.com/9e97ec4bf6.js" crossorigin="anonymous"></script>
 </body>
 </html>
