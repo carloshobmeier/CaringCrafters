@@ -64,6 +64,8 @@ CREATE TABLE Evento (
     numeroVagas INTEGER,
     horaInicial TIME,
     horaFinal TIME,
+    imagem LONGBLOB,
+    titulo, VARCHAR(100),
     fk_Instituicao_id_Inst INTEGER
 );
 
@@ -345,27 +347,27 @@ INSERT INTO Conectou_com (fk_Usuario_id_user, fk_Instituicao_id_Inst) VALUES
 (20, 10);
 
 -- na tabela evento:
-INSERT INTO Evento (id_evento, rua, numero, cidade, cep, dataPostagem, dataEvento, conteudo, numeroVagas, horaInicial, horaFinal, fk_Instituicao_id_Inst) VALUES
-(1, 'Rua das Flores', '123', 'São Paulo', '01234-567', '2024-03-30', '2024-04-15', 'Venha participar do nosso mutirão de limpeza urbana! Juntos podemos fazer a diferença.', 50, '08:00:00', '12:00:00', 1),
-(2, 'Avenida Principal', '456', 'Rio de Janeiro', '98765-432', '2024-04-02', '2024-04-20', 'Participe do nosso workshop de reciclagem! Aprenda a reutilizar materiais e contribua para um mundo mais sustentável.', 30, '14:00:00', '17:00:00', 2),
-(3, 'Praça Central', '789', 'Belo Horizonte', '54321-098', '2024-03-28', '2024-04-25', 'Estamos promovendo uma feira de adoção de animais. Venha conhecer nossos amiguinhos!', 20, '10:00:00', '14:00:00', 3),
-(4, 'Avenida das Árvores', '321', 'Curitiba', '87654-321', '2024-04-01', '2024-04-30', 'Participe da nossa palestra sobre saúde mental. Um momento importante de conscientização.', 50, '18:00:00', '20:00:00', 4),
-(5, 'Rua dos Voluntários', '654', 'Porto Alegre', '23456-789', '2024-04-03', '2024-05-05', 'Venha ajudar a construir casas para famílias carentes em nosso mutirão de construção!', 40, '09:00:00', '16:00:00', 5),
-(6, 'Praça da Paz', '987', 'Recife', '67890-123', '2024-03-29', '2024-05-10', 'Estamos organizando uma tarde recreativa para as crianças da comunidade. Venha participar!', 60, '14:00:00', '18:00:00', 6),
-(7, 'Avenida dos Artistas', '246', 'Salvador', '54321-987', '2024-04-01', '2024-05-15', 'Participe do nosso festival de música beneficente. Todos os fundos arrecadados serão destinados a projetos sociais.', 100, '16:00:00', '22:00:00', 7),
-(8, 'Rua da Esperança', '135', 'Fortaleza', '01234-567', '2024-03-31', '2024-05-20', 'Venha participar da nossa campanha de doação de sangue. Sua doação pode salvar vidas!', 50, '08:00:00', '13:00:00', 8),
-(9, 'Praça das Flores', '753', 'Manaus', '87654-321', '2024-04-02', '2024-05-25', 'Estamos promovendo uma feira de artesanato local. Venha conhecer o talento dos nossos artesãos!', 30, '10:00:00', '16:00:00', 9),
-(10, 'Avenida dos Esportes', '258', 'Brasília', '23456-789', '2024-04-04', '2024-05-30', 'Participe do nosso torneio de futebol solidário. Junte sua equipe e ajude a fazer a diferença!', 80, '14:00:00', '18:00:00', 10),
-(11, 'Rua das Artes', '369', 'São Paulo', '01234-567', '2024-03-30', '2024-06-05', 'Venha participar da nossa oficina de pintura em tela. Não é necessário ter experiência!', 20, '10:00:00', '12:00:00', 1),
-(12, 'Avenida da Paz', '147', 'Rio de Janeiro', '98765-432', '2024-04-02', '2024-06-10', 'Participe do nosso mutirão de plantio de árvores. Vamos juntos cuidar do meio ambiente!', 40, '08:00:00', '11:00:00', 2),
-(13, 'Praça das Crianças', '258', 'Belo Horizonte', '54321-098', '2024-03-28', '2024-06-15', 'Estamos organizando uma tarde de contação de histórias para os pequenos. Traga sua família!', 30, '15:00:00', '17:00:00', 3),
-(14, 'Avenida da Saúde', '369', 'Curitiba', '87654-321', '2024-04-01', '2024-06-20', 'Participe da nossa palestra sobre alimentação saudável. Aprenda dicas para uma vida mais saudável!', 50, '19:00:00', '21:00:00', 4),
-(15, 'Rua dos Sonhos', '654', 'Porto Alegre', '23456-789', '2024-04-03', '2024-06-25', 'Estamos organizando uma visita guiada aos pontos turísticos da cidade. Venha conhecer mais sobre nossa cultura!', 25, '09:00:00', '12:00:00', 5),
-(16, 'Praça da Alegria', '987', 'Recife', '67890-123', '2024-03-29', '2024-06-30', 'Venha participar da nossa festa junina! Teremos comidas típicas, música ao vivo e muita diversão!', 100, '17:00:00', '22:00:00', 6),
-(17, 'Avenida da Solidariedade', '246', 'Salvador', '54321-987', '2024-04-01', '2024-07-05', 'Participe da nossa campanha de doação de agasalhos. Ajude a aquecer o inverno de quem mais precisa!', 50, '10:00:00', '14:00:00', 7),
-(18, 'Rua da Esperança', '135', 'Fortaleza', '01234-567', '2024-03-31', '2024-07-10', 'Estamos organizando uma visita aos pacientes do hospital. Traga sua solidariedade!', 20, '15:00:00', '17:00:00', 8),
-(19, 'Praça da Cultura', '753', 'Manaus', '87654-321', '2024-04-02', '2024-07-15', 'Venha participar do nosso sarau literário. Traga seus poemas e contos para compartilhar!', 30, '18:00:00', '20:00:00', 9),
-(20, 'Avenida da Integração', '258', 'Brasília', '23456-789', '2024-04-04', '2024-07-20', 'Participe da nossa caminhada pela paz. Juntos podemos construir um mundo melhor!', 50, '07:00:00', '10:00:00', 10);
+INSERT INTO Evento (id_evento, rua, numero, cidade, cep, dataPostagem, dataEvento, conteudo, numeroVagas, horaInicial, horaFinal, fk_Instituicao_id_Inst, titulo, imagem) VALUES
+(1, 'Rua das Flores', '123', 'São Paulo', '01234-567', '2024-03-30', '2024-04-15', 'Venha participar do nosso mutirão de limpeza urbana! Juntos podemos fazer a diferença.', 50, '08:00:00', '12:00:00', 1, 'Mutirão de Limpeza Urbana', NULL),
+(2, 'Avenida Principal', '456', 'Rio de Janeiro', '98765-432', '2024-04-02', '2024-04-20', 'Participe do nosso workshop de reciclagem! Aprenda a reutilizar materiais e contribua para um mundo mais sustentável.', 30, '14:00:00', '17:00:00', 2, 'Workshop de Reciclagem', NULL),
+(3, 'Praça Central', '789', 'Belo Horizonte', '54321-098', '2024-03-28', '2024-04-25', 'Estamos promovendo uma feira de adoção de animais. Venha conhecer nossos amiguinhos!', 20, '10:00:00', '14:00:00', 3, 'Feira de Adoção de Animais', NULL),
+(4, 'Avenida das Árvores', '321', 'Curitiba', '87654-321', '2024-04-01', '2024-04-30', 'Participe da nossa palestra sobre saúde mental. Um momento importante de conscientização.', 50, '18:00:00', '20:00:00', 4, 'Palestra sobre Saúde Mental', NULL),
+(5, 'Rua dos Voluntários', '654', 'Porto Alegre', '23456-789', '2024-04-03', '2024-05-05', 'Venha ajudar a construir casas para famílias carentes em nosso mutirão de construção!', 40, '09:00:00', '16:00:00', 5, 'Mutirão de Construção', NULL),
+(6, 'Praça da Paz', '987', 'Recife', '67890-123', '2024-03-29', '2024-05-10', 'Estamos organizando uma tarde recreativa para as crianças da comunidade. Venha participar!', 60, '14:00:00', '18:00:00', 6, 'Tarde Recreativa para Crianças', NULL),
+(7, 'Avenida dos Artistas', '246', 'Salvador', '54321-987', '2024-04-01', '2024-05-15', 'Participe do nosso festival de música beneficente. Todos os fundos arrecadados serão destinados a projetos sociais.', 100, '16:00:00', '22:00:00', 7, 'Festival de Música Beneficente', NULL),
+(8, 'Rua da Esperança', '135', 'Fortaleza', '01234-567', '2024-03-31', '2024-05-20', 'Venha participar da nossa campanha de doação de sangue. Sua doação pode salvar vidas!', 50, '08:00:00', '13:00:00', 8, 'Campanha de Doação de Sangue', NULL),
+(9, 'Praça das Flores', '753', 'Manaus', '87654-321', '2024-04-02', '2024-05-25', 'Estamos promovendo uma feira de artesanato local. Venha conhecer o talento dos nossos artesãos!', 30, '10:00:00', '16:00:00', 9, 'Feira de Artesanato Local', NULL),
+(10, 'Avenida dos Esportes', '258', 'Brasília', '23456-789', '2024-04-04', '2024-05-30', 'Participe do nosso torneio de futebol solidário. Junte sua equipe e ajude a fazer a diferença!', 80, '14:00:00', '18:00:00', 10, 'Torneio de Futebol Solidário', NULL),
+(11, 'Rua das Artes', '369', 'São Paulo', '01234-567', '2024-03-30', '2024-06-05', 'Venha participar da nossa oficina de pintura em tela. Não é necessário ter experiência!', 20, '10:00:00', '12:00:00', 1, 'Oficina de Pintura em Tela', NULL),
+(12, 'Avenida da Paz', '147', 'Rio de Janeiro', '98765-432', '2024-04-02', '2024-06-10', 'Participe do nosso mutirão de plantio de árvores. Vamos juntos cuidar do meio ambiente!', 40, '08:00:00', '11:00:00', 2, 'Mutirão de Plantio de Árvores', NULL),
+(13, 'Praça das Crianças', '258', 'Belo Horizonte', '54321-098', '2024-03-28', '2024-06-15', 'Estamos organizando uma tarde de contação de histórias para os pequenos. Traga sua família!', 30, '15:00:00', '17:00:00', 3, 'Contação de Histórias', NULL),
+(14, 'Avenida da Saúde', '369', 'Curitiba', '87654-321', '2024-04-01', '2024-06-20', 'Participe da nossa palestra sobre alimentação saudável. Aprenda dicas para uma vida mais saudável!', 50, '19:00:00', '21:00:00', 4, 'Palestra sobre Alimentação Saudável', NULL),
+(15, 'Rua dos Sonhos', '654', 'Porto Alegre', '23456-789', '2024-04-03', '2024-06-25', 'Estamos organizando uma visita guiada aos pontos turísticos da cidade. Venha conhecer mais sobre nossa cultura!', 25, '09:00:00', '12:00:00', 5, 'Visita Guiada aos Pontos Turísticos', NULL),
+(16, 'Praça da Alegria', '987', 'Recife', '67890-123', '2024-03-29', '2024-06-30', 'Venha participar da nossa festa junina! Teremos comidas típicas, música ao vivo e muita diversão!', 100, '17:00:00', '22:00:00', 6, 'Festa Junina', NULL),
+(17, 'Avenida da Solidariedade', '246', 'Salvador', '54321-987', '2024-04-01', '2024-07-05', 'Participe da nossa campanha de doação de agasalhos. Ajude a aquecer o inverno de quem mais precisa!', 50, '10:00:00', '14:00:00', 7, 'Campanha de Doação de Agasalhos', NULL),
+(18, 'Rua da Esperança', '135', 'Fortaleza', '01234-567', '2024-03-31', '2024-07-10', 'Estamos organizando uma visita aos pacientes do hospital. Traga sua solidariedade!', 20, '15:00:00', '17:00:00', 8, 'Visita aos Pacientes do Hospital', NULL),
+(19, 'Praça da Cultura', '753', 'Manaus', '87654-321', '2024-04-02', '2024-07-15', 'Venha participar do nosso sarau literário. Traga seus poemas e contos para compartilhar!', 30, '18:00:00', '20:00:00', 9, 'Sarau Literário', NULL),
+(20, 'Avenida da Integração', '258', 'Brasília', '23456-789', '2024-04-04', '2024-07-20', 'Participe da nossa caminhada pela paz. Juntos podemos construir um mundo melhor!', 50, '07:00:00', '10:00:00', 10, 'Caminhada pela Paz', NULL);
 
 -- na tabela feedback_dar:
 INSERT INTO Feedback_dar (id_feedback, autor, destinatario, conteudo, fk_Usuario_id_user, fk_Instituicao_id_Inst) VALUES
