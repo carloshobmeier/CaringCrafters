@@ -1,0 +1,10 @@
+.card{
+    width: 30% !important;
+    margin: 0 !important;
+    justify-self: start !important;
+}
+
+.cards{
+    column-gap: 5%;
+    row-gap: 1rem;
+}
