@@ -87,7 +87,7 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
         }
         ?>
         </div>
-        <section class="cards container d-flex flex-row flex-wrap justify-content-start">
+        <section class="cards container d-flex flex-row flex-wrap justify-content-start  my-5">
             <?php
         
         loadContent($page,$instFIlter)
