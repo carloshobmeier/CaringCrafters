@@ -16,12 +16,16 @@ session_start();
 </head>
 <body>
   <?php 
-  if (!isset($_SESSION['id'])) {
-    include('./components/navbar_index.php');
-  } else {
-    include('./components/navbar_logado.php');
-  }
-  ?>
+    if (!isset($_SESSION['id'])) {
+      include('./components/navbar_index.php');
+    } else {
+        if($_SESSION['tipoCadastro'] === 'usuario') {
+          include("./components/navbar_logado_usuario.php");
+        } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+          include("./components/navbar_logado_instituicao.php");
+        }
+    }
+    ?>
 
 
   <div class="institutions text-center">

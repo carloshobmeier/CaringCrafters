@@ -11,7 +11,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
   <body>
-  <?php include('./components/navbar_index.php') ?>
+    <?php 
+    if (!isset($_SESSION['id'])) {
+        include('./components/navbar_index.php');
+    } else {
+        if($_SESSION['tipoCadastro'] === 'usuario') {
+            include("./components/navbar_logado_usuario.php");
+        } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+            include("./components/navbar_logado_instituicao.php");
+        }
+    }
+    ?>
     <section class="index-main-banner d-flex">
         <div class="d-flex container">
             <div class="main-banner-content col-6">
