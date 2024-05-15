@@ -12,7 +12,7 @@ if (!isset($_SESSION['id'])) {
 }
 */
 
-$page = isset($_GET['page']) ? $_GET['page'] : '';
+$page = isset($_GET['page']) ? $_GET['page'] : '0';
 $page = $page *15
 ?>
 
