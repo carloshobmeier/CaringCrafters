@@ -13,7 +13,11 @@ if (!isset($_SESSION['id'])) {
 */
 
 $page = isset($_GET['page']) ? $_GET['page'] : '0';
-$page = $page *15
+$page = $page *15;
+
+$instFIlter = isset($_SESSION['idInst']) ? $_SESSION['idInst'] : '';
+$InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName'] : '';
+
 ?>
 
 <html lang="pt-BR">
@@ -22,14 +26,39 @@ $page = $page *15
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/setup.css">
     <link rel="stylesheet" href="./style/events.css">
-    <title>Página Inicial</title>
+    <title>Eventos</title>
 </head>
 <body>
     <main >
-        <?php include('./components/navbar_logado.php') ?>
-        
+        <?php include('./components/navbar_logado.php');
+        $sql = "SELECT nomefantasia FROM instituicao";
+        $resultInst = $conn->query($sql);
+        ?>
+        <div class="container">
+
+            <form action="./banco_de_dados/filterEvents.php" method="POST">
+                <label for="institutions">Choose an institution:</label>
+                <select name="institutions" id="institutions">
+                    <?php
+            if ($resultInst->num_rows > 0) {
+                echo "<option value='SelectAll'>Select All</option>";
+                while($row = $resultInst->fetch_assoc()) {
+                    echo "<option value='" . $row["nomefantasia"] . "'>" . $row["nomefantasia"] . "</option>";
+                }
+            } else {
+                echo "<option value=''>No institutions found</option>";
+            }
+            ?>
+        </select>
+            <input type="submit" value="Submit">
+        </form>
         <?php
-        $sql = "SELECT COUNT(*) AS total_events FROM Evento";
+        if ($instFIlter == "") {
+            $sql = "SELECT COUNT(*) AS total_events FROM Evento";
+        }
+        else{
+            $sql = "SELECT COUNT(*) AS total_events FROM Evento WHERE fk_Instituicao_id_Inst = ".$instFIlter.";";
+        }
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -48,10 +77,11 @@ $page = $page *15
             
         }
         ?>
+        </div>
         <section class="cards container d-flex flex-row flex-wrap justify-content-start">
-        <?php
-
-        loadContent($page)
+            <?php
+        
+        loadContent($page,$instFIlter)
         ?>
         </section>
             
@@ -64,10 +94,15 @@ $page = $page *15
 
     
     <?php
-function loadContent($pagination) {
+function loadContent($pagination,$instFIlter) {
     include('./banco_de_dados/connectTeste.php');
+    if ($instFIlter == "") {
+        $sql = "SELECT * FROM Evento LIMIT ".$pagination.",15";
+    }
+    else{
+        $sql = "SELECT * FROM Evento WHERE fk_Instituicao_id_Inst = ".$instFIlter." LIMIT ".$pagination.",15";
+    }
 
-    $sql = "SELECT * FROM Evento LIMIT ".$pagination.",15";
     $result = $conn->query($sql);
     
     // Check if there are results
