@@ -53,7 +53,17 @@ else{
     <title><?php echo $nome;?> - Profile Page</title>
 </head>
 <body>
-    <?php include('./components/navbar_logado.php') ?>
+    <?php 
+    if (!isset($_SESSION['id'])) {
+        include('./components/navbar_index.php');
+    } else {
+        if($_SESSION['tipoCadastro'] === 'usuario') {
+            include("./components/navbar_logado_usuario.php");
+        } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+            include("./components/navbar_logado_instituicao.php");
+        }
+    }
+    ?>
     <section class="w-100 h-100">
         <div class="w-full">
             <div class="profile-banner" style="background-image: url('./assets/images/agua.jpeg')" alt="">

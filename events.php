@@ -30,7 +30,16 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
 </head>
 <body>
     <main >
-        <?php include('./components/navbar_logado.php');
+        <?php 
+        if (!isset($_SESSION['id'])) {
+            include('./components/navbar_index.php');
+        } else {
+            if($_SESSION['tipoCadastro'] === 'usuario') {
+                include("./components/navbar_logado_usuario.php");
+            } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+                include("./components/navbar_logado_instituicao.php");
+            }
+        }
         $sql = "SELECT nomefantasia FROM instituicao";
         $resultInst = $conn->query($sql);
         ?>
