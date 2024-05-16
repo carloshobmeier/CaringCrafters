@@ -4,6 +4,7 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $senha = mysqli_real_escape_string($conn, $_POST['password']);
+    
 
     $sql = "SELECT * FROM usuario WHERE email = '$email' AND senha = md5('$senha')";
     $result = mysqli_query($conn, $sql);
@@ -13,6 +14,7 @@
         $row = mysqli_fetch_assoc($result);
         
         session_start();
+
         $_SESSION['tipoCadastro'] = 'usuario';
         $_SESSION['id'] = $row['id_user'];
         $_SESSION['nome'] = $row['nome'];
@@ -30,7 +32,10 @@
             $_SESSION['nome'] = $row['nomeFantasia'];
             header("Location:../home.php");
         } else {
-            echo 'Cadastro inexistente';
+            session_start();
+            $_SESSION['loginEmail'] = $email;
+            
+            header("Location:../login.php");
         }
     }
   }

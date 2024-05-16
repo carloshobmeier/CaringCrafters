@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="./style/login.css">
     <link rel="stylesheet" href="./style/setup.css">
 </head>
+<?php
+session_start();
+?>
 <body>
     <div class="login-background">
         <div class="login-form-container mx-auto text-center rounded bg-white p-4 rounded-sm border border-1">
             <h1 class="mb-5">Entrar</h1>
             <form class="needs-validation" novalidate action="./banco_de_dados/login_php.php" method="POST" id="loginForm">
                 <div class="mb-3">
-                    <input type="email" class="form-control" id="form-email" name="email" placeholder="Digite seu e-mail aqui...">
+                    <input value="<?php echo isset($_SESSION['loginEmail'])?$_SESSION['loginEmail']:""?>" type="email" class="form-control" id="form-email" name="email" placeholder="Digite seu e-mail aqui...">
                     <div class="invalid-feedback" id="email-feedback">
                         Por favor digite um e-mail válido.
                     </div>
@@ -34,5 +37,24 @@
     <?php include('./components/footer.php') ?>
     <script src="./assets/scripts/login.js"></script>
     <script src="https://kit.fontawesome.com/9e97ec4bf6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function wrongEmail() {
+    swal.fire({
+            title: "Credenciais Erradas!",
+            text: "O email e/ou senha inseridas estao invalidas.",
+            icon: "warning"
+            });
+}
+    
+</script>
+<?php
+if (isset($_SESSION['loginEmail'])) {
+    unset($_SESSION['loginEmail']);    
+    echo "<script>wrongEmail()</script>";
+}
+
+?>
 </body>
 </html>
