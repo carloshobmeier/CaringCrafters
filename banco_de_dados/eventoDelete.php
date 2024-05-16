@@ -3,6 +3,7 @@ session_start();
 include('./connectTeste.php');
 $userID = $_SESSION['id'];
 $id_evento = $_POST['id_evento'];
+$_SESSION['deleted'] = "deleted";
 
 $sql = "Delete from evento WHERE id_evento = '$id_evento';";
 

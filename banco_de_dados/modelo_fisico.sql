@@ -65,7 +65,7 @@ CREATE TABLE Evento (
     horaInicial TIME,
     horaFinal TIME,
     imagem LONGBLOB,
-    titulo, VARCHAR(100),
+    titulo VARCHAR(100),
     fk_Instituicao_id_Inst INTEGER
 );
 

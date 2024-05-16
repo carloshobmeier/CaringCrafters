@@ -11,7 +11,6 @@ if (!isset($_SESSION['id'])) {
 }
 ?>
 
-
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -151,9 +150,9 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
                         <input type="hidden" name="id_counter" value="<?php echo $counter; ?>">
                         <input type="submit" class="btn mb-4 btn-success"  style="font-size: 14px" name="action" value="Editar">
                     </form>
-                    <form method="post" action="./banco_de_dados/eventoDelete.php">
+                    <form method="post" id='form<?php echo $eventos['id_evento']; ?>' action="./banco_de_dados/eventoDelete.php">
                         <input type="hidden" name="id_evento" value="<?php echo $eventos['id_evento']; ?>">
-                        <input type="submit" class="btn mb-4"  style="font-size: 14px; background-color: #efa34c; color: white;" name="action" value="Deletar" >
+                        <input onclick="handleDelete(event,this.id)" type="submit" class="btn mb-4" id="<?php echo $eventos['id_evento']; ?>" class="deleteBTN" style="font-size: 14px; background-color: #efa34c; color: white;" name="action" value="Deletar" >
                     </form>
                 </td>
             </tr>
@@ -201,9 +200,43 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
     </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
+    function handleDelete(event,id){
+        event.preventDefault();
+        console.log(id)
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById("form"+id).submit()}
+        });
+
+    }
+
+function deletedEvent() {
+    swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+            });
+}
     
 </script>
+<?php
+if (isset($_SESSION['deleted'])) {
+    unset($_SESSION['deleted']);    
+    echo "<script>deletedEvent()</script>";
+}
+
+?>
 <?php include('./components/footer.php') ?>
 </body>
 </html>
