@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<?php session_start();
+echo $_SESSION['dataNascimentoU'];?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,63 +40,63 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Informe seu nome:<span class="requir">*</span></strong></label>
-              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU">
+              <input value=" <?php echo isset($_SESSION['nomeU']) ? $_SESSION['nomeU'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU">
               <div class="name"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="username"><strong>Informe seu sobrenome:<span class="requir">*</span></strong></label>
-              <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="surname" name="surnameU">
+              <input value="<?php echo isset($_SESSION['sobrenomeU']) ? $_SESSION['sobrenomeU'] : ""; ?>" data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="surname" name="surnameU">
               <div class="surname"></div>
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="nationality"><strong>Informe sua nacionalidade:<span class="requir">*</span></strong></label>
-              <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality" name="nationalityU">
+              <input value="<?php echo isset($_SESSION['nacionalidadeU']) ? $_SESSION['nacionalidadeU'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="nationality" name="nationalityU">
               <div class="nationality"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cpf"><strong>Informe seu CPF:<span class="requir">*</span></strong></label>
-              <input data-type="cpf" placeholder="000.000.000-00 ou 00000000000" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf" name="cpfU">
+              <input value="<?php echo isset($_SESSION['cpfU']) ? $_SESSION['cpfU'] : ""; ?>" data-type="cpf" placeholder="000.000.000-00 ou 00000000000" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf" name="cpfU">
               <div class="cpf"></div>
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="email"><strong>Informe seu e-mail:<span class="requir">*</span></strong></label>
-              <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email" name="emailU">
+              <input value="<?php echo isset($_SESSION['emailU']) ? $_SESSION['emailU'] : ""; ?>" data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="email" name="emailU">
               <div class="email"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="phonenumber"><strong>Informe seu número de telefone:<span class="requir">*</span></strong></label>
-              <input data-type="number" placeholder="Somente números..." class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber" name="phonenumberU">
+              <input value="<?php echo isset($_SESSION['numeroU']) ?$_SESSION['numeroU'] : ""; ?>" data-type="number" placeholder="Somente números..." class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="phonenumber" name="phonenumberU">
               <div class="phonenumber"></div>
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-              <input data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU">
+              <input value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU">
               <div class="cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="city"><strong>Informe sua cidade:<span class="requir">*</span></strong></label>
-              <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city" name="cityU">
+              <input value="<?php echo isset($_SESSION['cidadeU']) ? $_SESSION['cidadeU'] : ""; ?>" data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="city" name="cityU">
               <div class="city"></div>
             </div>
           </div>
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="birthdate"><strong>Informe sua data de nascimento:<span class="requir">*</span></strong></label>
-                <input data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate" name="birthdateU">
+                <input value="<?php echo isset($_SESSION['dataNascimentoU'])?$_SESSION['dataNascimentoU']:""; ?>" data-type="dateOfBirth" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="birthdate" name="birthdateU">
                 <div class="birthdate"></div>
               </div>
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="gender"><strong>Informe seu gênero:</strong></label>
                 <select class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" id="gender" name="genderU">
-                  <option value="Masculino">Masculino</option>
-                  <option value="Feminino">Feminino</option>
-                  <option value="Outro">Outro</option>
+                  <option <?php echo (isset($_SESSION['generoU'])&&$_SESSION['generoU']=="Masculino") ?"selected": ""; ?> value="Masculino">Masculino</option>
+                  <option <?php echo (isset($_SESSION['generoU'])&&$_SESSION['generoU']=="Feminino") ?"selected": ""; ?>      value="Feminino">Feminino</option>
+                  <option <?php echo (isset($_SESSION['generoU'])&&$_SESSION['generoU']=="Outro") ?"selected": ""; ?> value="Outro">Outro</option>
                 </select>
               </div>
             </div>
@@ -103,20 +105,20 @@
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="maritalstatus"><strong>Informe seu estado civil:</strong></label>
                 <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus" name="martialstatusU">
-                  <option value="Solteiro(a)">Solteiro(a)</option>
-                  <option value="Casado(a)">Casado(a)</option>
-                  <option value="Divorciado(a)">Divorciado(a)</option>
-                  <option value="Viúvo(a)">Viúvo(a)</option>
+                  <option <?php echo (isset($_SESSION['estadoCivilU'])&&$_SESSION['estadoCivilU']=="Solteiro(a)") ?"selected": ""; ?> value="Solteiro(a)">Solteiro(a)</option>
+                  <option <?php echo (isset($_SESSION['estadoCivilU'])&&$_SESSION['estadoCivilU']=="Casado(a)") ?"selected": ""; ?>  value="Casado(a)">Casado(a)</option>
+                  <option <?php echo (isset($_SESSION['estadoCivilU'])&&$_SESSION['estadoCivilU']=="Divorciado(a)") ?"selected": ""; ?>  value="Divorciado(a)">Divorciado(a)</option>
+                  <option <?php echo (isset($_SESSION['estadoCivilU'])&&$_SESSION['estadoCivilU']=="Viúvo(a)") ?"selected": ""; ?>  value="Viúvo(a)">Viúvo(a)</option>
                 </select>
               </div>
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="education"><strong>Informe seu nível de educação:</strong></label>
                 <select class="col-12" id="education" name="educationU">
-                  <option value="Ensino Médio">Ensino médio</option>
-                  <option value="Ensino Superior">Faculdade</option>
-                  <option value="Pós-graduação">Especialização</option>
-                  <option value="Mestrado">Mestrado</option>
-                  <option value="Doutorado">Doutorado</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Ensino médio") ?"selected": ""; ?> value="Ensino Médio">Ensino médio</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Faculdade") ?"selected": ""; ?> value="Ensino Superior">Faculdade</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Especialização") ?"selected": ""; ?> value="Pós-graduação">Especialização</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Mestrado") ?"selected": ""; ?> value="Mestrado">Mestrado</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Doutorado") ?"selected": ""; ?> value="Doutorado">Doutorado</option>
                 </select>
               </div>
             </div>
@@ -124,14 +126,14 @@
             <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12 mt-2">
                 <label for="occupation"><strong>Informe sua ocupação:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="occupation" name="occupationU">
+                <input value="<?php echo isset($_SESSION['ocupacaoU']) ? $_SESSION['ocupacaoU'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="occupation" name="occupationU">
                 <div class="occupation"></div>
               </div>
             </div>
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-12">
                 <label for="volunteering_experience"><strong>Você tem alguma experiência prévia com voluntariado?</strong></label>
-                <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU"></textarea>
+                <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU"><?php echo isset($_SESSION['experienciaU']) ? $_SESSION['experienciaU'] : ""; ?></textarea>
               </div>
             </div>
             <div class="d-flex flex-row col-12">
@@ -267,7 +269,7 @@
                   </div>
                   <div class="align-item-center">
                     <label for="close_time"><strong>Fechamento: </strong></label>
-                    <input type="time" id="appt" name="close_time" required />
+                    <input type="time" id="appt2" name="close_time" required />
                   </div>
                 </div>
             </div>
@@ -314,8 +316,16 @@
             </div>
             <input class="submit btn btn-success" type="submit" value="Cadastre-se" name="submitI">
         </div>
-
       <?php include("./components/footer.php")?>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
       <script src="./assets/scripts/signin.js"></script>
+      <?php
+  if (isset($_SESSION['typeForm'])) {
+    echo "<script>toggleFormPHP('volunteer')</script>";
+    echo "<script>cpfAlreadyUsed()</script>";
+  }
+
+?>
 </body>
 </html>

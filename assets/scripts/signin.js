@@ -18,6 +18,33 @@ function toggleForm(formId) {
   }
 }
 
+function toggleFormPHP(formId) {
+  var volunteerForm = document.getElementById("volunteer");
+  var institutionForm = document.getElementById("institution");
+  document.getElementById("radioButtons").classList.add("hidden");
+  document.getElementById("foot").classList.add("footerActive");
+  if (
+    formId === "volunteer"
+  ) {
+    volunteerForm.classList.remove("d-none");
+    institutionForm.classList.add("d-none");
+  } else if (
+    formId === "institution"
+  ) {
+    institutionForm.classList.remove("d-none");
+    volunteerForm.classList.add("d-none");
+  }
+}
+
+function cpfAlreadyUsed() {
+  swal.fire({
+          title: "CPF Duplicado!",
+          text: "O CPF inserido ja esta cadastrado em nosso sistema, favor inserir outro ou entrar em contato com nosso suporte.",
+          icon: "warning"
+          });
+}
+ 
+
 function validateFormVol(id) {
   let camposVol = document.getElementById(id).querySelectorAll("input");
   camposVol.forEach((element) => {
