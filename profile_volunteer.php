@@ -32,6 +32,7 @@ else{
         $experienciaPrevia = $userData['experienciaPrevia'];
         $senha = $userData['senha'];
         $id_user = $userData['id_user'];
+        $fotoPerfil = $userData['foto'];
 
         // Add more fields as needed
     } else {
@@ -72,7 +73,7 @@ else{
         </div>
         <div class="d-flex justify-content-center gap-5 mb-5 profile-layout">
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
-                <img class="mx-auto rounded-circle mb-2" src="./assets/images/agua.jpeg" style="width: 38%" alt="">
+                <img class="mx-auto rounded-circle mb-2" src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" style="width: 38%" alt="">
                 <div class="text-center mb-3">
                     <h5 class="mb-0"><?php echo $nome;?> <?php echo $sobrenome;?></h5>
                     <p><?php echo $cidade;?></p>
@@ -91,7 +92,11 @@ else{
                             </div>
                             <div class="modal-body">
                                 <div id="volunteer" class="content container container-fluid">
-                                    <form method="POST" id="formUpdateUser" class="d-flex flex-column" action="./banco_de_dados/updateuser_php.php">
+                                    <form method="POST" id="formUpdateUser" class="d-flex flex-column" action="./banco_de_dados/updateuser_php.php" enctype="multipart/form-data">
+                                                <label for=""></label>
+                                                <img class="mx-auto rounded-circle mb-2" src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" name="imagemSelecionada" alt="Foto de perfil" style="width: 25%">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                                                <input type="file" id="Imagem" name="Imagem" accept="imagem/*" class="col-4 mx-auto mt-2 mb-4" onchange="validaImagem(this);"></label>
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12" >
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="name"><strong>Nome:<span class="requir"></span></strong></label>
@@ -100,7 +105,7 @@ else{
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="sobrenome"><strong>Sobrenome:<span class="requir"></span></strong></label>
-                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="surname" name="sobrenomeU" value="<?php echo $sobrenome;?>">
+                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="sobrenomeU" name="sobrenomeU" value="<?php echo $sobrenome;?>">
                                                 <div class="surname col-10"></div>
                                             </div>
                                         </div>
@@ -138,9 +143,9 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="gender"><strong>Gênero:</strong></label>
                                                 <select class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" id="gender" name="genderU">
-                                                <option value="male">Masculino</option>
-                                                <option value="female">Feminino</option>
-                                                <option value="other">Outro</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Feminino">Feminino</option>
+                                                <option value="Outro">Outro</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -149,20 +154,21 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="maritalstatus"><strong>Estado civil:</strong></label>
                                                 <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus" name="martialstatusU">
-                                                <option value="single">Solteiro(a)</option>
-                                                <option value="married">Casado(a)</option>
-                                                <option value="divorced">Divorciado(a)</option>
-                                                <option value="widowed">Viúvo(a)</option>
+                                                    <option value="">--Caso deseje alterar, selecione uma opção--</option>
+                                                <option value="Solteiro(a)">Solteiro(a)</option>
+                                                <option value="Casado(a)">Casado(a)</option>
+                                                <option value="Divorciado(a)">Divorciado(a)</option>
+                                                <option value="Viúvo(a)">Viúvo(a)</option>
                                                 </select>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="education"><strong>Educação:</strong></label>
                                                 <select class="col-12" id="education" name="educationU">
-                                                <option value="highschool">Ensino médio</option>
-                                                <option value="college">Faculdade</option>
-                                                <option value="bachelor">Especialização</option>
-                                                <option value="master">Mestrado</option>
-                                                <option value="phd">Doutorado</option>
+                                                <option value="Ensino Médio">Ensino médio</option>
+                                                <option value="Faculdade">Faculdade</option>
+                                                <option value="Especialização">Especialização</option>
+                                                <option value="Mestrado">Mestrado</option>
+                                                <option value="Doutorado">Doutorado</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -192,14 +198,12 @@ else{
 
                                         <label for="pass2"><strong>Confirme a senha nova:<span class="requir"></span></strong></label>
                                         <input data-type="repeatPassword" type="password" id="pass2" name="pass2U">
-                                        <div class="pass2"></div>
-
-                                        <!-- <input class="submit" type="submit" value="Submit" name="submitU"> -->
+                                        <div class="pass2"></div>                                     
                                     </form>
                                 </div>  
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salvar</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
                                 <button type="submit" form="formUpdateUser" type="button" class="btn btn-success">Salvar</button>
                             </div>
                         </div>

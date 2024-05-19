@@ -17,6 +17,7 @@ CREATE TABLE Usuario (
     nacionalidade VARCHAR(50) NOT NULL,
     ocupacao VARCHAR(100) NOT NULL,
     experienciaPrevia TEXT,
+    foto MEDIUMBLOB NULL,
     senha VARCHAR(32) NOT NULL,
     id_user INTEGER PRIMARY KEY AUTO_INCREMENT
 );
@@ -35,6 +36,7 @@ CREATE TABLE Instituicao (
     capitalSocial VARCHAR(100) NOT NULL,
     horaInicial TIME,
     horaFinal TIME,
+    foto MEDIUMBLOB NULL,
     senha VARCHAR(32) NOT NULL
 );
 

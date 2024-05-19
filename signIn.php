@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<<<<<<< HEAD
 <?php session_start();
 ?>
+=======
+<?php session_start();?>
+>>>>>>> 58ec97fab5a9189bd0fc36993bc9d8e1514d4e45
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +40,7 @@
       </div>
 
       <div id="volunteer" class="d-none content container container-fluid">
-        <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signinuser_php.php">
+        <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signinuser_php.php" enctype="multipart/form-data">
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Informe seu nome:<span class="requir">*</span></strong></label>
@@ -129,6 +133,11 @@
                 <input value="<?php echo isset($_SESSION['ocupacaoU']) ? $_SESSION['ocupacaoU'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="occupation" name="occupationU">
                 <div class="occupation"></div>
               </div>
+              <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12 mt-2">
+                  <label for="Imagem"><strong>Insira uma foto de perfil:</strong></label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                  <input type="file" id="Imagem" name="Imagem" accept="imagem/*" onchange="validaImagem(this);"></label>
+                </div>
             </div>
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-12">
@@ -198,7 +207,7 @@
       </div>
 
       <div id="institution" class="d-none content container container-fluid">
-    <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signininstitution_php.php">
+    <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signininstitution_php.php" enctype="multipart/form-data">
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Informe seu e-mail:<span class="requir">*</span></strong></label>
@@ -236,10 +245,19 @@
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
-            <div class="d-flex flex-column col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cnpj"><strong>CNPJ:<span class="requir">*</span></strong></label>
+<<<<<<< HEAD
                 <input value="<?php echo isset($_SESSION['cnpjI']) ? $_SESSION['cnpjI'] : ""; ?>" data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-12 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
+=======
+                <input data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
+>>>>>>> 58ec97fab5a9189bd0fc36993bc9d8e1514d4e45
                 <div class="institution_cnpj"></div>
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                 <label for="Imagem"><strong>Insira uma foto de perfil:</strong></label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                  <input type="file" id="Imagem" name="Imagem" accept="imagem/*" onchange="validaImagem(this);"></label>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">

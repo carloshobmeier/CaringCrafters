@@ -22,7 +22,7 @@ session_start();
                         Por favor digite um e-mail válido.
                     </div>
                 </div>
-                <div class="mb-4">
+                <div class="mb-0">
                     <input type="password" class="form-control" id="form-password" name="password" placeholder="Digite sua senha...">
                     <i class="fa-solid fa-eye-slashed"></i>
                     <div class="invalid-feedback" id="password-feedback">

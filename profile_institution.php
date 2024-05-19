@@ -26,6 +26,7 @@ else{
         $dataFundacao = $row['dataFundacao'];
         $horaInicial = $row['horaInicial'];
         $horaFinal = $row['horaFinal'];
+        $fotoPerfil = $row['foto'];
 
     } else {
         // No user found with the provided ID
@@ -66,7 +67,7 @@ else{
         </div>
         <div class="d-flex justify-content-center gap-5 mb-5 profile-layout">
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
-                <img class="mx-auto rounded-circle mb-2" src="./assets/images/pequeno_principe.jpg" style="width: 38%" alt="">
+                <img class="mx-auto rounded-circle mb-2" src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" style="width: 38%" alt="">
                 <div class="text-center mb-3">
                     <h5 class="mb-0"><?php echo($nomeFantasia) ?></h5>
                     <p><?php echo($cidade) ?></p>

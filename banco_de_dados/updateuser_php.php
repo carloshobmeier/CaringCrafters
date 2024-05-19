@@ -18,7 +18,7 @@ $userID = $_SESSION['id'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data and sanitize inputs to prevent SQL injection
     $nomeU = mysqli_real_escape_string($conn, $_POST['nameU']);
-    #$sobrenomeU = mysqli_real_escape_string($conn, $_POST['sobrenome']);
+    $sobrenomeU = mysqli_real_escape_string($conn, $_POST['sobrenomeU']);
     //$cpfU = mysqli_real_escape_string($conn, $_POST['cpfU']);
     $emailU = mysqli_real_escape_string($conn, $_POST['emailU']);
     $numeroU = mysqli_real_escape_string($conn, $_POST['phonenumberU']);
@@ -39,12 +39,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userData = $result->fetch_assoc();
         $pass = $userData['senha'];
     }
+    
     if (md5($newPass) == $pass || $newPass == ""){
         $newPass = $pass;
     }
-// Prepare and execute SQL query to update user's email
-    $sqlU = "UPDATE usuario SET 
-                nome = '$nomeU', 
+
+    if ($_FILES['Imagem']['size'] == 0) {
+        echo "sem img";
+        $sqlU = "UPDATE usuario SET 
+                nome = '$nomeU',
+                sobrenome = '$sobrenomeU',
                 email = '$emailU',
                 telefone = '$numeroU', 
                 cep = '$cepU', 
@@ -55,10 +59,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 escolaridade = '$educacaoU', 
                 nacionalidade = '$nacionalidadeU', 
                 ocupacao = '$ocupacaoU', 
-                experienciaPrevia = '$experienciaU', 
+                experienciaPrevia = '$experienciaU',
                 senha = md5('$newPass') 
             WHERE 
                 id_user = '$userID'";
+    } else {
+        echo "com img img";
+        $profilePictureU = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));             
+        $sqlU = "UPDATE usuario SET 
+                nome = '$nomeU',
+                sobrenome = '$sobrenomeU',
+                email = '$emailU',
+                telefone = '$numeroU', 
+                cep = '$cepU', 
+                cidade = '$cidadeU', 
+                dataDeNascimento = '$dataNascimentoU', 
+                genero = '$generoU', 
+                estadoCivil = '$estadoCivilU', 
+                escolaridade = '$educacaoU', 
+                nacionalidade = '$nacionalidadeU', 
+                ocupacao = '$ocupacaoU', 
+                experienciaPrevia = '$experienciaU',
+                foto = '$profilePictureU',
+                senha = md5('$newPass')
+            WHERE 
+                id_user = '$userID'";
+    }
+// Prepare and execute SQL query to update user's email
 $stmt = $conn->prepare($sqlU);
 // Execute the update statement
 if ($stmt->execute()) {

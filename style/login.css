@@ -1,24 +1,24 @@
 .login-background {
-  padding-top: 17vh;
-  width: 100%;
+    padding-top: 10vh;
+    width: 100%;
 }
 
 .login-form-container {
-  width: 370px;
-  min-width: 300px;
-  padding-bottom: 20px;
+    width: 370px;
+    min-width: 300px;
+    padding-bottom: 20px;
 }
 
 .submit {
-  width: 100%;
-  background-color: #000;
-  color: #fff;
-  margin-top: 20px;
-  padding: 12px;
-  border: none;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
 }
 
 .foot {
-  position: absolute;
-  bottom: 0;
+    position: absolute;
+    bottom: 0;
 }
