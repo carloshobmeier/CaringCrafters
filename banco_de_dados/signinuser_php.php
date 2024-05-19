@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ocupacaoU = mysqli_real_escape_string($conn, $_POST['occupationU']);
     $experienciaU = mysqli_real_escape_string($conn, $_POST['volunteering_experienceU']);
     $pass1U = mysqli_real_escape_string($conn, $_POST['pass1U']);
-    $profilePictureU = NULL;
 
     $query = "SELECT * FROM usuario WHERE cpf = '$cpfU'";
     $resultCPF = mysqli_query($conn, $query);
@@ -51,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "This CPF is available.";
 
         if ($_FILES['Imagem']['size'] == 0) {
-            $profilePictureU = NULL;
+            $profilePictureU = addslashes(file_get_contents("../assets/images/pessoa.jpg"));
         } else {                             
             $profilePictureU = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
         }
