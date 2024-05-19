@@ -72,7 +72,7 @@ $conn->close();
       <div class="modal-body">
         <!-- Conteúdo do modal: imagem do usuário e botões -->
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
-          <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>"  alt="User Avatar" class="navbar-profile-pic"></a>
+          <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>"  alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;"></a>
           <h4>Bem-vindo(a), <?php echo $_SESSION['nome']; ?></h4>
           <div class="d-flex">
             <a href="<?php if($_SESSION['tipoCadastro'] === 'usuario') {
