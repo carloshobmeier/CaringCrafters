@@ -207,13 +207,13 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
         event.preventDefault();
         console.log(id)
         Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "Deseja deletar seu evento?",
+        text: "Essa acao nao pode ser revertida!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "Sim, deletar!"
         }).then((result) => {
         if (result.isConfirmed) {
             document.getElementById("form"+id).submit()}
@@ -223,8 +223,8 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
 
 function deletedEvent() {
     swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
+            title: "Deletado!",
+            text: "Seu evento foi deletado com sucesso.",
             icon: "success"
             });
 }

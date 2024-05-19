@@ -43,7 +43,14 @@ function cpfAlreadyUsed() {
           icon: "warning"
           });
 }
- 
+
+function cnpjAlreadyUsed() {
+  swal.fire({
+          title: "CNPJ Duplicado!",
+          text: "O CNPJ inserido ja esta cadastrado em nosso sistema, favor inserir outro ou entrar em contato com nosso suporte.",
+          icon: "warning"
+          });
+}
 
 function validateFormVol(id) {
   let camposVol = document.getElementById(id).querySelectorAll("input");
