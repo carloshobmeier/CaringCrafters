@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<?php session_start();
-echo $_SESSION['dataNascimentoU'];?>
+<?php session_start();?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -203,7 +202,7 @@ echo $_SESSION['dataNascimentoU'];?>
       </div>
 
       <div id="institution" class="d-none content container container-fluid">
-    <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signininstitution_php.php">
+    <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signininstitution_php.php" enctype="multipart/form-data">
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Informe seu e-mail:<span class="requir">*</span></strong></label>
@@ -241,10 +240,15 @@ echo $_SESSION['dataNascimentoU'];?>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
-            <div class="d-flex flex-column col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12">
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cnpj"><strong>CNPJ:<span class="requir">*</span></strong></label>
-                <input data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-12 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
+                <input data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
                 <div class="institution_cnpj"></div>
+            </div>
+            <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                 <label for="Imagem"><strong>Insira uma foto de perfil:</strong></label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                  <input type="file" id="Imagem" name="Imagem" accept="imagem/*" onchange="validaImagem(this);"></label>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
