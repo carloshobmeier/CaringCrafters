@@ -40,6 +40,8 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
                 include("./components/navbar_logado_usuario.php");
             } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
                 include("./components/navbar_logado_instituicao.php");
+            } elseif ($_SESSION['tipoCadastro'] === 'admin') {
+                include("./components/navbar_logado_admin.php");
             }
         }
         ?>

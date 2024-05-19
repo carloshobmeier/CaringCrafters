@@ -9,7 +9,7 @@
     $sql = "SELECT * FROM usuario WHERE email = '$email' AND senha = md5('$senha')";
     $result = mysqli_query($conn, $sql);
     
-    // Ordem de procura: voluntário -> Instituição
+    // Ordem de procura: voluntário -> Instituição -> admin
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         
@@ -32,10 +32,24 @@
             $_SESSION['nome'] = $row['nomeFantasia'];
             header("Location:../home.php");
         } else {
-            session_start();
-            $_SESSION['loginEmail'] = $email;
-            
-            header("Location:../login.php");
+            echo $senha;
+            $sql = "SELECT * FROM administrador WHERE email = '$email' AND senha = md5('$senha')";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) === 1) {
+              $row = mysqli_fetch_assoc($result);
+              
+              session_start();
+              $_SESSION['tipoCadastro'] = 'admin';
+              $_SESSION['id'] = $row['id_admin'];
+              $_SESSION['nome'] = 'Administrador';
+              header("Location:../admin_users.php");
+            } else {
+              session_start();
+              $_SESSION['loginEmail'] = $email;
+              
+              header("Location:../login.php");
+            }
         }
     }
   }
