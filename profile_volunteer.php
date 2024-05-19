@@ -213,7 +213,13 @@ else{
                 
                 <div class="text-start">
                     <h5>Sobre</h5>
-                    <p class="fw-normal" style="font-size: 15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus odio rerum? Eveniet laborum maiores, ipsa quasi qui quibusdam asperiores, in id saepe, expedita nesciunt amet enim neque voluptates facilis.</p>
+                    <p class="fw-normal" style="font-size: 15px"><?php 
+                            if (strlen($experienciaPrevia) > 0) {
+                                echo $experienciaPrevia;
+                            } else {
+                                echo "Nenhuma informação disponível.";
+                            }    
+                        ?></p>
                 </div>
             </div>
             <div class="py-4" style="width: 55%; max-width: 835px">

@@ -36,6 +36,7 @@ CREATE TABLE Instituicao (
     capitalSocial VARCHAR(100) NOT NULL,
     horaInicial TIME,
     horaFinal TIME,
+    sobre TEXT,
     foto MEDIUMBLOB NULL,
     senha VARCHAR(32) NOT NULL
 );

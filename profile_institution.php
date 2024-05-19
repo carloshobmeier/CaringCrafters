@@ -27,6 +27,7 @@ else{
         $horaInicial = $row['horaInicial'];
         $horaFinal = $row['horaFinal'];
         $fotoPerfil = $row['foto'];
+        $sobre = $row['sobre'];
 
     } else {
         // No user found with the provided ID
@@ -84,7 +85,15 @@ else{
                 <button type="button" class="btn btn-outline-dark mb-4" style="font-size: 14px">Editar Perfil</button>
                 <div class="text-start">
                     <h5>Sobre</h5>
-                    <p class="fw-normal" style="font-size: 15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus odio rerum? Eveniet laborum maiores, ipsa quasi qui quibusdam asperiores, in id saepe, expedita nesciunt amet enim neque voluptates facilis.</p>
+                    <p class="fw-normal" style="font-size: 15px">
+                        <?php 
+                            if (strlen($sobre) > 0) {
+                                echo $sobre;
+                            } else {
+                                echo "Nenhuma informação disponível.";
+                            }    
+                        ?>
+                    </p>
                 </div>
             </div>
             <div class="py-4 d-flex flex-column row-gap-4" style="width: 45%">

@@ -137,7 +137,7 @@
             </div>
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-12">
-                <label for="volunteering_experience"><strong>Você tem alguma experiência prévia com voluntariado?</strong></label>
+                <label for="volunteering_experience"><strong>Gostaria de contar um pouco sobre você?</strong></label>
                 <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU"><?php echo isset($_SESSION['experienciaU']) ? $_SESSION['experienciaU'] : ""; ?></textarea>
               </div>
             </div>
@@ -283,6 +283,12 @@
                   </div>
                 </div>
             </div>
+        </div>
+        <div class="d-flex flex-row col-12">
+          <div class="d-flex flex-column col-12">
+            <label for="aboutI"><strong>Gostaria de contar um pouco sobre a instituição?</strong></label>
+            <textarea class="form-control" id="aboutI" rows="4" name="aboutI"><?php echo isset($_SESSION['aboutI']) ? $_SESSION['aboutI'] : ""; ?></textarea>
+          </div>
         </div>
         <div class="d-flex flex-row col-12">
             <div class="d-flex flex-column col-12">
