@@ -136,11 +136,13 @@ ALTER TABLE Evento ADD CONSTRAINT FK_Evento_2
  
 ALTER TABLE Feedback_dar ADD CONSTRAINT FK_Feedback_dar_2
     FOREIGN KEY (fk_Usuario_id_user)
-    REFERENCES Usuario (id_user);
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE;
  
 ALTER TABLE Feedback_dar ADD CONSTRAINT FK_Feedback_dar_3
     FOREIGN KEY (fk_Instituicao_id_Inst)
-    REFERENCES Instituicao (id_Inst);
+    REFERENCES Instituicao (id_Inst)
+    ON DELETE CASCADE;
  
 ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_2
     FOREIGN KEY (fk_Postagem_id_post)
@@ -149,7 +151,8 @@ ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_2
  
 ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_3
     FOREIGN KEY (fk_Usuario_id_user)
-    REFERENCES Usuario (id_user);
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE;
  
 ALTER TABLE Vaga ADD CONSTRAINT FK_Vaga_2
     FOREIGN KEY (fk_Instituicao_id_Inst)
@@ -159,32 +162,32 @@ ALTER TABLE Vaga ADD CONSTRAINT FK_Vaga_2
 ALTER TABLE Conectou_com ADD CONSTRAINT FK_Conectou_com_1
     FOREIGN KEY (fk_Usuario_id_user)
     REFERENCES Usuario (id_user)
-    ON DELETE restrict;
+    ON DELETE CASCADE;
  
 ALTER TABLE Conectou_com ADD CONSTRAINT FK_Conectou_com_2
     FOREIGN KEY (fk_Instituicao_id_Inst)
     REFERENCES Instituicao (id_Inst)
-    ON DELETE restrict;
+    ON DELETE CASCADE;
 
 ALTER TABLE TemInteresse ADD CONSTRAINT FK_TemInteresse_1
     FOREIGN KEY (fk_Usuario_id_user)
     REFERENCES Usuario (id_user)
-    ON DELETE restrict;
+    ON DELETE CASCADE;
  
 ALTER TABLE TemInteresse ADD CONSTRAINT FK_TemInteresse_2
     FOREIGN KEY (fk_Area_id_area)
     REFERENCES Area (id_area)
-    ON DELETE restrict;
+    ON DELETE CASCADE;
   
 ALTER TABLE Atua ADD CONSTRAINT FK_Atua_1
     FOREIGN KEY (fk_Area_id_area)
     REFERENCES Area (id_area)
-    ON DELETE RESTRICT;
+    ON DELETE CASCADE;
   
 ALTER TABLE Atua ADD CONSTRAINT FK_Atua_2
     FOREIGN KEY (fk_Instituicao_id_Inst)
     REFERENCES Instituicao (id_Inst)
-    ON DELETE restrict;
+    ON DELETE CASCADE;
     
     
 -- INSERTS

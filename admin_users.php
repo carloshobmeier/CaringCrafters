@@ -48,7 +48,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
             include("./components/navbar_logado_admin.php");
         }
         ?>
-        <div class="">
+        <div class="mb-5">
             <table>
                 <tr>
                     <th>Nome</th>
@@ -58,7 +58,6 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
                     <th>Gênero</th>
                     <th>Escolaridade</th>
                     <th>Cidade</th>
-                    <!-- <th></th> -->
                     <th></th>
                 </tr>
                 <?php
@@ -84,15 +83,24 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
                         <td><?php echo $row["escolaridade"] ?></td>
                         <td><?php echo $row["cidade"] ?></td>
                         
-                        <!-- <td>
-                            <a href="">
-                                Editar
-                            </a>
-                        </td> -->
                         <td>
-                            <a href="">
-                                Remover
-                            </a>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['id_user'] ?>">
+                              Remover
+                            </button>
+                            <div class="modal fade" id="exampleModal<?php echo $row['id_user'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel<?php echo $row['id_user'] ?>" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel<?php echo $row['id_user'] ?>">Tem certeza que deseja remover isso? </h1>
+                                </div>
+                                
+                                <div class="modal-footer mx-auto">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                                    <a href="./banco_de_dados/adminRemoveUser_php.php?id=<?php echo $row['id_user'] ?>"><button type="button" class="btn btn-success">Sim</button></a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
                         </td>
                     </tr>
                     <?php
