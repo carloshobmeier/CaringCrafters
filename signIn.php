@@ -76,7 +76,7 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-              <input value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU">
+              <input value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU">
               <div class="cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -328,6 +328,7 @@
         </div>
       <?php include("./components/footer.php")?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://unpkg.com/imask"></script>
 
       <script src="./assets/scripts/signin.js"></script>
       <?php
