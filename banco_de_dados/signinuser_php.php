@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ocupacaoU = mysqli_real_escape_string($conn, $_POST['occupationU']);
     $experienciaU = mysqli_real_escape_string($conn, $_POST['volunteering_experienceU']);
     $pass1U = mysqli_real_escape_string($conn, $_POST['pass1U']);
+    $profilePictureU = NULL;
 
     $query = "SELECT * FROM usuario WHERE cpf = '$cpfU'";
     $resultCPF = mysqli_query($conn, $query);
@@ -48,8 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // CPF does not exist, proceed with your logic
         echo "This CPF is available.";
+
+        if ($_FILES['Imagem']['size'] == 0) {
+            $profilePictureU = NULL;
+        } else {                             
+            $profilePictureU = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
+        }
+
         // Construct the SQL query
-        $sqlU = "INSERT INTO usuario (nome, sobrenome, cpf, email, telefone, cep, cidade,dataDeNascimento, genero, estadoCivil, escolaridade, nacionalidade, ocupacao, experienciaPrevia, senha) VALUES ('$nomeU', '$sobrenomeU', '$cpfU', '$emailU', '$numeroU', '$cepU','$cidadeU', '$dataNascimentoU', '$generoU', '$estadoCivilU', '$educacaoU', '$nacionalidadeU', '$ocupacaoU', '$experienciaU', md5('$pass1U'))";
+        $sqlU = "INSERT INTO usuario (nome, sobrenome, cpf, email, telefone, cep, cidade,dataDeNascimento, genero, estadoCivil, escolaridade, nacionalidade, ocupacao, experienciaPrevia, foto, senha) VALUES ('$nomeU', '$sobrenomeU', '$cpfU', '$emailU', '$numeroU', '$cepU','$cidadeU', '$dataNascimentoU', '$generoU', '$estadoCivilU', '$educacaoU', '$nacionalidadeU', '$ocupacaoU', '$experienciaU', '$profilePictureU' ,md5('$pass1U'))";
 
         // Execute the query
         if (mysqli_query($conn, $sqlU)) {   

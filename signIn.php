@@ -36,7 +36,7 @@ echo $_SESSION['dataNascimentoU'];?>
       </div>
 
       <div id="volunteer" class="d-none content container container-fluid">
-        <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signinuser_php.php">
+        <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signinuser_php.php" enctype="multipart/form-data">
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Informe seu nome:<span class="requir">*</span></strong></label>
@@ -129,6 +129,11 @@ echo $_SESSION['dataNascimentoU'];?>
                 <input value="<?php echo isset($_SESSION['ocupacaoU']) ? $_SESSION['ocupacaoU'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="occupation" name="occupationU">
                 <div class="occupation"></div>
               </div>
+              <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12 mt-2">
+                  <label for="Imagem"><strong>Insira uma foto de perfil:</strong></label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                  <input type="file" id="Imagem" name="Imagem" accept="imagem/*" onchange="validaImagem(this);"></label>
+                </div>
             </div>
             <div class="d-flex flex-row col-12">
               <div class="d-flex flex-column col-12">
