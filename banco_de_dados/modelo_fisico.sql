@@ -22,6 +22,12 @@ CREATE TABLE Usuario (
     id_user INTEGER PRIMARY KEY AUTO_INCREMENT
 );
 
+CREATE TABLE Participa_evento (
+    fk_Usuario_id_user INTEGER,
+    fk_Evento_id_evento INTEGER,
+    PRIMARY KEY (fk_Usuario_id_user, fk_Evento_id_evento)
+);
+
 CREATE TABLE Instituicao (
     id_Inst INTEGER PRIMARY KEY AUTO_INCREMENT,
     nomeFantasia VARCHAR(100) NOT NULL,
@@ -73,37 +79,9 @@ CREATE TABLE Evento (
     fk_Instituicao_id_Inst INTEGER
 );
 
-CREATE TABLE Feedback_dar (
-    id_feedback INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    autor VARCHAR(100),
-    destinatario VARCHAR(100),
-    conteudo TEXT,
-    fk_Usuario_id_user INTEGER,
-    fk_Instituicao_id_Inst INTEGER
-);
-
-CREATE TABLE Comentario (
-    id_comentario INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    conteudo TEXT NOT NULL,
-    dataPostagem DATETIME,
-    fk_Postagem_id_post INTEGER,
-    fk_Usuario_id_user INTEGER
-);
-
 CREATE TABLE Area (
     id_area INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
     tituloCompleto TEXT
-);
-
-CREATE TABLE Vaga (
-    id_vaga INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    titulo VARCHAR(100) NOT NULL,
-    descricao VARCHAR(200) NOT NULL,
-    dataPostado DATE,
-    dataLimite DATE,
-    status VARCHAR(50) NOT NULL,
-    anexo VARCHAR(100),
-    fk_Instituicao_id_Inst INTEGER
 );
 
 CREATE TABLE Conectou_com (
@@ -134,31 +112,6 @@ ALTER TABLE Evento ADD CONSTRAINT FK_Evento_2
     REFERENCES Instituicao (id_Inst)
     ON DELETE CASCADE;
  
-ALTER TABLE Feedback_dar ADD CONSTRAINT FK_Feedback_dar_2
-    FOREIGN KEY (fk_Usuario_id_user)
-    REFERENCES Usuario (id_user)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Feedback_dar ADD CONSTRAINT FK_Feedback_dar_3
-    FOREIGN KEY (fk_Instituicao_id_Inst)
-    REFERENCES Instituicao (id_Inst)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_2
-    FOREIGN KEY (fk_Postagem_id_post)
-    REFERENCES Postagem (id_post)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_3
-    FOREIGN KEY (fk_Usuario_id_user)
-    REFERENCES Usuario (id_user)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Vaga ADD CONSTRAINT FK_Vaga_2
-    FOREIGN KEY (fk_Instituicao_id_Inst)
-    REFERENCES Instituicao (id_Inst)
-    ON DELETE CASCADE;
- 
 ALTER TABLE Conectou_com ADD CONSTRAINT FK_Conectou_com_1
     FOREIGN KEY (fk_Usuario_id_user)
     REFERENCES Usuario (id_user)
@@ -177,6 +130,16 @@ ALTER TABLE TemInteresse ADD CONSTRAINT FK_TemInteresse_1
 ALTER TABLE TemInteresse ADD CONSTRAINT FK_TemInteresse_2
     FOREIGN KEY (fk_Area_id_area)
     REFERENCES Area (id_area)
+    ON DELETE CASCADE;
+    
+ALTER TABLE Participa_evento ADD CONSTRAINT FK_PaticipaEvento_1
+	FOREIGN KEY (fk_Usuario_id_user)
+	REFERENCES Usuario (id_user)
+	ON DELETE CASCADE;
+ 
+ALTER TABLE Participa_evento ADD CONSTRAINT FK_PaticipaEvento_2
+    FOREIGN KEY (fk_Evento_id_evento)
+    REFERENCES Evento (id_evento)
     ON DELETE CASCADE;
   
 ALTER TABLE Atua ADD CONSTRAINT FK_Atua_1
@@ -310,24 +273,6 @@ INSERT INTO Postagem (id_post, conteudo, dataPostagem, imagem, fk_Instituicao_id
 (19, 'Hoje realizamos uma tarde recreativa para os adolescentes da comunidade. Agradecemos aos voluntários pela disposição!', '2024-04-02 14:00:00', 'imagem19.jpg', 19),
 (20, 'Participe de nossa próxima campanha de doação de alimentos não perecíveis. Juntos podemos ajudar quem mais precisa!', '2024-04-03 12:00:00', 'imagem20.jpg', 20);
 
--- na tabela comentario:
-INSERT INTO Comentario (id_comentario, conteudo, dataPostagem, fk_Postagem_id_post, fk_Usuario_id_user) VALUES
-(1, 'Ótimo conteúdo! Parabéns!', '2024-04-02 10:15:00', 1, 1),
-(2, 'Gostei muito da sua postagem!', '2024-04-03 14:30:00', 2, 2),
-(3, 'Que iniciativa incrível!', '2024-04-04 09:45:00', 3, 3),
-(4, 'Excelente trabalho!', '2024-04-05 11:20:00', 4, 4),
-(5, 'Muito inspirador!', '2024-04-06 13:55:00', 5, 5),
-(6, 'Parabéns pela iniciativa!', '2024-04-07 15:10:00', 6, 6),
-(7, 'Estou adorando acompanhar!', '2024-04-08 12:30:00', 7, 7),
-(8, 'Que bela contribuição!', '2024-04-09 10:45:00', 8, 8),
-(9, 'Muito interessante!', '2024-04-10 14:25:00', 9, 9),
-(10, 'Continuem assim!', '2024-04-11 11:40:00', 10, 10),
-(11, 'Incrível!', '2024-04-12 09:20:00', 11, 1),
-(12, 'Ótimo trabalho!', '2024-04-13 13:15:00', 12, 2),
-(13, 'Estou aprendendo muito!', '2024-04-14 15:50:00', 13, 3),
-(14, 'Que legal!', '2024-04-15 12:10:00', 14, 4),
-(15, 'Muito bom!', '2024-04-16 10:30:00', 15, 5);
-
 -- na tabela conectou_com:
 INSERT INTO Conectou_com (fk_Usuario_id_user, fk_Instituicao_id_Inst) VALUES
 (1, 1),
@@ -374,39 +319,6 @@ INSERT INTO Evento (id_evento, rua, numero, cidade, cep, dataPostagem, dataEvent
 (19, 'Praça da Cultura', '753', 'Manaus', '87654-321', '2024-04-02', '2024-07-15', 'Venha participar do nosso sarau literário. Traga seus poemas e contos para compartilhar!', 30, '18:00:00', '20:00:00', 9, 'Sarau Literário', NULL),
 (20, 'Avenida da Integração', '258', 'Brasília', '23456-789', '2024-04-04', '2024-07-20', 'Participe da nossa caminhada pela paz. Juntos podemos construir um mundo melhor!', 50, '07:00:00', '10:00:00', 10, 'Caminhada pela Paz', NULL);
 
--- na tabela feedback_dar:
-INSERT INTO Feedback_dar (id_feedback, autor, destinatario, conteudo, fk_Usuario_id_user, fk_Instituicao_id_Inst) VALUES
-(1, 'João', 'Maria', 'Parabéns pelo excelente trabalho voluntário na última campanha de arrecadação de alimentos!', 1, 20),
-(2, 'Ana', 'Carlos', 'Agradeço imensamente pela sua dedicação na organização do evento de conscientização ambiental.', 2, 19),
-(3, 'Pedro', 'Fernanda', 'Seu apoio na última campanha de doação de sangue foi fundamental. Muito obrigado!', 3, 18),
-(4, 'Carla', 'Paulo', 'Agradeço pela sua colaboração na limpeza do parque. Seu empenho faz a diferença!', 4, 17),
-(5, 'Mariana', 'Lucas', 'Parabéns pela sua atuação como monitor de atividades recreativas para idosos. Seu trabalho é inspirador!', 5, 16),
-(6, 'José', 'Juliana', 'Agradeço pelo seu apoio na organização do evento beneficente. Sua dedicação é admirável!', 6, 15),
-(7, 'Fernando', 'Amanda', 'Seu comprometimento na campanha de vacinação animal é digno de reconhecimento. Muito obrigado!', 7, 14),
-(8, 'Rafael', 'Patrícia', 'Agradeço pela sua disposição em ministrar aulas de reforço escolar para crianças carentes. Você faz a diferença!', 8, 13),
-(9, 'Camila', 'Luciana', 'Parabéns pelo seu trabalho voluntário na última visita ao asilo. Seu carinho com os idosos é notável!', 9, 12),
-(10, 'Rodrigo', 'Giovana', 'Agradeço pela sua colaboração na organização da campanha de conscientização sobre saúde mental. Seu trabalho é essencial!', 10, 11),
-(11, 'Patricia', 'Josué', 'Seu auxílio na última campanha de arrecadação de agasalhos foi muito importante. Muito obrigado!', 11, 10),
-(12, 'Daniel', 'Monica', 'Parabéns pela sua dedicação na aula de informática básica para os moradores do bairro. Seu conhecimento é valioso!', 12, 9),
-(13, 'Larissa', 'Eduardo', 'Agradeço pelo seu apoio na organização da visita aos pacientes do hospital. Seu cuidado com o próximo é admirável!', 13, 8),
-(14, 'Sandra', 'Felipe', 'Parabéns pelo seu trabalho na campanha de arrecadação de brinquedos para o dia das crianças. Seu gesto fez muitas crianças felizes!', 14, 7),
-(15, 'Gustavo', 'Vanessa', 'Agradeço pela sua participação na limpeza das praias. Sua dedicação em preservar o meio ambiente é louvável!', 15, 6),
-(16, 'Carolina', 'Lucas', 'Parabéns pelo seu comprometimento na aula de música para as crianças do abrigo. Seu talento musical é inspirador!', 16, 5),
-(17, 'Henrique', 'Aline', 'Agradeço pela sua ajuda na organização do evento beneficente. Seu empenho contribuiu para o sucesso do evento!', 17, 4),
-(18, 'Juliana', 'Ricardo', 'Parabéns pelo seu trabalho na tarde recreativa para os adolescentes da comunidade. Sua interação com os jovens é fundamental!', 18, 3),
-(19, 'Lucas', 'Carla', 'Agradeço pelo seu apoio na campanha de doação de alimentos não perecíveis. Sua solidariedade é inspiradora!', 19, 2),
-(20, 'Amanda', 'Marcelo', 'Parabéns pela sua dedicação na última campanha de conscientização sobre os direitos das mulheres. Seu engajamento é notável!', 20, 1),
-(21, 'João', 'Maria', 'Seu apoio na organização da última campanha de arrecadação de alimentos foi incrível. Obrigado pelo empenho!', 5, 1),
-(22, 'Ana', 'Carlos', 'Parabéns pelo seu comprometimento na campanha de conscientização ambiental. Seu trabalho é fundamental!', 7, 2),
-(23, 'Pedro', 'Fernanda', 'Agradeço pela sua dedicação na última campanha de doação de sangue. Seu gesto salvou vidas!', 1, 3),
-(24, 'Carla', 'Paulo', 'Parabéns pela sua colaboração na limpeza do parque. Seu esforço faz a diferença!', 2, 4),
-(25, 'Mariana', 'Lucas', 'Agradeço pelo seu trabalho como monitor de atividades recreativas para idosos. Sua dedicação é admirável!', 3, 5),
-(26, 'José', 'Juliana', 'Parabéns pelo seu apoio na organização do evento beneficente. Seu empenho fez o evento ser um sucesso!', 7, 6),
-(27, 'Fernando', 'Amanda', 'Agradeço pela sua participação na campanha de vacinação animal. Seu comprometimento é digno de reconhecimento!', 9, 7),
-(28, 'Rafael', 'Patrícia', 'Parabéns pela sua dedicação em ministrar aulas de reforço escolar para crianças carentes. Seu trabalho é inspirador!', 12, 8),
-(29, 'Camila', 'Luciana', 'Agradeço pelo seu trabalho na última visita ao asilo. Seu carinho com os idosos é fundamental!', 2, 9),
-(30, 'Rodrigo', 'Giovana', 'Parabéns pela sua colaboração na organização da campanha de conscientização sobre saúde mental. Seu esforço é notável!', 15, 10);
-
 -- na tabela teminteresse:
 INSERT INTO TemInteresse (fk_Usuario_id_user, fk_Area_id_area) VALUES
 (1, 1),
@@ -430,45 +342,3 @@ INSERT INTO TemInteresse (fk_Usuario_id_user, fk_Area_id_area) VALUES
 (18, 20),
 (19, 12),
 (20, 19);
-
--- na tabela vaga:
-INSERT INTO Vaga (id_vaga, titulo, descricao, dataPostado, dataLimite, status, anexo, fk_Instituicao_id_Inst) VALUES
-(1, 'Voluntário para Atividades Recreativas', 'Procuramos voluntários para auxiliar em atividades recreativas para crianças carentes. Experiência prévia não é necessária, apenas disposição e amor pelas crianças.', '2024-04-01', '2024-05-01', 'Aberta', 'Nenhum', 1),
-(2, 'Assistente de Alimentação', 'Precisamos de voluntários para auxiliar na preparação e distribuição de alimentos para moradores de rua. As atividades ocorrem todas as quintas-feiras à noite.', '2024-03-28', '2024-04-28', 'Aberta', 'Nenhum', 2),
-(3, 'Instrutor de Informática', 'Estamos em busca de voluntários para ministrar aulas de informática básica para idosos. As aulas acontecem duas vezes por semana, no período da tarde.', '2024-03-30', '2024-04-30', 'Aberta', 'Nenhum', 3),
-(4, 'Apoio em Atividades Ambientais', 'Procuramos voluntários para auxiliar em atividades de preservação ambiental em parques da cidade. As atividades incluem limpeza de áreas verdes e sensibilização da comunidade.', '2024-04-02', '2024-05-02', 'Aberta', 'Nenhum', 4),
-(5, 'Tutor para Reforço Escolar', 'Buscamos voluntários para oferecer reforço escolar em português e matemática para crianças em situação de vulnerabilidade. As aulas serão realizadas duas vezes por semana.', '2024-04-03', '2024-05-03', 'Aberta', 'Nenhum', 5),
-(6, 'Cuidador de Animais', 'Precisamos de voluntários para auxiliar nos cuidados diários de cães e gatos em nosso abrigo. As atividades incluem alimentação, limpeza dos espaços e interação com os animais.', '2024-03-29', '2024-04-29', 'Aberta', 'Nenhum', 6),
-(7, 'Monitor de Atividades Recreativas', 'Estamos em busca de voluntários para monitorar atividades recreativas para idosos em nosso centro de convivência. As atividades incluem jogos, danças e exercícios físicos.', '2024-04-01', '2024-05-01', 'Aberta', 'Nenhum', 7),
-(8, 'Apoio em Campanha de Vacinação', 'Procuramos voluntários para auxiliar em uma campanha de vacinação contra a gripe. As atividades incluem organização da fila, triagem e encaminhamento das pessoas.', '2024-03-30', '2024-04-30', 'Aberta', 'Nenhum', 8),
-(9, 'Auxiliar de Cuidados em Asilo', 'Precisamos de voluntários para auxiliar nos cuidados diários de idosos em nosso asilo. As atividades incluem auxílio na alimentação, higiene pessoal e interação com os residentes.', '2024-04-02', '2024-05-02', 'Aberta', 'Nenhum', 9),
-(10, 'Professor de Artesanato', 'Buscamos voluntários para ministrar oficinas de artesanato para mulheres em situação de risco. As atividades visam proporcionar uma fonte de renda alternativa e empoderamento feminino.', '2024-04-03', '2024-05-03', 'Aberta', 'Nenhum', 10),
-(11, 'Voluntário para Visitas Hospitalares', 'Procuramos voluntários para realizar visitas a pacientes hospitalizados, oferecendo apoio emocional e auxílio em pequenas tarefas. É necessário disponibilidade semanal.', '2024-03-28', '2024-04-28', 'Aberta', 'Nenhum', 11),
-(12, 'Apoio em Campanha de Doação de Sangue', 'Estamos em busca de voluntários para auxiliar em uma campanha de doação de sangue. As atividades incluem recepção dos doadores, acompanhamento pós-doação e organização do espaço.', '2024-04-01', '2024-05-01', 'Aberta', 'Nenhum', 12),
-(13, 'Instrutor de Capacitação Profissional', 'Precisamos de voluntários para ministrar cursos de capacitação profissional para jovens em situação de vulnerabilidade. As aulas serão realizadas à noite.', '2024-03-30', '2024-04-30', 'Aberta', 'Nenhum', 13),
-(14, 'Voluntário para Acompanhamento Escolar', 'Buscamos voluntários para acompanhar crianças em situação de risco em suas atividades escolares. É necessário disponibilidade durante a semana.', '2024-04-02', '2024-05-02', 'Aberta', 'Nenhum', 14),
-(15, 'Apoio em Eventos Sociais', 'Procuramos voluntários para auxiliar na organização e execução de eventos sociais em nossa comunidade. As atividades incluem montagem de estrutura, recepção de convidados e apoio logístico.', '2024-04-03', '2024-05-03', 'Aberta', 'Nenhum', 15),
-(16, 'Instrutor de Atividades Físicas', 'Estamos em busca de voluntários para ministrar atividades físicas para idosos em nosso centro de convivência. As atividades incluem alongamento, caminhada e exercícios leves.', '2024-03-28', '2024-04-28', 'Aberta', 'Nenhum', 16),
-(17, 'Cuidador de Plantas', 'Precisamos de voluntários para cuidar de plantas em espaços públicos da cidade. As atividades incluem rega, poda e adubação das plantas.', '2024-04-01', '2024-05-01', 'Aberta', 'Nenhum', 17),
-(18, 'Apoio em Campanha de Conscientização', 'Buscamos voluntários para auxiliar em uma campanha de conscientização sobre doenças crônicas. As atividades incluem distribuição de materiais informativos e orientação ao público.', '2024-03-30', '2024-04-30', 'Aberta', 'Nenhum', 18),
-(19, 'Auxiliar em Atividades Recreativas para Crianças', 'Procuramos voluntários para auxiliar em atividades recreativas para crianças em abrigos. As atividades incluem jogos, brincadeiras e contação de histórias.', '2024-04-02', '2024-05-02', 'Aberta', 'Nenhum', 19),
-(20, 'Apoio em Campanha de Doação de Alimentos', 'Estamos em busca de voluntários para auxiliar em uma campanha de arrecadação e distribuição de alimentos para famílias carentes. As atividades incluem coleta, triagem e entrega dos alimentos.', '2024-04-03', '2024-05-03', 'Aberta', 'Nenhum', 20),
-(21, 'Instrutor de Dança para Idosos', 'Precisamos de voluntários para ministrar aulas de dança para idosos em nosso centro de convivência. As atividades visam promover a socialização e o bem-estar dos participantes.', '2024-03-28', '2024-04-28', 'Aberta', 'Nenhum', 7),
-(22, 'Apoio em Atividades Culturais', 'Procuramos voluntários para auxiliar na organização e execução de atividades culturais em nossa comunidade. As atividades incluem exposições, shows e apresentações artísticas.', '2024-04-01', '2024-05-01', 'Aberta', 'Nenhum', 6),
-(23, 'Instrutor de Música', 'Estamos em busca de voluntários para ministrar aulas de música para crianças em comunidades carentes. As aulas podem incluir violão, teclado, canto, entre outros instrumentos.', '2024-03-30', '2024-04-30', 'Aberta', 'Nenhum', 1),
-(24, 'Voluntário para Atividades de Lazer', 'Buscamos voluntários para auxiliar em atividades de lazer para idosos em asilos. As atividades incluem jogos, passeios e eventos temáticos.', '2024-04-02', '2024-05-02', 'Aberta', 'Nenhum', 5),
-(25, 'Apoio em Eventos Esportivos', 'Procuramos voluntários para auxiliar na organização e execução de eventos esportivos em nossa comunidade. As atividades incluem preparação do local, apoio aos participantes e controle de cronograma.', '2024-04-03', '2024-05-03', 'Aberta', 'Nenhum', 5),
-(26, 'Apoio em Campanha de Vacinação Animal', 'Buscamos voluntários para auxiliar em campanha de vacinação e conscientização sobre cuidados com animais de estimação. As atividades incluem organização do evento e orientação aos interessados.', '2024-03-28', '2024-04-28', 'Aberta', 'Nenhum', 4),
-(27, 'Voluntário para Apoio a Refugiados', 'Precisamos de voluntários para auxiliar na integração de refugiados em nossa comunidade. As atividades incluem apoio jurídico, orientação cultural e busca por moradia.', '2024-04-01', '2024-05-01', 'Aberta', 'Nenhum', 3),
-(28, 'Apoio em Campanha de Doação de Brinquedos', 'Buscamos voluntários para auxiliar em uma campanha de arrecadação e distribuição de brinquedos para crianças carentes. As atividades incluem divulgação, coleta e organização dos brinquedos.', '2024-03-30', '2024-04-30', 'Aberta', 'Nenhum', 3),
-(29, 'Instrutor de Atividades Culturais', 'Estamos em busca de voluntários para ministrar oficinas de atividades culturais para adolescentes em situação de risco. As atividades incluem dança, teatro, pintura, entre outras.', '2024-04-02', '2024-05-02', 'Aberta', 'Nenhum', 2),
-(30, 'Apoio em Campanha de Doação de Agasalhos', 'Procuramos voluntários para auxiliar em uma campanha de arrecadação e distribuição de agasalhos para pessoas de rua. As atividades incluem triagem, organização e entrega dos agasalhos.', '2024-04-03', '2024-05-03', 'Aberta', 'Nenhum', 1);
-
-
-
-
-
-
-
-
-
