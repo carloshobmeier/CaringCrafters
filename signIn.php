@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<<<<<<< HEAD
 <?php session_start();
 ?>
-=======
-<?php session_start();?>
->>>>>>> 58ec97fab5a9189bd0fc36993bc9d8e1514d4e45
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -247,11 +243,7 @@
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cnpj"><strong>CNPJ:<span class="requir">*</span></strong></label>
-<<<<<<< HEAD
-                <input value="<?php echo isset($_SESSION['cnpjI']) ? $_SESSION['cnpjI'] : ""; ?>" data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-12 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
-=======
-                <input data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
->>>>>>> 58ec97fab5a9189bd0fc36993bc9d8e1514d4e45
+                <input value="<?php echo isset($_SESSION['cnpjI']) ? $_SESSION['cnpjI'] : ""; ?>" data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-11 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
                 <div class="institution_cnpj"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">

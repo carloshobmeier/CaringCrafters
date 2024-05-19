@@ -39,7 +39,6 @@ function cpfAlreadyUsed() {
         icon: "warning",
     });
 }
-<<<<<<< HEAD
 
 function cnpjAlreadyUsed() {
   swal.fire({
@@ -48,8 +47,6 @@ function cnpjAlreadyUsed() {
           icon: "warning"
           });
 }
-=======
->>>>>>> 58ec97fab5a9189bd0fc36993bc9d8e1514d4e45
 
 function validateFormVol(id) {
     let camposVol = document.getElementById(id).querySelectorAll("input");
