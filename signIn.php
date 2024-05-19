@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<?php session_start();?>
+<?php session_start();
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +76,7 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-              <input value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU">
+              <input value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU">
               <div class="cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -113,9 +114,9 @@
               <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="education"><strong>Informe seu nível de educação:</strong></label>
                 <select class="col-12" id="education" name="educationU">
-                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Ensino médio") ?"selected": ""; ?> value="Ensino Médio">Ensino médio</option>
-                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Faculdade") ?"selected": ""; ?> value="Ensino Superior">Faculdade</option>
-                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Especialização") ?"selected": ""; ?> value="Pós-graduação">Especialização</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Ensino médio") ?"selected": ""; ?> value="Ensino médio">Ensino médio</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Faculdade") ?"selected": ""; ?> value="Faculdade">Faculdade</option>
+                  <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Especialização") ?"selected": ""; ?> value="Especialização">Especialização</option>
                   <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Mestrado") ?"selected": ""; ?> value="Mestrado">Mestrado</option>
                   <option <?php echo (isset($_SESSION['educacaoU'])&&$_SESSION['educacaoU']=="Doutorado") ?"selected": ""; ?> value="Doutorado">Doutorado</option>
                 </select>
@@ -206,43 +207,43 @@
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Informe seu e-mail:<span class="requir">*</span></strong></label>
-                <input data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="institution_email" name="emailI">
+                <input value="<?php echo isset($_SESSION['emailI']) ? $_SESSION['emailI'] : ""; ?>" data-type="email" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="email" id="institution_email" name="emailI">
                 <div class="institution_email"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_phonenumber"><strong>Informe seu telefone:<span class="requir">*</span></strong></label>
-                <input data-type="number" placeholder="Somente números..." class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_phonenumber" name="phonenumberI">
+                <input value="<?php echo isset($_SESSION['numeroI']) ? $_SESSION['numeroI'] : ""; ?>" data-type="number" placeholder="Somente números..." class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_phonenumber" name="phonenumberI">
                 <div class="institution_phonenumber"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-                <input data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="institution_cep" name="cepI">
+                <input value="<?php echo isset($_SESSION['cepI']) ? $_SESSION['cepI'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="institution_cep" name="cepI">
                 <div class="institution_cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_city"><strong>Informe sua cidade:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_city" name="cityI">
+                <input value="<?php echo isset($_SESSION['cidadeI']) ? $_SESSION['cidadeI'] : ""; ?>" data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_city" name="cityI">
                 <div class="institution_city"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_social_reasoning"><strong>Razão Social:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_social_reasoning" name="reasonI">
+                <input value="<?php echo isset($_SESSION['razaoI']) ? $_SESSION['razaoI'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_social_reasoning" name="reasonI">
                 <div class="institution_social_reasoning"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_fantasy_name"><strong>Nome Fantasia:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_fantasy_name" name="nameI">
+                <input value="<?php echo isset($_SESSION['nameI']) ? $_SESSION['nameI'] : ""; ?>" data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="institution_fantasy_name" name="nameI">
                 <div class="institution_fantasy_name"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cnpj"><strong>CNPJ:<span class="requir">*</span></strong></label>
-                <input data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
+                <input value="<?php echo isset($_SESSION['cnpjI']) ? $_SESSION['cnpjI'] : ""; ?>" data-type="cnpj" placeholder="00.000.000/0000-00" class="col-xl-11 co2-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cnpj" name="cnpjI">
                 <div class="institution_cnpj"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -254,19 +255,19 @@
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="founding_date"><strong>Data de fundação:<span class="requir">*</span></strong></label>
-                <input data-type="date" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="founding_date" name="dateI">
+                <input value="<?php echo isset($_SESSION['dataI']) ? $_SESSION['dataI'] : ""; ?>" data-type="date" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="date" id="founding_date" name="dateI">
                 <div class="founding_date"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="social_capital"><strong>Capital Social:<span class="requir">*</span></strong></label>
-                <input data-type="number" placeholder="Somente números..." class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="number" id="social_capital" name="socialI">
+                <input value="<?php echo isset($_SESSION['socialI']) ? $_SESSION['socialI'] : ""; ?>" data-type="number" placeholder="Somente números..." class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="number" id="social_capital" name="socialI">
                 <div class="social_capital"></div>
             </div>
         </div>
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="administrator_name"><strong>Nome do administrador:<span class="requir">*</span></strong></label>
-                <input data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="administrator_name" name="adminNameI">
+                <input value="<?php echo isset($_SESSION['nomeAdmin']) ? $_SESSION['nomeAdmin'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="administrator_name" name="adminNameI">
                 <div class="administrator_name"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -274,11 +275,11 @@
                 <div class="d-flex gap-3">
                   <div class="align-item-center">
                     <label for="open_time"><strong>Abertura: </strong></label>
-                    <input type="time" id="appt" name="open_time" required />
+                    <input value="<?php echo isset($_SESSION['horaAbertura']) ? $_SESSION['horaAbertura'] : ""; ?>" type="time" id="appt" name="open_time" required />
                   </div>
                   <div class="align-item-center">
                     <label for="close_time"><strong>Fechamento: </strong></label>
-                    <input type="time" id="appt2" name="close_time" required />
+                    <input value="<?php echo isset($_SESSION['horaFechamento']) ? $_SESSION['horaFechamento'] : ""; ?>" type="time" id="appt2" name="close_time" required />
                   </div>
                 </div>
             </div>
@@ -327,12 +328,36 @@
         </div>
       <?php include("./components/footer.php")?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://unpkg.com/imask"></script>
 
       <script src="./assets/scripts/signin.js"></script>
       <?php
   if (isset($_SESSION['typeForm'])) {
-    echo "<script>toggleFormPHP('volunteer')</script>";
-    echo "<script>cpfAlreadyUsed()</script>";
+    if ($_SESSION['typeForm']=="user") {
+      echo "<script>toggleFormPHP('volunteer')</script>";
+      echo "<script>cpfAlreadyUsed()</script>";
+      unset($_SESSION['typeForm']);
+      unset($_SESSION['nomeU']);
+      unset($_SESSION['sobrenomeU']);
+      unset($_SESSION['cpfU']);
+      unset($_SESSION['emailU']);
+      unset($_SESSION['numeroU']);
+      unset($_SESSION['cepU']);
+      unset($_SESSION['cidadeU']);
+      unset($_SESSION['dataNascimentoU']);
+      unset($_SESSION['generoU']);
+      unset($_SESSION['estadoCivilU']);
+      unset($_SESSION['educacaoU']);
+      unset($_SESSION['nacionalidadeU']);
+      unset($_SESSION['ocupacaoU']);
+      unset($_SESSION['experienciaU']);
+      unset($_SESSION['pass1U']);
+    }
+    else{
+      echo "<script>toggleFormPHP('institution')</script>";
+      echo "<script>cnpjAlreadyUsed()</script>";
+    }
+
   }
 
 ?>

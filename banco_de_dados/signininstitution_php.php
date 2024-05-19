@@ -21,30 +21,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass1I = mysqli_real_escape_string($conn, $_POST['pass1I']);
     $pass2I = mysqli_real_escape_string($conn, $_POST['pass2I']);
 
-    if ($_FILES['Imagem']['size'] == 0) {
-        $profilePictureI = addslashes(file_get_contents("../assets/images/pessoa.jpg"));
-    } else {                             
-        $profilePictureI = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
-    }
+    $query = "SELECT * FROM instituicao WHERE cnpj = '$cnpjI'";
+    $resultCNPJ = mysqli_query($conn, $query);
 
-    // Construct the SQL query
-    $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal, foto, senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','$horaAbertura','$horaFechamento', '$profilePictureI',md5('$pass1I'))";
-
-    // Execute the query
-    if (mysqli_query($conn, $sqlI) && $pass1I === $pass2I) {
-        $sql = "SELECT * FROM Instituicao WHERE email = '$emailI'";
-        $result = mysqli_query($conn, $sql);
-
-        $row = mysqli_fetch_assoc($result);
-        
+    if (mysqli_num_rows($resultCNPJ) > 0) {
         session_start();
-        $_SESSION['tipoCadastro'] = 'instituicao';
-        $_SESSION['id'] = $row['id_Inst'];
-        $_SESSION['nome'] = $row['nomeFantasia'];
-        echo 'Cadastrado com sucesso!';
-        header("Location:../home.php");
+
+        $_SESSION['typeForm'] = "institution";
+        $_SESSION['emailI'] = $emailI;
+        $_SESSION['numeroI'] = $numeroI;
+        $_SESSION['cepI'] = $cepI;
+        $_SESSION['cidadeI'] = $cidadeI;
+        $_SESSION['razaoI'] = $razaoI;
+        $_SESSION['nameI'] = $nomeI;
+        $_SESSION['cnpjI'] = $cnpjI;
+        $_SESSION['dataI'] = $dataI;
+        $_SESSION['socialI'] = $socialI;
+        $_SESSION['nomeAdmin'] = $nomeAdmin;
+        $_SESSION['horaAbertura'] = $horaAbertura;
+        $_SESSION['horaFechamento'] = $horaFechamento;
+        $_SESSION['administracaoI'] = $administracaoI;
+        $_SESSION['pass1I'] = $pass1I;
+
+        header("Location:../signin.php");
     } else {
-        echo 'Erro ao cadastrar: ' . mysqli_error($conn); // Output the specific error message
+        if ($_FILES['Imagem']['size'] == 0) {
+            $profilePictureI = addslashes(file_get_contents("../assets/images/pessoa.jpg"));
+        } else {                             
+            $profilePictureI = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
+        }
+    
+        $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal, foto, senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','$horaAbertura','$horaFechamento', '$profilePictureI',md5('$pass1I'))";
+    
+        if (mysqli_query($conn, $sqlI) && $pass1I === $pass2I) {
+            $sql = "SELECT * FROM Instituicao WHERE email = '$emailI'";
+            $result = mysqli_query($conn, $sql);
+    
+            $row = mysqli_fetch_assoc($result);
+            
+            
+            session_start();
+            $_SESSION['tipoCadastro'] = 'instituicao';
+            $_SESSION['id'] = $row['id_Inst'];
+            $_SESSION['nome'] = $row['nomeFantasia'];
+            echo 'Cadastrado com sucesso!';
+            header("Location:../home.php");
+        } else {
+            echo 'Erro ao cadastrar: ' . mysqli_error($conn); 
+        }
     }
 }
 ?>

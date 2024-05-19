@@ -40,6 +40,14 @@ function cpfAlreadyUsed() {
     });
 }
 
+function cnpjAlreadyUsed() {
+  swal.fire({
+          title: "CNPJ Duplicado!",
+          text: "O CNPJ inserido ja esta cadastrado em nosso sistema, favor inserir outro ou entrar em contato com nosso suporte.",
+          icon: "warning"
+          });
+}
+
 function validateFormVol(id) {
     let camposVol = document.getElementById(id).querySelectorAll("input");
     camposVol.forEach((element) => {
@@ -246,13 +254,27 @@ document.querySelectorAll("input").forEach((element) => {
                     "CPF inválido. Inserir segundo um dos modelos: 000.000.000-00 ou 00000000000.";
                 break;
             case "number":
-                isValidNumber(element.value)
+                let id = element.getAttribute("id")
+                console.log(masks[id].unmaskedValue)
+                if(id == "phonenumber"){
+                  value = masks[id].unmaskedValue
+                }else{
+                  value = element.value
+                }
+                isValidNumber(value)
                     ? element.classList.remove("wrong")
                     : element.classList.add("wrong");
                 errorPhrase = "Inserir somente números.";
                 break;
             case "cep":
-                isValidCEP(element.value)
+              let id2 = element.getAttribute("id")
+                console.log(masks[id2].unmaskedValue)
+                if(id2 == "cep"){
+                  value = masks[id2].unmaskedValue
+                }else{
+                  value = element.value
+                }
+                isValidCEP(cepMask.unmaskedValue)
                     ? element.classList.remove("wrong")
                     : element.classList.add("wrong");
                 errorPhrase =
@@ -360,4 +382,29 @@ function validaImagem(input) {
             alert("O arquivo precisa ser uma imagem com menos de 16 MB");
         }
     }
+}
+
+let masks = {}
+masks.phonenumber = IMask(
+  document.getElementById('phonenumber'),
+  {
+    mask: '(00) 00000-0000'
+  }
+)
+
+const cpfMask = IMask(
+  document.getElementById('cpf'),
+  {
+    mask: '000.000.000-00'
+  }
+)
+
+masks.cep = IMask(
+  document.getElementById('cep'),
+  {
+    mask: '00000-000'
+  }
+)
+let constMasks = {
+  phonenumber : phonenumber.unmaskedValue
 }
