@@ -40,7 +40,7 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Informe seu nome:<span class="requir">*</span></strong></label>
-              <input value=" <?php echo isset($_SESSION['nomeU']) ? $_SESSION['nomeU'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU">
+              <input required value=" <?php echo isset($_SESSION['nomeU']) ? $_SESSION['nomeU'] : ""; ?>" data-type="plainText" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="name" name="nameU">
               <div class="name"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">

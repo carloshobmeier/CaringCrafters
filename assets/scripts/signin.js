@@ -50,6 +50,7 @@ function cnpjAlreadyUsed() {
 
 function validateFormVol(id) {
     let camposVol = document.getElementById(id).querySelectorAll("input");
+    console.log("passei")
     camposVol.forEach((element) => {
         switch (element.dataset.type) {
             case "plainText":
@@ -63,7 +64,14 @@ function validateFormVol(id) {
                     : element.classList.add("wrong");
                 break;
             case "number":
-                isValidNumber(element.value)
+                let id = element.getAttribute("id")
+                console.log(masks[id].unmaskedValue)
+                if(id == "phonenumber" || id == "institution_phonenumber"){
+                  value = masks[id].unmaskedValue
+                }else{
+                  value = element.value
+                }
+                isValidNumber(value)
                     ? element.classList.remove("wrong")
                     : element.classList.add("wrong");
                 break;
@@ -131,23 +139,19 @@ function validateFormVol(id) {
 document
     .getElementById("volunteer")
     .addEventListener("submit", function (event) {
-        if (!validateFormVol("volunteer")) {
-            // Prevent default form submission if validation fails
-            event.preventDefault();
-        } else {
-            event.submit();
-        }
+        event.preventDefault();
+        if (validateFormVol("volunteer")) {
+            document.getElementById("volunteer").submit();
+        } 
     });
 
 document
     .getElementById("institution")
     .addEventListener("submit", function (event) {
-        if (!validateFormVol("institution")) {
-            // Prevent default form submission if validation fails
-            event.preventDefault();
-        } else {
-            event.submit();
-        }
+        event.preventDefault();
+        if (validateFormVol("institution")) {
+            document.getElementById("institution").submit();
+        } 
     });
 
 function isValidEmail(email) {
