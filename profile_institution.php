@@ -96,18 +96,18 @@ else{
                     </p>
                 </div>
             </div>
-            <div class="py-4 d-flex flex-column row-gap-4" style="width: 45%">
+            <div class="py-4 d-flex flex-column row-gap-4" style="width: 60%">
                 <div>
                     <h5 class="border-1 border-bottom py-1 mb-3">Postagens</h5>
                     <div class="grid row row-cols-1 row-gap-3 mx-auto">
-                        <div class="card p-0 w-100">
+                        <div class="card p-0" style="width: 95%">
                             <div class="card-body p-4">
                                 <a href="" class="text-decoration-none fw-medium" style="color: #07857A">Instituição XYZ</a>
                                 <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
                                 <p class="card-text" style="font-size: 15px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat quam natus ex reiciendis porro. Eligendi inventore sit vero debitis quae accusantium enim libero vel quod. Doloremque nihil vitae hic assumenda...</p>
                             </div>
                         </div>
-                        <div class="card p-0 w-100">
+                        <div class="card p-0" style="width: 95%">
                             <div class="card-body p-4">
                                 <a href="" class="text-decoration-none fw-medium" style="color: #07857A">Instituição XYZ</a>
                                 <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -125,7 +125,7 @@ else{
                     <div>
                     </div>
                     <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
-                        <div class="card p-0" style="width: 250px">
+                        <div class="card p-0" style="width: 31%">
                             <div class="card-body">
                                 <a href="" class="text-decoration-none fw-medium text-black">Encontro presencial</a>
                                 <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -137,18 +137,18 @@ else{
                                 <button type="button" class="out-yellow-button w-100">Ver mais</button>
                             </div>
                         </div>
-                        <div class="card p-0" style="width: 250px">
+                        <div class="card p-0" style="width: 31%">
                             <div class="card-body">
                                 <a href="" class="text-decoration-none fw-medium text-black">Reunião online</a>
                                 <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
                                 <p class="card-text" style="font-size: 15px">Foi realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
                                 <div class="d-flex gap-1 mb-3">
-                                    <span class="profile-label"">Saúde</span>
+                                    <span class="profile-label">Saúde</span>
                                 </div>
                                 <button type="button" class="out-yellow-button w-100">Ver mais</button>
                             </div>
                         </div>
-                        <div class="card p-0" style="width: 250px">
+                        <div class="card p-0" style="width: 31%">
                             <div class="card-body">
                                 <a href="" class="text-decoration-none fw-medium text-black">Comemoração de 1 ano</a>
                                 <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
