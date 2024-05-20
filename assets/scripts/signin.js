@@ -256,7 +256,7 @@ document.querySelectorAll("input").forEach((element) => {
             case "number":
                 let id = element.getAttribute("id")
                 console.log(masks[id].unmaskedValue)
-                if(id == "phonenumber"){
+                if(id == "phonenumber" || id == "institution_phonenumber"){
                   value = masks[id].unmaskedValue
                 }else{
                   value = element.value
@@ -268,13 +268,12 @@ document.querySelectorAll("input").forEach((element) => {
                 break;
             case "cep":
               let id2 = element.getAttribute("id")
-                console.log(masks[id2].unmaskedValue)
-                if(id2 == "cep"){
+                if(id2 == "cep" || id2 == "institution_cep"){
                   value = masks[id2].unmaskedValue
                 }else{
                   value = element.value
                 }
-                isValidCEP(cepMask.unmaskedValue)
+                isValidCEP(value)
                     ? element.classList.remove("wrong")
                     : element.classList.add("wrong");
                 errorPhrase =
@@ -391,6 +390,12 @@ masks.phonenumber = IMask(
     mask: '(00) 00000-0000'
   }
 )
+masks.institution_phonenumber = IMask(
+  document.getElementById('institution_phonenumber'),
+  {
+    mask: '(00) 00000-0000'
+  }
+)
 
 const cpfMask = IMask(
   document.getElementById('cpf'),
@@ -401,6 +406,13 @@ const cpfMask = IMask(
 
 masks.cep = IMask(
   document.getElementById('cep'),
+  {
+    mask: '00000-000'
+  }
+)
+
+masks.institution_cep = IMask(
+  document.getElementById('institution_cep'),
   {
     mask: '00000-000'
   }
