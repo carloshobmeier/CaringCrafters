@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <?php
-session_start();
+include('./components/controle_expiracao.php');
 ?>
 
 <html lang="pt-BR">

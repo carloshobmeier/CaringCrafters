@@ -12,6 +12,8 @@
   </head>
   <body>
     <?php 
+    include('./components/controle_expiracao.php');
+    
     if (!isset($_SESSION['id'])) {
         include('./components/navbar_index.php');
     } else {
