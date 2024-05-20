@@ -47,7 +47,7 @@ $conn->close();
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
           <div id="navButtons" class="buttonsNav">
-            <button class="btn btn-outline-success">Eventos</button>
+          <a href="eventos_usuario.php" class="btn btn-outline-success"> Eventos</a>
             <button class="btn btn-outline-success">Instituições</button>
             <button class="btn btn-outline-success">Vagas</button>
           </div>
