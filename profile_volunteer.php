@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-session_start();
+include('./components/controle_expiracao.php');
 
 // Check if the session variable 'id' is not set
 if (!isset($_SESSION['id'])) {
@@ -213,13 +213,19 @@ else{
                 
                 <div class="text-start">
                     <h5>Sobre</h5>
-                    <p class="fw-normal" style="font-size: 15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus odio rerum? Eveniet laborum maiores, ipsa quasi qui quibusdam asperiores, in id saepe, expedita nesciunt amet enim neque voluptates facilis.</p>
+                    <p class="fw-normal" style="font-size: 15px"><?php 
+                            if (strlen($experienciaPrevia) > 0) {
+                                echo $experienciaPrevia;
+                            } else {
+                                echo "Nenhuma informação disponível.";
+                            }    
+                        ?></p>
                 </div>
             </div>
             <div class="py-4" style="width: 55%; max-width: 835px">
                 <h5 class="border-1 border-bottom py-1 mb-3">Colaborações</h5>
                 <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -229,7 +235,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -240,7 +246,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -250,7 +256,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>

@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $administracaoI = mysqli_real_escape_string($conn, $_POST['adminNameI']);
     $pass1I = mysqli_real_escape_string($conn, $_POST['pass1I']);
     $pass2I = mysqli_real_escape_string($conn, $_POST['pass2I']);
+    $about = mysqli_real_escape_string($conn, $_POST['aboutI']);
 
     $query = "SELECT * FROM instituicao WHERE cnpj = '$cnpjI'";
     $resultCNPJ = mysqli_query($conn, $query);
@@ -42,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['horaFechamento'] = $horaFechamento;
         $_SESSION['administracaoI'] = $administracaoI;
         $_SESSION['pass1I'] = $pass1I;
+        $_SESSION['aboutI'] = $about;
 
         header("Location:../signin.php");
     } else {
@@ -51,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $profilePictureI = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
         }
     
-        $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal, foto, senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','$horaAbertura','$horaFechamento', '$profilePictureI',md5('$pass1I'))";
+        $sqlI = "INSERT INTO instituicao (nomeFantasia,nomeAdministrador,email,telefone,cep,cidade,razaoSocial,cnpj,dataFundacao,capitalSocial,horaInicial,horaFinal, sobre, foto, senha) VALUES ('$nomeI','$administracaoI','$emailI','$numeroI','$cepI','$cidadeI','$razaoI','$cnpjI','$dataI','$socialI','$horaAbertura','$horaFechamento','$about', '$profilePictureI',md5('$pass1I'))";
     
         if (mysqli_query($conn, $sqlI) && $pass1I === $pass2I) {
             $sql = "SELECT * FROM Instituicao WHERE email = '$emailI'";

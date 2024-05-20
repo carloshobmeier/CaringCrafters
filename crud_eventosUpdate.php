@@ -11,7 +11,7 @@
 <body>
 
 <?php
-session_start();
+include('./components/controle_expiracao.php');
 
 // Check if the session variable 'id' is not set
 if (!isset($_SESSION['id'])) {

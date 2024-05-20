@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-session_start();
+include('./components/controle_expiracao.php');
 
 // Check if the session variable 'id' is not set
 if (!isset($_SESSION['id'])) {
@@ -8,20 +8,7 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit(); // Make sure to exit after redirection
 }
-
-// Atribuindo valores para expirar a sessão
-$offset = 3*60*60;
-$dateFormat = "h:i:s";
-$time = gmdate($dateFormat, time()-$offset);
-
-// Verificando se a última atividade foi a 30 minutos atrás
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-  session_unset();
-  session_destroy();
-  header("Location:../login.php");
-}
 ?>
-
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +27,8 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
                 include("./components/navbar_logado_usuario.php");
             } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
                 include("./components/navbar_logado_instituicao.php");
+            } elseif ($_SESSION['tipoCadastro'] === 'admin') {
+                include("./components/navbar_logado_admin.php");
             }
         }
         ?>
