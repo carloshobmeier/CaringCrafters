@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./style/signIn.css">
     <link rel="stylesheet" href="./style/setup.css">
+    <script src="./assets/scripts/signincep.js"></script>
 </head>
 <body id="body">
       <div class="signin pt-5">
@@ -76,7 +77,7 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-              <input value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU">
+              <input onblur="pesquisacep(this.value);" value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU">
               <div class="cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -219,7 +220,7 @@
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-                <input value="<?php echo isset($_SESSION['cepI']) ? $_SESSION['cepI'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cep" name="cepI">
+                <input onblur="pesquisacep(this.value);" value="<?php echo isset($_SESSION['cepI']) ? $_SESSION['cepI'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cep" name="cepI">
                 <div class="institution_cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
