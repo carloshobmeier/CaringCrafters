@@ -40,6 +40,14 @@ function cpfAlreadyUsed() {
     });
 }
 
+function emailAlreadyUsed() {
+    swal.fire({
+        title: "Email Duplicado!",
+        text: "O Email inserido ja esta cadastrado em nosso sistema, favor inserir outro ou entrar em contato com nosso suporte.",
+        icon: "warning",
+    });
+}
+
 function cnpjAlreadyUsed() {
   swal.fire({
           title: "CNPJ Duplicado!",

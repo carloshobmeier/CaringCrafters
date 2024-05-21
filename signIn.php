@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./style/signIn.css">
     <link rel="stylesheet" href="./style/setup.css">
-    <script src="./assets/scripts/signincep.js"></script>
+    <!--<script src="./assets/scripts/signincep.js"></script>-->
 </head>
 <body id="body">
       <div class="signin pt-5">
@@ -77,7 +77,7 @@
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-              <input onblur="pesquisacep(this.value);" value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU">
+              <input value="<?php echo isset($_SESSION['cepU']) ?$_SESSION['cepU'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU">
               <div class="cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -342,8 +342,13 @@
   if (isset($_SESSION['typeForm'])) {
     if ($_SESSION['typeForm']=="user") {
       echo "<script>toggleFormPHP('volunteer')</script>";
-      echo "<script>cpfAlreadyUsed()</script>";
+      if($_SESSION['errorType'] =="cpf"){
+        echo "<script>cpfAlreadyUsed()</script>";
+      }else{
+        echo "<script>emailAlreadyUsed()</script>";
+      }
       unset($_SESSION['typeForm']);
+      unset($_SESSION['errorType']);
       unset($_SESSION['nomeU']);
       unset($_SESSION['sobrenomeU']);
       unset($_SESSION['cpfU']);
@@ -362,7 +367,29 @@
     }
     else{
       echo "<script>toggleFormPHP('institution')</script>";
-      echo "<script>cnpjAlreadyUsed()</script>";
+      if($_SESSION['errorType'] =="cnpj"){
+        echo "<script>cnpjAlreadyUsed()</script>";
+      }else{
+        echo "<script>emailAlreadyUsed()</script>";
+      }
+      unset($_SESSION['errorType']);
+      unset($_SESSION['typeForm']);
+      unset($_SESSION['emailI']);
+      unset($_SESSION['numeroI']);
+      unset($_SESSION['cepI']);
+      unset($_SESSION['cidadeI']);
+      unset($_SESSION['razaoI']);
+      unset($_SESSION['nameI']);
+      unset($_SESSION['cnpjI']);
+      unset($_SESSION['dataI']);
+      unset($_SESSION['socialI']);
+      unset($_SESSION['nomeAdmin']);
+      unset($_SESSION['horaAbertura']);
+      unset($_SESSION['horaFechamento']);
+      unset($_SESSION['administracaoI']);
+      unset($_SESSION['pass1I']);
+      unset($_SESSION['aboutI']);
+
     }
 
   }

@@ -24,11 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM usuario WHERE cpf = '$cpfU'";
     $resultCPF = mysqli_query($conn, $query);
 
+    $queryEmail = "SELECT * FROM usuario WHERE email = '$emailU'";
+    $resultEmail = mysqli_query($conn, $queryEmail);
+
     if (mysqli_num_rows($resultCPF) > 0) {
         // CPF already exists
         echo "This CPF already exists in the database.";
         session_start();
         $_SESSION['typeForm'] = "user";
+        $_SESSION['errorType'] = "cpf";
         $_SESSION['nomeU'] = $nomeU;
         $_SESSION['sobrenomeU'] = $sobrenomeU;
         $_SESSION['cpfU'] = $cpfU;
@@ -46,35 +50,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['pass1U'] = $pass1U;
         header("Location:../signin.php");
     } else {
-        // CPF does not exist, proceed with your logic
-        echo "This CPF is available.";
 
-        if ($_FILES['Imagem']['size'] == 0) {
-            $profilePictureU = addslashes(file_get_contents("../assets/images/pessoa.jpg"));
-        } else {                             
-            $profilePictureU = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
-        }
-
-        // Construct the SQL query
-        $sqlU = "INSERT INTO usuario (nome, sobrenome, cpf, email, telefone, cep, cidade,dataDeNascimento, genero, estadoCivil, escolaridade, nacionalidade, ocupacao, experienciaPrevia, foto, senha) VALUES ('$nomeU', '$sobrenomeU', '$cpfU', '$emailU', '$numeroU', '$cepU','$cidadeU', '$dataNascimentoU', '$generoU', '$estadoCivilU', '$educacaoU', '$nacionalidadeU', '$ocupacaoU', '$experienciaU', '$profilePictureU' ,md5('$pass1U'))";
-
-        // Execute the query
-        if (mysqli_query($conn, $sqlU)) {   
-
-
-            $sql = "SELECT * FROM usuario WHERE email = '$emailU'";
-            $result = mysqli_query($conn, $sql);
-
-            $row = mysqli_fetch_assoc($result);
-            
+        if (mysqli_num_rows($resultEmail) > 0) {
+            echo "This email already exists in the database.";
             session_start();
-            $_SESSION['tipoCadastro'] = 'usuario';
-            $_SESSION['id'] = $row['id_user'];
-            $_SESSION['nome'] = $row['nome'];
-            echo 'Cadastrado com sucesso!';
-            header("Location:../home.php");
-        } else {
-            echo 'Erro ao cadastrar: ' . mysqli_error($conn); // Output the specific error message
+            $_SESSION['typeForm'] = "user";
+            $_SESSION['errorType'] = "email";
+            $_SESSION['nomeU'] = $nomeU;
+            $_SESSION['sobrenomeU'] = $sobrenomeU;
+            $_SESSION['cpfU'] = $cpfU;
+            $_SESSION['emailU'] = $emailU;
+            $_SESSION['numeroU'] = $numeroU;
+            $_SESSION['cepU'] = $cepU;
+            $_SESSION['cidadeU'] = $cidadeU;
+            $_SESSION['dataNascimentoU'] = $dataNascimentoU;
+            $_SESSION['generoU'] = $generoU;
+            $_SESSION['estadoCivilU'] = $estadoCivilU;
+            $_SESSION['educacaoU'] = $educacaoU;
+            $_SESSION['nacionalidadeU'] = $nacionalidadeU;
+            $_SESSION['ocupacaoU'] = $ocupacaoU;
+            $_SESSION['experienciaU'] = $experienciaU;
+            $_SESSION['pass1U'] = $pass1U;
+            header("Location:../signin.php");
+        }
+        else{
+
+            echo "This CPF is available.";
+            
+            if ($_FILES['Imagem']['size'] == 0) {
+                $profilePictureU = addslashes(file_get_contents("../assets/images/pessoa.jpg"));
+            } else {                             
+                $profilePictureU = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
+            }
+            
+            // Construct the SQL query
+            $sqlU = "INSERT INTO usuario (nome, sobrenome, cpf, email, telefone, cep, cidade,dataDeNascimento, genero, estadoCivil, escolaridade, nacionalidade, ocupacao, experienciaPrevia, foto, senha) VALUES ('$nomeU', '$sobrenomeU', '$cpfU', '$emailU', '$numeroU', '$cepU','$cidadeU', '$dataNascimentoU', '$generoU', '$estadoCivilU', '$educacaoU', '$nacionalidadeU', '$ocupacaoU', '$experienciaU', '$profilePictureU' ,md5('$pass1U'))";
+            
+            // Execute the query
+            if (mysqli_query($conn, $sqlU)) {   
+                
+                
+                $sql = "SELECT * FROM usuario WHERE email = '$emailU'";
+                $result = mysqli_query($conn, $sql);
+                
+                $row = mysqli_fetch_assoc($result);
+                
+                session_start();
+                $_SESSION['tipoCadastro'] = 'usuario';
+                $_SESSION['id'] = $row['id_user'];
+                $_SESSION['nome'] = $row['nome'];
+                echo 'Cadastrado com sucesso!';
+                header("Location:../home.php");
+            } else {
+                echo 'Erro ao cadastrar: ' . mysqli_error($conn); // Output the specific error message
+            }
         }
     }
 }
