@@ -17,9 +17,17 @@ include('./banco_de_dados/connectTeste.php');
 $userID = $_SESSION['id'];
 $sql = "SELECT * FROM usuario WHERE id_user = $userID";
 $result = $conn->query($sql);
+$fotoPerfil = 0;
+$hasImage = false;
+$pathDefault = "./assets/images/pessoa.jpg";
 if ($result->num_rows > 0) {
   $userData = $result->fetch_assoc();
-  $fotoPerfil = $userData['foto'];
+  if($userData['foto'] == null){
+    $hasImage = false;
+  }else{
+    $hasImage = true;
+    $fotoPerfil = $userData['foto'];
+  }
 }
 $conn->close();
 
@@ -47,12 +55,12 @@ $conn->close();
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
           <div id="navButtons" class="buttonsNav">
-          <a href="eventos_usuario.php" class="btn btn-outline-success"> Eventos</a>
+          <a href="events.php" class="btn btn-outline-success"> Eventos</a>
             <button class="btn btn-outline-success">Instituições</button>
             <button class="btn btn-outline-success">Vagas</button>
           </div>
           <a href="#" id="profileLink">
-            <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>"  alt="User Avatar" class="navbar-profile-pic"></a>
+            <img src="<?php echo $hasImage ?  "data:image/png;base64," . base64_encode($fotoPerfil) : $pathDefault?>"  alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>
@@ -71,7 +79,8 @@ $conn->close();
         <!-- Conteúdo do modal: imagem do usuário e botões -->
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
           <!-- ESSE CÓDIGO PHP N VAI SER USADO DPS, SÓ FIZ PRA TER UMA IMAGEM ESTÁTICA DIFERENTE PRA CADA USUARIO (SPRINT 2) -->
-          <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
+          <img src="<?= $hasImage ? "data:image/png;base64," . base64_encode($fotoPerfil) : $pathDefault?>
+"alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
           <h4>Bem-vindo(a), <?php echo $_SESSION['nome']; ?></h4>
           <div class="d-flex">
             <a href="<?php if($_SESSION['tipoCadastro'] === 'usuario') {

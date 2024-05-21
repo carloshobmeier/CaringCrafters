@@ -50,7 +50,7 @@ function cnpjAlreadyUsed() {
 
 function validateFormVol(id) {
     let camposVol = document.getElementById(id).querySelectorAll("input");
-    console.log("passei")
+    console.log(id)
     camposVol.forEach((element) => {
         switch (element.dataset.type) {
             case "plainText":
@@ -65,7 +65,6 @@ function validateFormVol(id) {
                 break;
             case "number":
                 let id = element.getAttribute("id")
-                console.log(masks[id].unmaskedValue)
                 if(id == "phonenumber" || id == "institution_phonenumber"){
                   value = masks[id].unmaskedValue
                 }else{
@@ -105,16 +104,7 @@ function validateFormVol(id) {
                     ? element.classList.remove("wrong")
                     : element.classList.add("wrong");
                 break;
-            case "repeatPassword":
-                let password =
-                    id == "volunteer"
-                        ? document.getElementById("pass1").value
-                        : document.getElementById("pass3").value;
-                let result = passwordsMatch(element.value, password);
-                result
-                    ? element.classList.remove("wrong")
-                    : element.classList.add("wrong");
-                break;
+            
         }
     });
 
@@ -139,20 +129,31 @@ function validateFormVol(id) {
 document
     .getElementById("volunteer")
     .addEventListener("submit", function (event) {
+        if(document.getElementById("pass1").value != document.getElementById("pass2").value){
+            equalPass = false;
+        }else{
+            equalPass = true
+        }
         event.preventDefault();
-        if (validateFormVol("volunteer")) {
-            document.getElementById("volunteer").submit();
+        if (validateFormVol("volunteer") && equalPass) {
+            document.getElementById("volunteerForm").submit();
         } 
     });
+
 
 document
     .getElementById("institution")
     .addEventListener("submit", function (event) {
+        if(document.getElementById("pass3").value != document.getElementById("pass4").value){
+            equalPass = false;
+        }else{
+            equalPass = true
+        }
         event.preventDefault();
-        if (validateFormVol("institution")) {
-            document.getElementById("institution").submit();
+        if (validateFormVol("institution") && equalPass) {
+            document.getElementById("institutionForm").submit();
         } 
-    });
+});
 
 function isValidEmail(email) {
     const regex =
@@ -259,7 +260,6 @@ document.querySelectorAll("input").forEach((element) => {
                 break;
             case "number":
                 let id = element.getAttribute("id")
-                console.log(masks[id].unmaskedValue)
                 if(id == "phonenumber" || id == "institution_phonenumber"){
                   value = masks[id].unmaskedValue
                 }else{
@@ -315,16 +315,7 @@ document.querySelectorAll("input").forEach((element) => {
                     : element.classList.add("wrong");
                 errorPhrase = "Data inválida. Insira uma data possível.";
                 break;
-            case "repeatPassword":
-                let password =
-                    id == "volunteer"
-                        ? document.getElementById("pass1").value
-                        : "oi";
-                let result = passwordsMatch(element.value, password);
-                errorPhrase = "As senhas não são iguais.";
-                result
-                    ? element.classList.remove("wrong")
-                    : element.classList.add("wrong");
+            
         }
         let identifier = element.getAttribute("id");
         let divError = document.getElementsByClassName(identifier);
@@ -421,6 +412,13 @@ masks.institution_cep = IMask(
     mask: '00000-000'
   }
 )
+
+masks.institution_cnpj = IMask(
+    document.getElementById('institution_cnpj'),
+    {
+      mask: '00.000.000/0000-00'
+    }
+  )
 let constMasks = {
   phonenumber : phonenumber.unmaskedValue
 }

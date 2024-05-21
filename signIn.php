@@ -36,7 +36,7 @@
       </div>
 
       <div id="volunteer" class="d-none content container container-fluid">
-        <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signinuser_php.php" enctype="multipart/form-data">
+        <form method="POST" id="volunteerForm" class="d-flex flex-column" action="./banco_de_dados/signinuser_php.php" enctype="multipart/form-data">
           <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
               <label for="name"><strong>Informe seu nome:<span class="requir">*</span></strong></label>
@@ -203,7 +203,7 @@
       </div>
 
       <div id="institution" class="d-none content container container-fluid">
-    <form method="POST" class="d-flex flex-column" action="./banco_de_dados/signininstitution_php.php" enctype="multipart/form-data">
+    <form method="POST" id="institutionForm" class="d-flex flex-column" action="./banco_de_dados/signininstitution_php.php" enctype="multipart/form-data">
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_email"><strong>Informe seu e-mail:<span class="requir">*</span></strong></label>
@@ -275,11 +275,11 @@
                 <div class="d-flex gap-3">
                   <div class="align-item-center">
                     <label for="open_time"><strong>Abertura: </strong></label>
-                    <input value="<?php echo isset($_SESSION['horaAbertura']) ? $_SESSION['horaAbertura'] : ""; ?>" type="time" id="appt" name="open_time" required />
+                    <input required value="<?php echo isset($_SESSION['horaAbertura']) ? $_SESSION['horaAbertura'] : ""; ?>" type="time" id="appt" name="open_time" />
                   </div>
                   <div class="align-item-center">
                     <label for="close_time"><strong>Fechamento: </strong></label>
-                    <input value="<?php echo isset($_SESSION['horaFechamento']) ? $_SESSION['horaFechamento'] : ""; ?>" type="time" id="appt2" name="close_time" required />
+                    <input required value="<?php echo isset($_SESSION['horaFechamento']) ? $_SESSION['horaFechamento'] : ""; ?>" type="time" id="appt2" name="close_time" />
                   </div>
                 </div>
             </div>

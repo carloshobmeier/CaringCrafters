@@ -15,4 +15,4 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 
 // Atualiza o timestamp de atividade a cada ação do usuário
 $_SESSION['LAST_ACTIVITY'] = time();  // atualiza o timestamp da última atividade
-
+?>

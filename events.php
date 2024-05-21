@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <?php
 include('./components/controle_expiracao.php');
-include('./banco_de_dados/connectTeste.php');
-
 // Check if the session variable 'id' is not set
 /*
 if (!isset($_SESSION['id'])) {
@@ -36,11 +34,13 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
         } else {
             if($_SESSION['tipoCadastro'] === 'usuario') {
                 include("./components/navbar_logado_usuario.php");
-            } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+            } else if ($_SESSION['tipoCadastro'] === 'instituicao') {
                 include("./components/navbar_logado_instituicao.php");
             }
         }
-        $sql = "SELECT nomefantasia FROM instituicao";
+        include('./banco_de_dados/connectTeste.php');
+
+        $sql = "SELECT nomeFantasia FROM Instituicao";
         $resultInst = $conn->query($sql);
         ?>
         <div class="container">
@@ -52,7 +52,7 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
             if ($resultInst->num_rows > 0) {
                 echo "<option value='SelectAll'>Select All</option>";
                 while($row = $resultInst->fetch_assoc()) {
-                    echo "<option value='" . $row["nomefantasia"] . "'>" . $row["nomefantasia"] . "</option>";
+                    echo "<option value='" . $row["nomeFantasia"] . "'>" . $row["nomeFantasia"] . "</option>";
                 }
             } else {
                 echo "<option value=''>No institutions found</option>";
@@ -124,6 +124,7 @@ function loadContent($pagination,$instFIlter) {
                 echo "<p>Date: " . $row["dataEvento"] . "</p>";
                 echo "<p>Location: " . $row["cep"] . "</p>";
                 echo "<p>Description: " . $row["conteudo"] . "</p>";
+                echo "<a href=''><button>Inscrever-se</button></a>";
                 echo "</div>";
             }
         } else {
