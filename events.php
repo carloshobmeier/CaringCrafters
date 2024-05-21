@@ -111,7 +111,7 @@ function loadContent($pagination,$instFIlter) {
 
 
     $resultRegistrado = $conn->query($sqlRegistrado);
-
+    $eventIds = [];
     if ($resultRegistrado->num_rows > 0) {
         // Output data of each row
             while($rowRegistrado = $resultRegistrado->fetch_assoc()) {
