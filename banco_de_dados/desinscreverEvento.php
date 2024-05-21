@@ -8,9 +8,8 @@ if (isset($_GET['event_id'])) {
 
     include_once('./connectTeste.php');
 
-    // Insert the event ID and session ID into the database
-    $sql ="INSERT INTO Participa_evento (fk_Usuario_id_user, fk_Evento_id_evento) VALUES ('$id_user', '$event_id')";
-
+    // Prepare and execute the DELETE query
+    $sql = "DELETE FROM Participa_evento WHERE fk_Usuario_id_user ='$id_user' AND fk_Evento_id_evento = '$event_id';";
 
     $stmt = $conn->prepare($sql);
 

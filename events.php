@@ -105,6 +105,21 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
     <?php
 function loadContent($pagination,$instFIlter) {
     include('./banco_de_dados/connectTeste.php');
+    $id_user = $_SESSION['id'];
+
+    $sqlRegistrado = "SELECT * FROM Participa_Evento WHERE fk_Usuario_id_user ='$id_user';";
+
+
+    $resultRegistrado = $conn->query($sqlRegistrado);
+
+    if ($resultRegistrado->num_rows > 0) {
+        // Output data of each row
+            while($rowRegistrado = $resultRegistrado->fetch_assoc()) {
+                $eventIds[] = $rowRegistrado['fk_Evento_id_evento']; // Add each event ID to the array
+            }
+        }
+
+
     if ($instFIlter == "") {
         $sql = "SELECT * FROM Evento LIMIT ".$pagination.",15";
     }
@@ -124,7 +139,11 @@ function loadContent($pagination,$instFIlter) {
                 echo "<p>Date: " . $row["dataEvento"] . "</p>";
                 echo "<p>Location: " . $row["cep"] . "</p>";
                 echo "<p>Description: " . $row["conteudo"] . "</p>";
-                echo "<a href=''><button>Inscrever-se</button></a>";
+                if (in_array($row["id_evento"], $eventIds)) {
+                    echo "<a href='./banco_de_dados/desinscreverEvento.php?event_id=".$row["id_evento"]."'><button class='btn btn-danger'>Desinscrever-se</button></a>";
+                }else{
+                    echo "<a href='./banco_de_dados/inscreverEvento.php?event_id=".$row["id_evento"]."'><button class='btn btn-success'>Inscrever-se</button></a>";
+                }
                 echo "</div>";
             }
         } else {
