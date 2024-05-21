@@ -56,7 +56,7 @@ $conn->close();
         <div class="rightside ms-auto">
           <div id="navButtons" class="buttonsNav">
           <a href="events.php" class="btn btn-outline-success"> Eventos</a>
-            <button class="btn btn-outline-success">Instituições</button>
+          <a href="instituicoes_cards.php" class="btn btn-outline-success">Instituições</a>
             <button class="btn btn-outline-success">Vagas</button>
           </div>
           <a href="#" id="profileLink">

@@ -63,26 +63,26 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
         </form>
         <?php
         if ($instFIlter == "") {
-            $sql = "SELECT COUNT(*) AS total_events FROM Evento";
+            $sql = "SELECT COUNT(*) AS total_institutions FROM instituicao";
         }
         else{
-            $sql = "SELECT COUNT(*) AS total_events FROM Evento WHERE fk_Instituicao_id_Inst = ".$instFIlter.";";
+            $sql = "SELECT COUNT(*) AS total_institutions FROM instituicao WHERE id_Inst = ".$instFIlter.";";
         }
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
             // Output data
             $row = $result->fetch_assoc();
-            $total_events = $row["total_events"];
+            $total_events = $row["total_institutions"];
         } else {
-            echo "0 events";
+            echo "0 institutions";
         }
         $numberOfPages = floor($total_events/15);
         if ($total_events%15 != 0) {
             $numberOfPages++;
         }
         for ($i=0; $i < $numberOfPages; $i++) { 
-            echo "<a href='events.php?page=".$i."'><button  id='".$i."'>".$i."</button></a>";
+            echo "<a href='instituicoes_cards.php?page=".$i."'><button  id='".$i."'>".$i."</button></a>";
             
         }
         ?>
@@ -106,10 +106,10 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
 function loadContent($pagination,$instFIlter) {
     include('./banco_de_dados/connectTeste.php');
     if ($instFIlter == "") {
-        $sql = "SELECT * FROM Evento LIMIT ".$pagination.",15";
+        $sql = "SELECT * FROM instituicao LIMIT ".$pagination.",15";
     }
     else{
-        $sql = "SELECT * FROM Evento WHERE fk_Instituicao_id_Inst = ".$instFIlter." LIMIT ".$pagination.",15";
+        $sql = "SELECT * FROM instituicao WHERE id_Inst = ".$instFIlter." LIMIT ".$pagination.",15";
     }
 
     $result = $conn->query($sql);
@@ -120,11 +120,11 @@ function loadContent($pagination,$instFIlter) {
             while($row = $result->fetch_assoc()) {
                 // HTML card for each event
                 echo "<div class='card container'>";
-                echo "<h3>" . $row["id_evento"] . "</h3>";
-                echo "<p>Date: " . $row["dataEvento"] . "</p>";
-                echo "<p>Location: " . $row["cep"] . "</p>";
-                echo "<p>Description: " . $row["conteudo"] . "</p>";
-                echo "<a href=''><button>Inscrever-se</button></a>";
+                echo "<h3 style=\"margin-top: 10px;\">" . $row["nomeFantasia"] . "</h3>";
+                echo "<p>Cidade: " . $row["cidade"] . "</p>";
+                echo "<p>E-mail: " . $row["email"] . "</p>";
+                echo "<p>Telefone: " . $row["telefone"] . "</p>";
+                echo "<a href=''><button class=\"btn btn-success mb-3\">Conectar-se</button></a>";
                 echo "</div>";
             }
         } else {
