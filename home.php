@@ -90,12 +90,12 @@ if (!isset($_SESSION['id'])) {
                 <!-- Carrega a imagem com base no id_Inst -->
                 <img src="./assets/images/instituicoes/<?php echo $row['id_Inst']; ?>.webp" alt="Imagem da <?php echo $row['nomeFantasia']; ?>">
                 <div>
-                    <h5><?php echo $row['nomeFantasia']; ?></h5>
+                    <h4><?php echo $row['nomeFantasia']; ?></h4>
                     <h6><?php echo $row['cidade']; ?></h6>
                 </div>
                 <div>
-                    <h4>Contato para detalhes</h4>
-                    <p>Email: <?php echo $row['email']; ?></p>
+                    <h5>Contato para detalhes</h5>
+                    <p style="margin-bottom: 0px;">Email: <?php echo $row['email']; ?></p>
                     <p>Telefone: <?php echo $row['telefone']; ?></p>
                 </div>
             </div>
