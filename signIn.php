@@ -220,7 +220,7 @@
         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                 <label for="institution_cep"><strong>Informe seu CEP:<span class="requir">*</span></strong></label>
-                <input onblur="pesquisacep(this.value);" value="<?php echo isset($_SESSION['cepI']) ? $_SESSION['cepI'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cep" name="cepI">
+                <input value="<?php echo isset($_SESSION['cepI']) ? $_SESSION['cepI'] : ""; ?>" data-type="cep" placeholder="00000-000 ou 00000000" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="institution_cep" name="cepI">
                 <div class="institution_cep"></div>
             </div>
             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -336,7 +336,7 @@
       <?php include("./components/footer.php")?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://unpkg.com/imask"></script>
-
+      <script src="./assets/scripts/signinViaCep.js"></script>
       <script src="./assets/scripts/signin.js"></script>
       <?php
   if (isset($_SESSION['typeForm'])) {

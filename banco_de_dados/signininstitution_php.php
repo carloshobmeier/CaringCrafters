@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM instituicao WHERE cnpj = '$cnpjI'";
     $resultCNPJ = mysqli_query($conn, $query);
 
-    $queryEmail = "SELECT * FROM instituicao WHERE email = '$emailU'";
+    $queryEmail = "SELECT * FROM instituicao WHERE email = '$emailI'";
     $resultEmail = mysqli_query($conn, $queryEmail);
 
     if (mysqli_num_rows($resultCNPJ) > 0) {
