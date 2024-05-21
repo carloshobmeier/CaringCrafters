@@ -42,7 +42,7 @@
         <h1 class="text-center" style="color: #343738;">Programas e áreas de ação</h1>
         <div class="row row-cols mx-auto gap-3" style="margin-top: 40px;">
             <div class="col-sm card border border-0 index-card">
-                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/medico.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Auxílio médico</h5>
                     <p class="card-text text-center" style="color: #8c8c91;">Encontre programas para ajudar aqueles que precisam de melhor cuidado médico.</p>
@@ -50,15 +50,15 @@
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
-                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/cachorro.png" class="index-card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="color: #343738;">Auxílio a animais</h5>
-                    <p class="card-text text-center" style="color: #8c8c91;">Ajude abrigos de animais a cuidade de suas infraestruturas e seus amiguinhos.</p>
+                    <h5 class="card-title text-center" style="color: #343738;">Auxílio aos animais</h5>
+                    <p class="card-text text-center" style="color: #8c8c91;">Ajude abrigos de animais a cuidar de suas infraestruturas e seus amiguinhos.</p>
                     <a href="#" class="index-card-btn">Veja mais<span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward_ios</span></a>
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
-                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/social.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Serviço social</h5>
                     <p class="card-text text-center" style="color: #8c8c91;">Junte-se às instituições e ajude pessoas de todos os segmentos da vida dentro da sua comunidade.</p>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="col-sm card border border-0 index-card">
-                <img src="./assets/images/usuarios-alt.png" class="index-card-img" alt="...">
+                <img src="./assets/images/alimento.png" class="index-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center" style="color: #343738;">Banco de alimentos</h5>
                     <p class="card-text text-center" style="color: #8c8c91;">Junte-se aos bancos de alimentos beneficentes e ajude as pessoas a evitar a fome e a desnutrição.</p>
