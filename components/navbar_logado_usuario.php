@@ -57,7 +57,6 @@ $conn->close();
           <div id="navButtons" class="buttonsNav">
           <a href="events.php" class="btn btn-outline-success"> Eventos</a>
           <a href="instituicoes_cards.php" class="btn btn-outline-success">Instituições</a>
-            <button class="btn btn-outline-success">Vagas</button>
           </div>
           <a href="#" id="profileLink">
             <img src="<?php echo $hasImage ?  "data:image/png;base64," . base64_encode($fotoPerfil) : $pathDefault?>"  alt="User Avatar" class="navbar-profile-pic"></a>

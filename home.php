@@ -80,7 +80,7 @@ if (!isset($_SESSION['id'])) {
             <?php
             // Conexão com o banco de dados
             include('./banco_de_dados/connectTeste.php');
-            $query = "SELECT nomeFantasia, cidade, email, telefone, id_Inst FROM Instituicao ORDER BY id_Inst DESC LIMIT 5";
+            $query = "SELECT nomeFantasia, cidade, email, telefone, id_Inst FROM Instituicao ORDER BY id_Inst LIMIT 5";
             $result = $conn->query($query);
             ?>
                 <h4>Instituições mais bem avaliadas para procurar</h4>
