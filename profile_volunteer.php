@@ -81,7 +81,7 @@ else{
                     <p class="mb-0"><strong>Escolaridade:</strong> <?php echo $escolaridade;?></p>
                     <p class="mb-0"><strong>Ocupação:</strong> <?php echo $ocupacao;?></p>
                 </div>
-                <button type="button" class="btn btn-outline-dark mb-4" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar Perfil</button>
+                <button type="button" class="btn btn-success mb-4" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar Perfil</button>
 
                 <!-- MODAL DE EDIÇÃO PERFIL -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -210,7 +210,7 @@ else{
                                 </div>  
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Voltar</button>
                                 <button type="submit" form="formUpdateUser" type="button" class="btn btn-success">Salvar</button>
                             </div>
                         </div>
