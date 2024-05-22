@@ -18,9 +18,17 @@ include('./banco_de_dados/connectTeste.php');
 $instituionID = $_SESSION['id'];
 $sql = "SELECT * FROM instituicao WHERE id_Inst = $instituionID";
 $result = $conn->query($sql);
+$fotoPerfil = 0;
+$hasImage = false;
+$pathDefault = "./assets/images/pessoa.png";
 if ($result->num_rows > 0) {
   $userData = $result->fetch_assoc();
-  $fotoPerfil = $userData['foto'];
+  if($userData['foto'] == null){
+    $hasImage = false;
+  }else{
+    $hasImage = true;
+    $fotoPerfil = $userData['foto'];
+  }
 }
 $conn->close();
 
@@ -53,7 +61,7 @@ $conn->close();
             <button class="btn btn-outline-success">Minhas Vagas</button>
           </div>
           <a href="#" id="profileLink">
-            <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>"  alt="User Avatar" class="navbar-profile-pic"></a>
+          <img src="<?php echo $hasImage ?  "data:image/png;base64," . base64_encode($fotoPerfil) : $pathDefault?>"  alt="Institution Avatar" class="navbar-profile-pic"></a>
           </a>
         </div>
       </div>
@@ -72,7 +80,8 @@ $conn->close();
       <div class="modal-body">
         <!-- Conteúdo do modal: imagem do usuário e botões -->
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
-          <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>"  alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;"></a>
+        <img src="<?= $hasImage ? "data:image/png;base64," . base64_encode($fotoPerfil) : $pathDefault?>
+        "alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
           <h4>Bem-vindo(a), <?php echo $_SESSION['nome']; ?></h4>
           <div class="d-flex">
             <a href="<?php if($_SESSION['tipoCadastro'] === 'usuario') {
