@@ -146,36 +146,36 @@
             <div class="d-flex flex-column col-6">
               <label for="areas_of_interest"><strong>Áreas de interesse:</strong></label>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest1" value="Educação" name="educationarea">
-                <label class="form-check-label" for="interest1">Educação</label>
+                <input class="form-check-input" type="checkbox" id="interest1" value="Educação" name="educationarea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest1" style="margin-top: 4px;">Educação</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest2" value="Meio Ambiente" name="environmentarea">
-                <label class="form-check-label" for="interest2">Meio Ambiente</label>
+                <input class="form-check-input" type="checkbox" id="interest2" value="Meio Ambiente" name="environmentarea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest2" style="margin-top: 4px;">Meio Ambiente</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest3" value="Saúde" name="healtharea">
-                <label class="form-check-label" for="interest3">Saúde</label>
+                <input class="form-check-input" type="checkbox" id="interest3" value="Saúde" name="healtharea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest3" style="margin-top: 4px;">Saúde</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest4" value="Animais" name="animalarea">
-                <label class="form-check-label" for="interest4">Animais</label>
+                <input class="form-check-input" type="checkbox" id="interest4" value="Animais" name="animalarea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest4" style="margin-top: 4px;">Animais</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest5" value="Idosos" name="elderarea">
-                <label class="form-check-label" for="interest5">Idosos</label>
+                <input class="form-check-input" type="checkbox" id="interest5" value="Idosos" name="elderarea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest5" style="margin-top: 4px;">Idosos</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest6" value="Crianças" name="childrenarea">
-                <label class="form-check-label" for="interest6">Crianças</label>
+                <input class="form-check-input" type="checkbox" id="interest6" value="Crianças" name="childrenarea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest6" style="margin-top: 4px;">Crianças</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest7" value="Alimentação" name="foodarea">
-                <label class="form-check-label" for="interest7">Alimentação</label>
+                <input class="form-check-input" type="checkbox" id="interest7" value="Alimentação" name="foodarea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest7" style="margin-top: 4px;">Alimentação</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="interest8" value="Esporte e Recreação" name="sportsarea">
-                <label class="form-check-label" for="interest8">Esporte e Recreação</label>
+                <input class="form-check-input" type="checkbox" id="interest8" value="Esporte e Recreação" name="sportsarea" style="margin-right: 10px;">
+                <label class="form-check-label" for="interest8" style="margin-top: 4px;">Esporte e Recreação</label>
               </div>
               <!-- Adicionar mais depois -->
             </div>
@@ -193,8 +193,8 @@
               <div class="d-flex flex-column col-6">
                 <label for="accept_terms"><strong>Você aceita os nossos <a href="terms.php" target="__blank" style="color: #07857A">Termos e Condições</a> de uso?</strong></label>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="accept_terms">
-                  <label class="form-check-label" for="accept_terms">Sim, aceito.</label>
+                  <input class="form-check-input" type="checkbox" id="accept_terms" style="margin-right: 10px;">
+                  <label class="form-check-label" for="accept_terms" style="margin-top: 4px;">Sim, aceito.</label>
                 </div>
               </div>
             </div>
@@ -297,20 +297,20 @@
 
                 <!-- deixar as mesmas que no dos voluntários -->
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="teaching" id="volunteering_area_teaching" name="educationI">
-                    <label class="form-check-label" for="volunteering_area_teaching">Educação</label>
+                    <input class="form-check-input" type="checkbox" value="teaching" id="volunteering_area_teaching" name="educationI" style="margin-right: 10px;">
+                    <label class="form-check-label" for="volunteering_area_teaching" style="margin-top: 4px;">Educação</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="mentoring" id="volunteering_area_mentoring" name="mentoringI">
-                    <label class="form-check-label" for="volunteering_area_mentoring">Mentoria</label>
+                    <input class="form-check-input" type="checkbox" value="mentoring" id="volunteering_area_mentoring" name="mentoringI" style="margin-right: 10px;">
+                    <label class="form-check-label" for="volunteering_area_mentoring" style="margin-top: 4px;">Mentoria</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="counseling" id="volunteering_area_counseling" name="counselingI">
-                    <label class="form-check-label" for="volunteering_area_counseling">Aconselhamento</label>
+                    <input class="form-check-input" type="checkbox" value="counseling" id="volunteering_area_counseling" name="counselingI" style="margin-right: 10px;">
+                    <label class="form-check-label" for="volunteering_area_counseling" style="margin-top: 4px;">Aconselhamento</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="administration" id="volunteering_area_administration" name="administrationI">
-                    <label class="form-check-label" for="volunteering_area_administration">Administração</label>
+                    <input class="form-check-input" type="checkbox" value="administration" id="volunteering_area_administration" name="administrationI" style="margin-right: 10px;">
+                    <label class="form-check-label" for="volunteering_area_administration" style="margin-top: 4px;">Administração</label>
                 </div>
                 <!-- Add more checkboxes as needed -->
             </div>
@@ -326,8 +326,8 @@
               <div class="d-flex flex-column col-6">
                 <label for="accept_terms"><strong>Você aceita os nossos <a href="terms.php" target="__blank" style="color: #07857A">Termos e Condições</a> de uso?</strong></label>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="accept_terms_institution">
-                  <label class="form-check-label" for="accept_terms_institution">Sim, aceito.</label>
+                  <input class="form-check-input" type="checkbox" id="accept_terms_institution" style="margin-right: 10px;">
+                  <label class="form-check-label" for="accept_terms_institution" style="margin-top: 4px;">Sim, aceito.</label>
                 </div>
               </div>
             </div>
