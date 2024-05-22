@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-session_start();
+include('./components/controle_expiracao.php');
 
 // Check if the session variable 'id' is not set
 if (!isset($_SESSION['id'])) {
@@ -9,7 +9,6 @@ if (!isset($_SESSION['id'])) {
     exit(); // Make sure to exit after redirection
 }
 ?>
-
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +19,19 @@ if (!isset($_SESSION['id'])) {
 </head>
 <body>
     <main >
-            <?php include('./components/navbar_logado.php') ?>
+    <?php 
+        if (!isset($_SESSION['id'])) {
+            include('./components/navbar_index.php');
+        } else {
+            if($_SESSION['tipoCadastro'] === 'usuario') {
+                include("./components/navbar_logado_usuario.php");
+            } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+                include("./components/navbar_logado_instituicao.php");
+            } elseif ($_SESSION['tipoCadastro'] === 'admin') {
+                include("./components/navbar_logado_admin.php");
+            }
+        }
+        ?>
 
             <section>
                 <div class="mainImage container text-center">
@@ -65,61 +76,40 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </section> 
             <section class="sectionCards container col-12">
+
+            <?php
+            // Conexão com o banco de dados
+            include('./banco_de_dados/connectTeste.php');
+            $query = "SELECT nomeFantasia, cidade, email, telefone, id_Inst FROM Instituicao ORDER BY id_Inst LIMIT 5";
+            $result = $conn->query($query);
+            ?>
                 <h4>Instituições mais bem avaliadas para procurar</h4>
-                <div class="suggestedCards col-12 d-flex flex-lg-row flex-md-row flex-sm-column flex-column" >
-                    <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
-                        <img src="./assets/images/pexels-tobi-463734.jpg" alt="">
-                        <div>
-                            <h5>Título</h5>
-                            <h6>Cidade</h6>
-                        </div>
-                        <div>
-                            <h4 >Contato para detalhes</h4>
-                        </div>
-                    </div> 
-                    <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
-                        <img src="./assets/images/pexels-tobi-463734.jpg" alt="">
-                        <div>
-                            <h5>Título</h5>
-                            <h6>Cidade</h6>
-                        </div>
-                        <div>
-                            <h4 >Contato para detalhes</h4>
-                        </div>
-                    </div>
-                    <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
-                        <img src="./assets/images/pexels-tobi-463734.jpg" alt="">
-                        <div>
-                            <h5>Título</h5>
-                            <h6>Cidade</h6>
-                        </div>
-                        <div>
-                            <h4 >Contato para detalhes</h4>
-                        </div>
-                    </div>
-                    <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
-                        <img src="./assets/images/pexels-tobi-463734.jpg" alt="">
-                        <div>
-                            <h5>Título</h5>
-                            <h6>Cidade</h6>
-                        </div>
-                        <div>
-                            <h4 >Contato para detalhes</h4>
-                        </div>
-                    </div>
-                    <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
-                        <img src="./assets/images/pexels-tobi-463734.jpg" alt="">
-                        <div>
-                            <h5>Título</h5>
-                            <h6>Cidade</h6>
-                        </div>
-                        <div>
-                            <h4 >Contato para detalhes</h4>
-                        </div>
-                    </div>
+                <div class="suggestedCards col-12 d-flex flex-lg-row flex-md-row flex-sm-column flex-column">
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <div class="customCard col-lg-2 col-md-2 col-sm-12 col-12">
+                <!-- Carrega a imagem com base no id_Inst -->
+                <img src="./assets/images/instituicoes/<?php echo $row['id_Inst']; ?>.webp" alt="Imagem da <?php echo $row['nomeFantasia']; ?>">
+                <div>
+                    <h4><?php echo $row['nomeFantasia']; ?></h4>
+                    <h6><?php echo $row['cidade']; ?></h6>
                 </div>
+                <div>
+                    <h5>Contato para detalhes</h5>
+                    <p style="margin-bottom: 0px;">Email: <?php echo $row['email']; ?></p>
+                    <p>Telefone: <?php echo $row['telefone']; ?></p>
+                </div>
+            </div>
+        <?php endwhile; ?>
+        <?php
+        // Fechar a conexão se não for mais usada
+        $conn->close();
+        ?>
+    </div>
+
+            </div>
             </section>
         </main>
+
         <?php include('./components/footer.php') ?>
     <!--<script src="./assets/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

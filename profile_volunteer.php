@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-session_start();
+include('./components/controle_expiracao.php');
 
 // Check if the session variable 'id' is not set
 if (!isset($_SESSION['id'])) {
@@ -32,6 +32,8 @@ else{
         $experienciaPrevia = $userData['experienciaPrevia'];
         $senha = $userData['senha'];
         $id_user = $userData['id_user'];
+        $fotoPerfil = $userData['foto'];
+        $cpf = $userData['cpf'];
 
         // Add more fields as needed
     } else {
@@ -53,7 +55,17 @@ else{
     <title><?php echo $nome;?> - Profile Page</title>
 </head>
 <body>
-    <?php include('./components/navbar_logado.php') ?>
+    <?php 
+    if (!isset($_SESSION['id'])) {
+        include('./components/navbar_index.php');
+    } else {
+        if($_SESSION['tipoCadastro'] === 'usuario') {
+            include("./components/navbar_logado_usuario.php");
+        } elseif ($_SESSION['tipoCadastro'] === 'instituicao') {
+            include("./components/navbar_logado_instituicao.php");
+        }
+    }
+    ?>
     <section class="w-100 h-100">
         <div class="w-full">
             <div class="profile-banner" style="background-image: url('./assets/images/agua.jpeg')" alt="">
@@ -62,13 +74,16 @@ else{
         </div>
         <div class="d-flex justify-content-center gap-5 mb-5 profile-layout">
             <div class="position-relative p-4 d-flex flex-column rounded-4" style="width: 250px; background: #F0F0F0; top: -90px; height: fit-content">
-                <img class="mx-auto rounded-circle mb-2" src="./assets/images/agua.jpeg" style="width: 38%" alt="">
+                <img class="mx-auto rounded-circle mb-2" src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" style="width: 38%" alt="">
                 <div class="text-center mb-3">
-                    <h5 class="mb-0"><?php echo $nome;?></h5>
-                    <p>Curitiba, Paraná</p>
+                    <h5 class="mb-0"><?php echo $nome;?> <?php echo $sobrenome;?></h5>
+                    <p><?php echo $cidade;?></p>
+                    <p class="mb-0"><strong>Escolaridade:</strong> <?php echo $escolaridade;?></p>
+                    <p class="mb-0"><strong>Ocupação:</strong> <?php echo $ocupacao;?></p>
                 </div>
-                <button type="button" class="btn btn-outline-dark mb-4" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar Perfil</button>
-                
+                <button type="button" class="btn btn-success mb-4" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar Perfil</button>
+                <a class="col-12" href="./changePassword.php"><button type="button" class="btn btn-success mb-4 col-12" style="font-size: 14px" >Alterar Senha</button></a>
+
                 <!-- MODAL DE EDIÇÃO PERFIL -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -79,7 +94,11 @@ else{
                             </div>
                             <div class="modal-body">
                                 <div id="volunteer" class="content container container-fluid">
-                                    <form method="POST" id="formUpdateUser" class="d-flex flex-column" action="./banco_de_dados/updateuser_php.php">
+                                    <form method="POST" id="formUpdateUser" class="d-flex flex-column" action="./banco_de_dados/updateuser_php.php" enctype="multipart/form-data">
+                                                <label for=""></label>
+                                                <img class="mx-auto rounded-circle mb-2" src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" name="imagemSelecionada" alt="Foto de perfil" style="width: 25%">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                                                <input type="file" id="Imagem" name="Imagem" accept="imagem/*" class="col-4 mx-auto mt-2 mb-4" onchange="validaImagem(this);"></label>
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12" >
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="name"><strong>Nome:<span class="requir"></span></strong></label>
@@ -88,7 +107,7 @@ else{
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="sobrenome"><strong>Sobrenome:<span class="requir"></span></strong></label>
-                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="surname" name="sobrenomeU" value="<?php echo $sobrenome;?>">
+                                                <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="sobrenomeU" name="sobrenomeU" value="<?php echo $sobrenome;?>">
                                                 <div class="surname col-10"></div>
                                             </div>
                                         </div>
@@ -107,7 +126,7 @@ else{
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="cep"><strong>CEP:</strong></label>
-                                                <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU" value="<?php echo $cep;?>">
+                                                <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU" value="<?php echo $cep; ?>">
                                                 <div class="cep col-10"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -126,9 +145,9 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="gender"><strong>Gênero:</strong></label>
                                                 <select class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" id="gender" name="genderU">
-                                                <option value="male">Masculino</option>
-                                                <option value="female">Feminino</option>
-                                                <option value="other">Outro</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Feminino">Feminino</option>
+                                                <option value="Outro">Outro</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -137,20 +156,22 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="maritalstatus"><strong>Estado civil:</strong></label>
                                                 <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus" name="martialstatusU">
-                                                <option value="single">Solteiro(a)</option>
-                                                <option value="married">Casado(a)</option>
-                                                <option value="divorced">Divorciado(a)</option>
-                                                <option value="widowed">Viúvo(a)</option>
+                                                    <option value="<?php echo $estadoCivil ?>"><?php echo $estadoCivil ?></option>
+                                                <option value="Solteiro(a)">Solteiro(a)</option>
+                                                <option value="Casado(a)">Casado(a)</option>
+                                                <option value="Divorciado(a)">Divorciado(a)</option>
+                                                <option value="Viúvo(a)">Viúvo(a)</option>
                                                 </select>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="education"><strong>Educação:</strong></label>
                                                 <select class="col-12" id="education" name="educationU">
-                                                <option value="highschool">Ensino médio</option>
-                                                <option value="college">Faculdade</option>
-                                                <option value="bachelor">Especialização</option>
-                                                <option value="master">Mestrado</option>
-                                                <option value="phd">Doutorado</option>
+                                                <option value="<?php echo $escolaridade ?>"><?php echo $escolaridade ?></option>
+                                                <option value="Ensino Médio">Ensino médio</option>
+                                                <option value="Faculdade">Faculdade</option>
+                                                <option value="Especialização">Especialização</option>
+                                                <option value="Mestrado">Mestrado</option>
+                                                <option value="Doutorado">Doutorado</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -167,28 +188,24 @@ else{
                                                 <div class="occupation"></div>
                                             </div>
                                         </div>
+                                        <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                                            <label for="cpf"><strong>CPF:<span class="" disable></span></strong></label>
+                                            <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf" name="cpf" value="<?php echo $cpf ?>" disabled>
+                                            <div class="cpf"></div>
+                                        </div>
                                         <div class="d-flex flex-row col-12">
                                             <div class="d-flex flex-column col-12">
                                                 <label for="volunteering_experience"><strong>Experiência como voluntário:</strong></label>
                                                 <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU" value="<?php echo $experienciaPrevia;?>"></textarea>
                                             </div>
                                         </div>
-
-                                        <label for="pass1"><strong>Alterar senha:<span class="requir"></span></strong></label>
-                                        <input data-type="password" type="password" id="pass1" name="pass1U" >
-                                        <div class="pass1"></div>
-
-                                        <label for="pass2"><strong>Confirme a senha nova:<span class="requir"></span></strong></label>
-                                        <input data-type="repeatPassword" type="password" id="pass2" name="pass2U">
-                                        <div class="pass2"></div>
-
-                                        <!-- <input class="submit" type="submit" value="Submit" name="submitU"> -->
+                                  
                                     </form>
                                 </div>  
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" form="formUpdateUser" type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Voltar</button>
+                                <button type="submit" form="formUpdateUser" type="button" class="btn btn-success">Salvar</button>
                             </div>
                         </div>
                     </div>
@@ -197,13 +214,19 @@ else{
                 
                 <div class="text-start">
                     <h5>Sobre</h5>
-                    <p class="fw-normal" style="font-size: 15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus odio rerum? Eveniet laborum maiores, ipsa quasi qui quibusdam asperiores, in id saepe, expedita nesciunt amet enim neque voluptates facilis.</p>
+                    <p class="fw-normal" style="font-size: 15px"><?php 
+                            if (strlen($experienciaPrevia) > 0) {
+                                echo $experienciaPrevia;
+                            } else {
+                                echo "Nenhuma informação disponível.";
+                            }    
+                        ?></p>
                 </div>
             </div>
-            <div class="py-4" style="width: 45%">
+            <div class="py-4" style="width: 55%; max-width: 835px">
                 <h5 class="border-1 border-bottom py-1 mb-3">Colaborações</h5>
                 <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -213,7 +236,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -224,7 +247,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
@@ -234,7 +257,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="card p-0" style="width: 250px">
+                    <div class="card p-0" style="width: 31%">
                         <div class="card-body">
                             <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
                             <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>

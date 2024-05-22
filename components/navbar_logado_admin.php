@@ -10,6 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   header("Location: index.php");
   exit();
 }
+?>
+
+<?php 
+include('./banco_de_dados/connectTeste.php');
+$userID = $_SESSION['id'];
+$sql = "SELECT * FROM administrador WHERE id_admin = $userID";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  $userData = $result->fetch_assoc();
+  $fotoPerfil = $userData['foto'];
+}
+$conn->close();
 
 ?>
 
@@ -35,11 +47,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
           <div id="navButtons" class="buttonsNav">
-            <button class="btn btn-outline-success">Instituições</button>
-            <button class="btn btn-outline-success">Voluntários</button>
-            <button class="btn btn-outline-success">Navegue</button>
+            <a href="./admin_users.php">
+              <button class="btn btn-outline-success">Usuários</button>
+            </a>
+            <a href="./admin_institutions.php">
+              <button class="btn btn-outline-success">Instituições</button>
+            </a>
           </div>
-          <a href="#" id="profileLink"><img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="navbar-profile-pic"></a>
+          <a href="#" id="profileLink">
+            <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>"  alt="User Avatar" class="navbar-profile-pic"></a>
         </div>
       </div>
     </div>
@@ -57,9 +73,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="modal-body">
         <!-- Conteúdo do modal: imagem do usuário e botões -->
         <div class="modal-buttons text-center" style="display: flex; flex-direction: column; align-items: center;">
-          <img src="./assets/images/profile-picture.jpeg" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
+          <!-- ESSE CÓDIGO PHP N VAI SER USADO DPS, SÓ FIZ PRA TER UMA IMAGEM ESTÁTICA DIFERENTE PRA CADA USUARIO (SPRINT 2) -->
+          <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" alt="User Avatar" class="modal-profile-pic elemento" width="50%" style="border-radius: 50%;">
+          <h4>Bem-vindo(a), <?php echo $_SESSION['nome']; ?></h4>
           <div class="d-flex">
-            <a href="profile_volunteer.php" class="btn btn-success elemento">Ver Perfil</a>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <button type="submit" onclick="leave()" class="btn btn-success elemento" id="logoutButton">Sair</button>
 
