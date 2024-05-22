@@ -185,6 +185,11 @@ else{
                                                 <div class="occupation"></div>
                                             </div>
                                         </div>
+                                        <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
+                                            <label for="cpf"><strong>CPF:<span class="" disable></span></strong></label>
+                                            <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf" name="cpf" value="" disabled>
+                                            <div class="cpf"></div>
+                                        </div>
                                         <div class="d-flex flex-row col-12">
                                             <div class="d-flex flex-column col-12">
                                                 <label for="volunteering_experience"><strong>Experiência como voluntário:</strong></label>
