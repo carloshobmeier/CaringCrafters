@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         else{
 
             if ($_FILES['Imagem']['size'] == 0) {
-                $profilePictureI = addslashes(file_get_contents("../assets/images/pessoa.jpg"));
+                $profilePictureI = addslashes(file_get_contents("../assets/images/pessoa.png"));
             } else {                             
                 $profilePictureI = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
             }

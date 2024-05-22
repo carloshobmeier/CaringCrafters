@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "This CPF is available.";
             
             if ($_FILES['Imagem']['size'] == 0) {
-                $profilePictureU = addslashes(file_get_contents("../assets/images/pessoa.jpg"));
+                $profilePictureU = addslashes(file_get_contents("../assets/images/pessoa.png"));
             } else {                             
                 $profilePictureU = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));
             }

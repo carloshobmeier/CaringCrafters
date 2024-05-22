@@ -19,7 +19,7 @@ $sql = "SELECT * FROM usuario WHERE id_user = $userID";
 $result = $conn->query($sql);
 $fotoPerfil = 0;
 $hasImage = false;
-$pathDefault = "./assets/images/pessoa.jpg";
+$pathDefault = "./assets/images/pessoa.png";
 if ($result->num_rows > 0) {
   $userData = $result->fetch_assoc();
   if($userData['foto'] == null){
