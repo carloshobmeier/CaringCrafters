@@ -23,11 +23,14 @@ else{
         $telefone = $row['telefone'];
         $cep = $row['cep'];
         $cidade = $row['cidade'];
+        $razaoSocial = $row['razaoSocial'];
         $dataFundacao = $row['dataFundacao'];
         $horaInicial = $row['horaInicial'];
         $horaFinal = $row['horaFinal'];
         $fotoPerfil = $row['foto'];
         $sobre = $row['sobre'];
+        $capitalSocial = $row['capitalSocial'];
+        $cnpj = $row['cnpj'];
 
     } else {
         // No user found with the provided ID
@@ -82,7 +85,56 @@ else{
                         ?>
                     </p>
                 </div>
-                <button type="button" class="btn btn-outline-dark mb-4" style="font-size: 14px">Editar Perfil</button>
+                <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#editInstitutionModal">Editar Perfil</button>
+
+
+                <div class="modal fade" id="editInstitutionModal" tabindex="-1" aria-labelledby="editInstitutionModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editInstitutionModalLabel">Editar Perfil da Instituição</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="POST" action="./banco_de_dados/updateInstitution_php.php" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="institutionName" class="form-label">Nome Fantasia</label>
+                                        <input type="text" class="form-control" id="institutionName" style="width: 700px;" name="nomeFantasia" value="<?php echo $nomeFantasia; ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="adminName" class="form-label">Nome do Administrador</label>
+                                        <input type="text" class="form-control" id="adminName" style="width: 700px;" name="nomeAdministrador" value="<?php echo $nomeAdm; ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control" id="email" name="email" style="width: 700px;" value="<?php echo $email; ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Telefone</label>
+                                        <input type="text" class="form-control" id="phone" name="telefone" style="width: 700px;" value="<?php echo $telefone; ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label">Cidade</label>
+                                        <input type="text" class="form-control" id="city" name="cidade" style="width: 700px;" value="<?php echo $cidade; ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="about" class="form-label">Sobre a Instituição</label>
+                                        <textarea class="form-control" id="about" name="sobre" rows="3" style="width: 700px;"><?php echo $sobre; ?></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
                 <div class="text-start">
                     <h5>Sobre</h5>
                     <p class="fw-normal" style="font-size: 15px">
@@ -165,6 +217,22 @@ else{
         </div>
     </section>
     <?php include('./components/footer.php') ?>
+
+    <style>
+        label {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        input {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        textarea {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    </style>
 
 </body>
 </html>
