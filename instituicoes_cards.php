@@ -46,11 +46,11 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
         <div class="container">
 
             <form action="./banco_de_dados/filterEvents.php" method="POST">
-                <label for="institutions">Choose an institution:</label>
+                <label for="institutions">Escolha uma instituição:</label>
                 <select name="institutions" id="institutions">
                     <?php
             if ($resultInst->num_rows > 0) {
-                echo "<option value='SelectAll'>Select All</option>";
+                echo "<option value='SelectAll'>Todas</option>";
                 while($row = $resultInst->fetch_assoc()) {
                     echo "<option value='" . $row["nomeFantasia"] . "'>" . $row["nomeFantasia"] . "</option>";
                 }
@@ -82,7 +82,7 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
             $numberOfPages++;
         }
         for ($i=0; $i < $numberOfPages; $i++) { 
-            echo "<a href='instituicoes_cards.php?page=".$i."'><button  id='".$i."'>".$i."</button></a>";
+            echo "<a href='instituicoes_cards.php?page=".$i."' style='margin-right: 5px;'><button  id='".$i."'>".$i."</button></a>";
             
         }
         ?>
@@ -119,7 +119,7 @@ function loadContent($pagination,$instFIlter) {
         // Output data of each row
             while($row = $result->fetch_assoc()) {
                 // HTML card for each event
-                echo "<div class='card container'>";
+                echo "<div class='card container' style='border: solid #efa34c'>";
                 echo "<h3 style=\"margin-top: 10px;\">" . $row["nomeFantasia"] . "</h3>";
                 echo "<p>Cidade: " . $row["cidade"] . "</p>";
                 echo "<p>E-mail: " . $row["email"] . "</p>";
