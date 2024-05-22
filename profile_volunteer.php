@@ -82,6 +82,7 @@ else{
                     <p class="mb-0"><strong>Ocupação:</strong> <?php echo $ocupacao;?></p>
                 </div>
                 <button type="button" class="btn btn-success mb-4" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar Perfil</button>
+                <a class="col-12" href="./changePassword.php"><button type="button" class="btn btn-success mb-4 col-12" style="font-size: 14px" >Alterar Senha</button></a>
 
                 <!-- MODAL DE EDIÇÃO PERFIL -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -198,14 +199,7 @@ else{
                                                 <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU" value="<?php echo $experienciaPrevia;?>"></textarea>
                                             </div>
                                         </div>
-
-                                        <label for="pass1"><strong>Alterar senha:<span class="requir"></span></strong></label>
-                                        <input data-type="password" type="password" id="pass1" name="pass1U" >
-                                        <div class="pass1"></div>
-
-                                        <label for="pass2"><strong>Confirme a senha nova:<span class="requir"></span></strong></label>
-                                        <input data-type="repeatPassword" type="password" id="pass2" name="pass2U">
-                                        <div class="pass2"></div>                                     
+                                  
                                     </form>
                                 </div>  
                             </div>
