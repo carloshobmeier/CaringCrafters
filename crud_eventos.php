@@ -43,8 +43,6 @@ include('./banco_de_dados/connectTeste.php');
 // Retrieve user's ID from session
 $userID = $_SESSION['id'];
 
-// Manipulação de ações do CRUD
-
 // Listagem de eventos
 $result = $conn->query("SELECT * FROM evento WHERE fk_Instituicao_id_Inst = '$userID';");
 $evento = $result->fetch_all(MYSQLI_ASSOC);
@@ -84,7 +82,7 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
 
             <div class="mb-3">
                 <label for="dataEvento" class="form-label">Data do Evento</label>
-                <input type="date" class="form-control" id="dataEvento" name="dataEvento" placeholder="Data do Evento" value="<?php echo $evento['dataEvento'] ?? ''; ?>" required>
+                <input type="date" min='2024-05-22' class="form-control" id="dataEvento" name="dataEvento" placeholder="Data do Evento" value="<?php echo $evento['dataEvento'] ?? ''; ?>" required>
             </div>
 
             <div class="mb-3">
