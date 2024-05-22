@@ -46,11 +46,11 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
         <div class="container">
 
             <form action="./banco_de_dados/filterEvents.php" method="POST">
-                <label for="institutions">Choose an institution:</label>
+                <label for="institutions">Escolha uma instituição:</label>
                 <select name="institutions" id="institutions">
                     <?php
             if ($resultInst->num_rows > 0) {
-                echo "<option value='SelectAll'>Select All</option>";
+                echo "<option value='SelectAll'>Todas</option>";
                 while($row = $resultInst->fetch_assoc()) {
                     echo "<option value='" . $row["nomeFantasia"] . "'>" . $row["nomeFantasia"] . "</option>";
                 }
@@ -59,7 +59,7 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
             }
             ?>
         </select>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Filtrar">
         </form>
         <?php
         if ($instFIlter == "") {
@@ -82,7 +82,7 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
             $numberOfPages++;
         }
         for ($i=0; $i < $numberOfPages; $i++) { 
-            echo "<a href='events.php?page=".$i."'><button  id='".$i."'>".$i."</button></a>";
+            echo "<a href='events.php?page=".$i."'><button  id='".$i."' style='margin-right: 5px;'>".$i."</button></a>";
             
         }
         ?>
@@ -134,15 +134,15 @@ function loadContent($pagination,$instFIlter) {
         // Output data of each row
             while($row = $result->fetch_assoc()) {
                 // HTML card for each event
-                echo "<div class='card container'>";
-                echo "<h3>" . $row["id_evento"] . "</h3>";
-                echo "<p>Date: " . $row["dataEvento"] . "</p>";
-                echo "<p>Location: " . $row["cep"] . "</p>";
-                echo "<p>Description: " . $row["conteudo"] . "</p>";
+                echo "<div class='card container' style='border: solid #efa34c'>";
+                echo "<h3 style='margin-top: 15px;'>" . $row["id_evento"] . "</h3>";
+                echo "<p>Data: " . $row["dataEvento"] . "</p>";
+                echo "<p>Local: " . $row["cep"] . "</p>";
+                echo "<p>Descrição: " . $row["conteudo"] . "</p>";
                 if (in_array($row["id_evento"], $eventIds)) {
-                    echo "<a href='./banco_de_dados/desinscreverEvento.php?event_id=".$row["id_evento"]."'><button class='btn btn-danger'>Desinscrever-se</button></a>";
+                    echo "<a href='./banco_de_dados/desinscreverEvento.php?event_id=".$row["id_evento"]."'><button class='btn btn-danger' style=\"margin-bottom:15px;\">Desinscrever-se</button></a>";
                 }else{
-                    echo "<a href='./banco_de_dados/inscreverEvento.php?event_id=".$row["id_evento"]."'><button class='btn btn-success'>Inscrever-se</button></a>";
+                    echo "<a href='./banco_de_dados/inscreverEvento.php?event_id=".$row["id_evento"]."'><button class='btn btn-success' style=\"margin-bottom:15px;\">Inscrever-se</button></a>";
                 }
                 echo "</div>";
             }
