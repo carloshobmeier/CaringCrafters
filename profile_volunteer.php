@@ -33,6 +33,7 @@ else{
         $senha = $userData['senha'];
         $id_user = $userData['id_user'];
         $fotoPerfil = $userData['foto'];
+        $cpf = $userData['cpf'];
 
         // Add more fields as needed
     } else {
@@ -124,7 +125,7 @@ else{
                                         <div class="d-flex flex-xl-row flex-lg-row flex-md-column flex-sm-column flex-column col-12">
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="cep"><strong>CEP:</strong></label>
-                                                <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="number" id="cep" name="cepU" value="<?php echo $cep;?>">
+                                                <input data-type="cep" class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" type="text" id="cep" name="cepU" value="<?php echo $cep; ?>">
                                                 <div class="cep col-10"></div>
                                             </div>
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
@@ -154,7 +155,7 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="maritalstatus"><strong>Estado civil:</strong></label>
                                                 <select class="col-xl-11 col-lg-11 col-sm-12 col-md-12 col-12" id="maritalstatus" name="martialstatusU">
-                                                    <option value="">--Caso deseje alterar, selecione uma opção--</option>
+                                                    <option value="<?php echo $estadoCivil ?>"><?php echo $estadoCivil ?></option>
                                                 <option value="Solteiro(a)">Solteiro(a)</option>
                                                 <option value="Casado(a)">Casado(a)</option>
                                                 <option value="Divorciado(a)">Divorciado(a)</option>
@@ -164,6 +165,7 @@ else{
                                             <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                                 <label for="education"><strong>Educação:</strong></label>
                                                 <select class="col-12" id="education" name="educationU">
+                                                <option value="<?php echo $escolaridade ?>"><?php echo $escolaridade ?></option>
                                                 <option value="Ensino Médio">Ensino médio</option>
                                                 <option value="Faculdade">Faculdade</option>
                                                 <option value="Especialização">Especialização</option>
@@ -187,7 +189,7 @@ else{
                                         </div>
                                         <div class="d-flex flex-column col-xl-6 col-lg-6 col-sm-12 col-md-12 col-12">
                                             <label for="cpf"><strong>CPF:<span class="" disable></span></strong></label>
-                                            <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf" name="cpf" value="" disabled>
+                                            <input data-type="plainText" class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-12" type="text" id="cpf" name="cpf" value="<?php echo $cpf ?>" disabled>
                                             <div class="cpf"></div>
                                         </div>
                                         <div class="d-flex flex-row col-12">
