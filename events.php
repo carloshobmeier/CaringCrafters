@@ -136,9 +136,11 @@ function loadContent($pagination,$instFIlter) {
                 // HTML card for each event
                 echo "<div class='card container' style='border: solid #efa34c'>";
                 echo "<h3 style='margin-top: 15px;'>" . $row["id_evento"] . "</h3>";
-                echo "<p>Data: " . $row["dataEvento"] . "</p>";
-                echo "<p>Local: " . $row["cep"] . "</p>";
-                echo "<p>Descrição: " . $row["conteudo"] . "</p>";
+                echo "<h3>" . $row["titulo"] . "</h3>";
+                echo "<p><strong>Data:</strong> " . $row["dataEvento"] . "</p>";
+                echo "<p><strong>Cidade:</strong> " . $row["cidade"] . "</p>";
+                echo "<p><strong>Rua:</strong> " . $row["rua"] . ", " . $row["numero"] . "</p>";
+                echo "<p><strong>Descrição:</strong> " . $row["conteudo"] . "</p>";
                 if (in_array($row["id_evento"], $eventIds)) {
                     echo "<a href='./banco_de_dados/desinscreverEvento.php?event_id=".$row["id_evento"]."'><button class='btn btn-danger' style=\"margin-bottom:15px;\">Desinscrever-se</button></a>";
                 }else{
