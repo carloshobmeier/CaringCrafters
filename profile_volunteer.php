@@ -242,7 +242,7 @@ else{
                                 ?> 
                                     <div class="card p-0" style="width: 31%">
                                         <div class="card-body">
-                                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A"><?php echo $rowInst['nomeFantasia'] ?></a>
+                                            <a class="text=decoration-underline fw-medium" style="color: #07857A"><?php echo $rowInst['nomeFantasia'] ?></a>
                                             <p class="card-text text-body-secondary" style="font-size: 12px"><?php echo $rowInst['cidade'] ?></p>
                                             <p class="card-text" style="font-size: 15px"><?php echo $rowInst['sobre'] ?></p>
                                         </div>
@@ -263,7 +263,7 @@ else{
                     <?php 
                         include('./banco_de_dados/connectTeste.php');
 
-                        $sqlEvents = "SELECT titulo, dataEvento, conteudo, cidade, rua, numero
+                        $sqlEvents = "SELECT titulo, dataEvento, conteudo, cidade, rua, numero, horaInicial, horaFinal
                             FROM evento
                             INNER JOIN participa_evento
                             ON evento.id_evento = participa_evento.fk_Evento_id_evento
@@ -276,15 +276,17 @@ else{
                                 ?> 
                                     <div class="card p-0" style="width: 31%">
                                         <div class="card-body">
-                                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A"><?php echo $rowEvents['titulo'] ?></a>
+                                            <a class="text=decoration-underline fw-medium" style="color: #07857A"><?php echo $rowEvents['titulo'] ?></a>
                                             <p class="card-text text-body-secondary" style="font-size: 12px">
                                                 <?php 
                                                     $dataEvento = $rowEvents['dataEvento'];
                                                     $date = date_create($dataEvento); 
                                                     $formattedDate = date_format($date, 'd-m-Y'); 
                                                     echo str_replace("-", "/", $formattedDate)
-                                                ?> - <?php echo $rowEvents['cidade'] ?>
+                                                ?>
                                             </p>
+                                            <p class="card-text fw-semibold mb-0" style="font-size: 15px"><?php echo $rowEvents['rua'] ?>, <?php echo $rowEvents['numero'] ?> - <?php echo $rowEvents['cidade'] ?></p>
+                                            <p class="card-text mt-0 text-body-secondary" style="font-size: 15px">Período: <?php echo substr($rowEvents['horaInicial'], 0, 5);?>h : <?php echo substr($rowEvents['horaFinal'], 0, 5);?>h</p>
                                             <p class="card-text" style="font-size: 15px"><?php echo $rowEvents['conteudo'] ?></p>
                                         </div>
                                     </div>
