@@ -92,12 +92,18 @@ else{
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editInstitutionModalLabel">Editar Perfil da Instituição</h5>
+                                <h5 class="modal-title" id="editInstitutionModalLabel">Editar Perfil</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form method="POST" action="./banco_de_dados/updateInstitution_php.php" enctype="multipart/form-data">
-                                    <div class="mb-3">
+                                    <div class="d-flex justify-content-center align-items-center flex-column">
+                                        <img class="mx-auto rounded-circle mb-2" src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>" name="imagemSelecionada" alt="Foto de perfil" style="width: 22%">
+                                        <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                                        <input type="file" id="Imagem" name="Imagem" accept="imagem/*" class="col-4 mx-auto mt-2 mb-4" onchange="validaImagem(this);"></label>
+                                    </div>
+
+                                <div class="mb-3">
                                         <label for="institutionName" class="form-label">Nome Fantasia</label>
                                         <input type="text" class="form-control" id="institutionName" style="width: 700px;" name="nomeFantasia" value="<?php echo $nomeFantasia; ?>">
                                     </div>
@@ -212,5 +218,56 @@ else{
         }
     </style>
 
+        <script>
+            function validaImagem(input) {
+            var caminho = input.value;
+
+            if (caminho) {
+                var comecoCaminho =
+                    caminho.indexOf("\\") >= 0
+                        ? caminho.lastIndexOf("\\")
+                        : caminho.lastIndexOf("/");
+                var nomeArquivo = caminho.substring(comecoCaminho);
+
+                if (nomeArquivo.indexOf("\\") === 0 || nomeArquivo.indexOf("/") === 0) {
+                    nomeArquivo = nomeArquivo.substring(1);
+                }
+
+                var extensaoArquivo =
+                    nomeArquivo.indexOf(".") < 1 ? "" : nomeArquivo.split(".").pop();
+
+                if (
+                    extensaoArquivo != "gif" &&
+                    extensaoArquivo != "png" &&
+                    extensaoArquivo != "jpg" &&
+                    extensaoArquivo != "jpeg"
+                ) {
+                    input.value = "";
+                    alert(
+                        "É preciso selecionar um arquivo de imagem (gif, png, jpg ou jpeg)"
+                    );
+                }
+            } else {
+                input.value = "";
+                alert("Selecione um caminho de arquivo válido");
+            }
+            if (input.files && input.files[0]) {
+                var arquivoTam = input.files[0].size / 1024 / 1024;
+                if (arquivoTam < 16) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // document
+                        //     .getElementById("imagemSelecionada")
+                        //     .setAttribute("src", e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    input.value = "";
+                    alert("O arquivo precisa ser uma imagem com menos de 16 MB");
+                }
+            }
+        }
+
+        </script>
 </body>
 </html>

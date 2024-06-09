@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($_FILES['Imagem']['size'] == 0) {
         echo "sem img";
-        $sqlU = "UPDATE instituicao SET 
+        $sql = "UPDATE instituicao SET 
                 nomeFantasia = '$nomeFantasia',
                 nomeAdministrador = '$nomeAdm',
                 email = '$email',
@@ -42,19 +42,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 id_Inst = '$institutionID'";
     } else {
         echo "com img img";
-        $profilePictureU = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));             
-        $sqlU = "UPDATE instituicao SET 
+        $profilePicture = addslashes(file_get_contents($_FILES['Imagem']['tmp_name']));             
+        $sql = "UPDATE instituicao SET 
                 nomeFantasia = '$nomeFantasia',
                 nomeAdministrador = '$nomeAdm',
                 email = '$email',
                 telefone = '$telefone', 
                 cidade = '$cidade', 
+                foto = '$profilePicture',
                 sobre = '$sobre' 
             WHERE 
                 id_Inst = '$institutionID'";
     }
 // Prepare and execute SQL query to update user's email
-$stmt = $conn->prepare($sqlU);
+$stmt = $conn->prepare($sql);
 // Execute the update statement
 if ($stmt->execute()) {
     echo "Email updated successfully.";
