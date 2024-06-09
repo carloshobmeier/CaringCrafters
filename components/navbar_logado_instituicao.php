@@ -56,9 +56,7 @@ $conn->close();
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="rightside ms-auto">
           <div id="navButtons" class="buttonsNav">
-            <button class="btn btn-outline-success">Usuários</button>
             <a href="crud_eventos.php" class="btn btn-outline-success">Meus Eventos</a>
-            <button class="btn btn-outline-success">Minhas Vagas</button>
           </div>
           <a href="#" id="profileLink">
           <img src="<?php echo $hasImage ?  "data:image/png;base64," . base64_encode($fotoPerfil) : $pathDefault?>"  alt="Institution Avatar" class="navbar-profile-pic"></a>

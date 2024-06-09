@@ -122,8 +122,8 @@ else{
                                         <textarea class="form-control" id="about" name="sobre" rows="3" style="width: 700px;"><?php echo $sobre; ?></textarea>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success">Salvar</button>
                                     </div>
                                 </form>
                             </div>
@@ -148,7 +148,7 @@ else{
                     </p>
                 </div>
             </div>
-            <div class="py-4 d-flex flex-column row-gap-4" style="width: 60%">
+            <div class="py-4 d-flex flex-column row-gap-4" style="width: 50%">
                 <div>
                     <h5 class="border-1 border-bottom py-1 mb-3">Postagens</h5>
                     <div class="grid row row-cols-1 row-gap-3 mx-auto">
@@ -177,40 +177,37 @@ else{
                     <div>
                     </div>
                     <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
-                        <div class="card p-0" style="width: 31%">
-                            <div class="card-body">
-                                <a href="" class="text-decoration-none fw-medium text-black">Encontro presencial</a>
-                                <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                                <p class="card-text" style="font-size: 15px">Será realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
-                                <div class="d-flex gap-1 mb-3">
-                                    <span class="profile-label">Saúde</span>
-                                    <span class="profile-label">Infantil</span>
-                                </div>
-                                <button type="button" class="out-yellow-button w-100">Ver mais</button>
-                            </div>
-                        </div>
-                        <div class="card p-0" style="width: 31%">
-                            <div class="card-body">
-                                <a href="" class="text-decoration-none fw-medium text-black">Reunião online</a>
-                                <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                                <p class="card-text" style="font-size: 15px">Foi realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
-                                <div class="d-flex gap-1 mb-3">
-                                    <span class="profile-label">Saúde</span>
-                                </div>
-                                <button type="button" class="out-yellow-button w-100">Ver mais</button>
-                            </div>
-                        </div>
-                        <div class="card p-0" style="width: 31%">
-                            <div class="card-body">
-                                <a href="" class="text-decoration-none fw-medium text-black">Comemoração de 1 ano</a>
-                                <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                                <p class="card-text" style="font-size: 15px">Foi realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
-                                <div class="d-flex gap-1 mb-3">
-                                    <span class="profile-label">Saúde</span>
-                                </div>
-                                <button type="button" class="out-yellow-button w-100">Ver mais</button>
-                            </div>
-                        </div>
+                        <?php
+                            include('./banco_de_dados/connectTeste.php');
+                            $sqlEvents = "SELECT * FROM evento WHERE fk_Instituicao_id_Inst = $id";
+                            $resultEvents = $conn->query($sqlEvents);
+                            if ($resultEvents->num_rows > 0) {
+                                while($rowEvents = $resultEvents->fetch_assoc()) {
+                                    ?>
+                                        <div class="card p-0" style="width: 31%">
+                                            <div class="card-body">
+                                                <div class="text-decoration-none fw-medium text-black fs-4"><?php echo $rowEvents['titulo'] ?></div>
+                                                <p class="card-text text-body-secondary" style="font-size: 12px">
+                                                    <?php
+                                                        $dataEvento = $rowEvents['dataEvento'];
+                                                        $date = date_create($dataEvento); 
+                                                        $formattedDate = date_format($date, 'd-m-Y'); 
+                                                        echo str_replace("-", "/", $formattedDate);
+                                                    ?>
+                                                </p>
+                                                <p class="card-text fw-semibold mb-0" style="font-size: 15px"><?php echo $rowEvents['rua'] ?>, <?php echo $rowEvents['numero'] ?> - <?php echo $rowEvents['cidade'] ?></p>
+                                                <p class="card-text mt-0 text-body-secondary" style="font-size: 15px">Período: <?php echo substr($rowEvents['horaInicial'], 0, 5);?>h : <?php echo substr($rowEvents['horaFinal'], 0, 5);?>h</p>
+                                                <p class="card-text" style="font-size: 15px"><?php echo $rowEvents['conteudo'] ?></p>
+                                                <button onclick="location.href='crud_eventos.php';" type="button" class="out-yellow-button w-100">Ver mais</button>
+                                            </div>
+                                        </div>
+
+                                    <?php
+                                }
+                            } else {
+                                echo "Não há eventos cadastrados...";
+                            }
+                        ?>
                     </div>
                 </div>                
             </div>
