@@ -53,6 +53,9 @@ $conn->close();
             <a href="./admin_institutions.php">
               <button class="btn btn-outline-success">Instituições</button>
             </a>
+            <a href="./admin_events.php">
+              <button class="btn btn-outline-success">Eventos</button>
+            </a>
           </div>
           <a href="#" id="profileLink">
             <img src="data:image/png;base64,<?php echo base64_encode($fotoPerfil) ?>"  alt="User Avatar" class="navbar-profile-pic"></a>
