@@ -112,7 +112,7 @@ if (!isset($_SESSION['id'])) {
     function deleteItem(id) {
         swal.fire({
                 title: "Deletado!",
-                html: "Seu evento foi deletado com sucesso.",
+                html: "Item deletado com sucesso.",
                 icon: "success",
                 }).then((result) => {
                     if(result.isConfirmed){
