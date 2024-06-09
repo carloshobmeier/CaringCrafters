@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Evento</title>
   <!-- Inclua o CSS do Bootstrap -->
+   <link rel="stylesheet" href="./style/setup.css">
+    <link rel="stylesheet" href="./style/profile.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -43,8 +45,14 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
     <div style="container">
         <h2 style="margin-bottom: 25px;">Edição de Evento:</h2>
     </div>
-<form action="./banco_de_dados/eventoUpdate.php" method="post" class="form">
+    <div class="container content">
+        <form action="./banco_de_dados/eventoUpdate.php" method="post" class="form">
             <input type="hidden" name="id_evento" value="<?php echo $evento[$counterPost]['id_evento'] ?? ''; ?>">
+
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Nome do evento" value="<?php echo $evento[$counterPost]['titulo'] ; ?>" required>
+            </div>
 
             <div class="mb-3">
                 <label for="rua" class="form-label">Rua</label>
@@ -91,10 +99,13 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
                 <input type="time" class="form-control" id="horaFinal" name="horaFinal" placeholder="Hora Final" value="<?php echo $evento[$counterPost]['horaFinal'] ?? ''; ?>" required>
             </div>
 
-            <button type="submit" class="btn btn-success" name="action" value="create">Atualizar</button>
-            <br>
-            <a href="crud_eventos.php" class="btn mb-4"  style="font-size: 14px; background-color: #efa34c; color: white; margin-top: 15px;">Cancelar</a>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success mx-2" name="action" value="create">Atualizar</button>
+                <button onclick="location.href='crud_eventos.php';" class="btn btn-secondary">Cancelar</a>
+            </div>
         </form>
+
+    </div>
         </div>
         <div class="col-2">
     

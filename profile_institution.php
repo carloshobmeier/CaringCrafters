@@ -148,26 +148,7 @@ else{
                     </p>
                 </div>
             </div>
-            <div class="py-4 d-flex flex-column row-gap-4" style="width: 50%">
-                <div>
-                    <h5 class="border-1 border-bottom py-1 mb-3">Postagens</h5>
-                    <div class="grid row row-cols-1 row-gap-3 mx-auto">
-                        <div class="card p-0" style="width: 95%">
-                            <div class="card-body p-4">
-                                <a href="" class="text-decoration-none fw-medium" style="color: #07857A">Instituição XYZ</a>
-                                <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                                <p class="card-text" style="font-size: 15px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat quam natus ex reiciendis porro. Eligendi inventore sit vero debitis quae accusantium enim libero vel quod. Doloremque nihil vitae hic assumenda...</p>
-                            </div>
-                        </div>
-                        <div class="card p-0" style="width: 95%">
-                            <div class="card-body p-4">
-                                <a href="" class="text-decoration-none fw-medium" style="color: #07857A">Instituição XYZ</a>
-                                <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                                <p class="card-text" style="font-size: 15px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat quam natus ex reiciendis porro. Eligendi inventore sit vero debitis quae accusantium enim libero vel quod. Doloremque nihil vitae hic assumenda...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="py-4 d-flex flex-column row-gap-4 mb-5" style="width: 50%">
                 <div>
                     <div class="d-flex justify-content-between align-items-center border-1 border-bottom py-1 mb-3">
                         <h5 class="mb-0">Eventos</h5>

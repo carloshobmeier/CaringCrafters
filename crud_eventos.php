@@ -61,6 +61,11 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
             <input type="hidden" name="id_evento" value="<?php echo $evento['id_evento'] ?? ''; ?>">
 
             <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Nome do evento" value="<?php echo $evento['titulo'] ?? ''; ?>" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="rua" class="form-label">Rua</label>
                 <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" value="<?php echo $evento['rua'] ?? ''; ?>" required>
             </div>
@@ -82,7 +87,7 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
 
             <div class="mb-3">
                 <label for="dataEvento" class="form-label">Data do Evento</label>
-                <input type="date" min='2024-05-22' class="form-control" id="dataEvento" name="dataEvento" placeholder="Data do Evento" value="<?php echo $evento['dataEvento'] ?? ''; ?>" required>
+                <input type="date" min='<?php echo date('Y-m-d') ?>' class="form-control" id="dataEvento" name="dataEvento" placeholder="Data do Evento" value="<?php echo $evento['dataEvento'] ?? ''; ?>" required>
             </div>
 
             <div class="mb-3">
