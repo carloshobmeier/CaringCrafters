@@ -88,7 +88,7 @@ if (!isset($_SESSION['id'])) {
                                 
                                 <div class="modal-footer mx-auto">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                                    <a href="./banco_de_dados/adminRemoveEvent_php.php?id=<?php echo $row['id_evento'] ?>"><button type="button" class="btn btn-success">Sim</button></a>
+                                    <a onclick="deleteItem(<?php echo $row['id_evento'] ?>)"><button type="button" class="btn btn-success">Sim</button></a>
                                 </div>
                                 </div>
                             </div>
@@ -110,6 +110,22 @@ if (!isset($_SESSION['id'])) {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
+    function deleteItem(id) {
+        swal.fire({
+                title: "Deletado!",
+                html: "Seu evento foi deletado com sucesso.",
+                icon: "success",
+                }).then((result) => {
+                    if(result.isConfirmed){
+                        location.href = "banco_de_dados/adminRemoveEvent_php.php?id=" + id
+
+                    }
+                })
+
+    }
+</script>
 </body>
 </html>
