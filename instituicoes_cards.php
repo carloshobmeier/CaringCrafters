@@ -59,7 +59,7 @@ $InstName = isset($_SESSION['institutionsName']) ? $_SESSION['institutionsName']
             }
             ?>
         </select>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Filtrar">
         </form>
         <?php
         if ($instFIlter == "") {

@@ -204,7 +204,7 @@ else{
                                 </div>  
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Voltar</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
                                 <button type="submit" form="formUpdateUser" type="button" class="btn btn-success">Salvar</button>
                             </div>
                         </div>
@@ -224,52 +224,83 @@ else{
                 </div>
             </div>
             <div class="py-4" style="width: 55%; max-width: 835px">
-                <h5 class="border-1 border-bottom py-1 mb-3">Colaborações</h5>
+                <h5 class="border-1 border-bottom py-1 mb-3">Segue:</h5>
                 <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
-                    <div class="card p-0" style="width: 31%">
-                        <div class="card-body">
-                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
-                            <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                            <p class="card-text" style="font-size: 15px">Foi realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
-                            <div class="d-flex gap-1">
-                                <span class="py-0 px-2 bg-black rounded-pill text-white" style="font-size: 12px;">Saúde</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-0" style="width: 31%">
-                        <div class="card-body">
-                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
-                            <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                            <p class="card-text" style="font-size: 15px">Foi realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
-                            <div class="d-flex gap-1">
-                                <span class="py-0 px-2 bg-black rounded-pill text-white" style="font-size: 12px;">Saúde</span>
-                                <span class="py-0 px-2 bg-black rounded-pill text-white" style="font-size: 12px;">Infantil</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-0" style="width: 31%">
-                        <div class="card-body">
-                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
-                            <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                            <p class="card-text" style="font-size: 15px">Foi realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
-                            <div class="d-flex gap-1">
-                                <span class="py-0 px-2 bg-black rounded-pill text-white" style="font-size: 12px;">Saúde</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-0" style="width: 31%">
-                        <div class="card-body">
-                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A">Instituição XYZ</a>
-                            <p class="card-text text-body-secondary" style="font-size: 12px">20/06/2023</p>
-                            <p class="card-text" style="font-size: 15px">Foi realizada uma atividade ao ar livre com crianças de um hospital infantil.</p>
-                            <div class="d-flex gap-1">
-                                <span class="py-0 px-2 bg-black rounded-pill text-white" style="font-size: 12px;">Saúde</span>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                        include('./banco_de_dados/connectTeste.php');
+
+                        $sqlInst = "SELECT nomeFantasia, nomeAdministrador, sobre, cidade, horaInicial, horaFinal
+                            FROM instituicao
+                            INNER JOIN conectou_com
+                            ON instituicao.Id_Inst = conectou_com.fk_Instituicao_id_Inst
+                            WHERE conectou_com.fk_Usuario_id_user = '$userID'
+                        ";
+
+                        $resultInst = $conn->query($sqlInst);
+                        if ($resultInst->num_rows > 0) {
+                            while($rowInst = $resultInst->fetch_assoc()) {
+                                ?> 
+                                    <div class="card p-0" style="width: 31%">
+                                        <div class="card-body">
+                                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A"><?php echo $rowInst['nomeFantasia'] ?></a>
+                                            <p class="card-text text-body-secondary" style="font-size: 12px"><?php echo $rowInst['cidade'] ?></p>
+                                            <p class="card-text" style="font-size: 15px"><?php echo $rowInst['sobre'] ?></p>
+                                        </div>
+                                    </div>
+
+
+                                <?php
+                            }
+                        } else {
+                            echo "Não está acompanhando instituições...";
+                        }
+                            $conn->close();
+
+                    ?>
+                </div>
+                <h5 class="border-1 border-bottom py-1 mb-3 mt-3">Participará em:</h5>
+                <div class="grid row row-cols-auto gap-3 row-gap-3 mx-auto">
+                    <?php 
+                        include('./banco_de_dados/connectTeste.php');
+
+                        $sqlEvents = "SELECT titulo, dataEvento, conteudo, cidade, rua, numero
+                            FROM evento
+                            INNER JOIN participa_evento
+                            ON evento.id_evento = participa_evento.fk_Evento_id_evento
+                            WHERE participa_evento.fk_Usuario_id_user = '$id_user';
+                        ";
+
+                        $resultEvents = $conn->query($sqlEvents);
+                        if ($resultEvents->num_rows > 0) {
+                            while($rowEvents = $resultEvents->fetch_assoc()) {
+                                ?> 
+                                    <div class="card p-0" style="width: 31%">
+                                        <div class="card-body">
+                                            <a href="" class="text=decoration-underline fw-medium" style="color: #07857A"><?php echo $rowEvents['titulo'] ?></a>
+                                            <p class="card-text text-body-secondary" style="font-size: 12px">
+                                                <?php 
+                                                    $dataEvento = $rowEvents['dataEvento'];
+                                                    $date = date_create($dataEvento); 
+                                                    $formattedDate = date_format($date, 'd-m-Y'); 
+                                                    echo str_replace("-", "/", $formattedDate)
+                                                ?> - <?php echo $rowEvents['cidade'] ?>
+                                            </p>
+                                            <p class="card-text" style="font-size: 15px"><?php echo $rowEvents['conteudo'] ?></p>
+                                        </div>
+                                    </div>
+
+
+                                <?php
+                            }
+                        } else {
+                            echo "Não está participando de eventos...";
+                        }
+                    
+                    ?>
                 </div>
                 
             </div>
+            
         </div>
     </section>
     <?php include('./components/footer.php') ?>

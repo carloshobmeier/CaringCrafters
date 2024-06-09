@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Evento</title>
   <!-- Inclua o CSS do Bootstrap -->
+   <link rel="stylesheet" href="./style/setup.css">
+       <link rel="stylesheet" href="./style/profile.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -43,23 +46,26 @@ $evento = $result->fetch_all(MYSQLI_ASSOC);
     <div style="container">
         <h2 style="margin-bottom: 25px;">Alterar Senha:</h2>
     </div>
-<form class="d-flex flex-column" action="./banco_de_dados/passwordUpdate.php" method="post" class="form">
+    <div class="container content">
+        <form class="d-flex flex-column" action="./banco_de_dados/passwordUpdate.php" method="post" class="form">
 
-        <label for="old_password">Senha Antiga:</label>
-        <input type="text" id="old_password" name="old_password" >
+            <label for="old_password">Senha Antiga:</label>
+            <input type="text" id="old_password" name="old_password" >
 
-        <label class="mt-4" for="new_password">Nova Senha:</label>
-        <input required minlength="8" type="text" id="new_password" name="new_password" >
+            <label class="mt-4" for="new_password">Nova Senha:</label>
+            <input required minlength="8" type="text" id="new_password" name="new_password" >
 
-        <label class="mt-4" for="confirm_password">Confirme a Nova Senha:</label>
-        <input  required minlength="8" type="text   echo " id="confirm_password" name="confirm_password" >
+            <label class="mt-4" for="confirm_password">Confirme a Nova Senha:</label>
+            <input  required minlength="8" type="text   echo " id="confirm_password" name="confirm_password" >
 
             <div class="mt-4 d-flex align-items-center justify-content-around">
-                <a href="profile_volunteer.php" class="btn col-5"  style="font-size: 14px; background-color: #efa34c; color: white;">Cancelar</a>
-                <button type="submit" style="font-size: 14px;" class="btn btn-success col-5" name="action" value="create">Atualizar</button>
+                <a href="profile_volunteer.php" class="btn btn-secondary col-5">Cancelar</a>
+                <button type="submit"  class="btn btn-success col-5 mb-0" name="action" value="create">Atualizar</button>
             </div>
             
         </form>
+
+    </div>
         </div>
         <div class="col-2">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
