@@ -195,7 +195,7 @@ else{
                                         </div>
                                         <div class="d-flex flex-row col-12">
                                             <div class="d-flex flex-column col-12">
-                                                <label for="volunteering_experience"><strong>Experiência como voluntário:</strong></label>
+                                                <label for="volunteering_experience"><strong>Sobre:</strong></label>
                                                 <textarea class="form-control" id="volunteering_experience" rows="4" name="volunteering_experienceU" value="<?php echo $experienciaPrevia;?>"></textarea>
                                             </div>
                                         </div>
